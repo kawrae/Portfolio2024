@@ -61,7 +61,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- Project Card -->
+                                <!-- Project Card 1 -->
                                 <div class="project-card">
                                     <div class="row">
                                         <div class="col">
@@ -79,29 +79,72 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more info</span>
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more
+                                                info</span>
                                         </div>
                                     </div>
                                     <!-- Hidden Information -->
                                     <div id="hiddenInfo" class="hidden-info">
                                         <p>
-                                            <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror experience 
+                                            <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror
+                                            experience
                                             where players navigate through a dark, eerie environment.
                                         </p>
                                         <p>
                                             <strong>Features:</strong>
-                                            <ul>
-                                                <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.</li>
-                                                <li>Jumpscare trigger technology as well as an interactive inventory system.</li>
-                                                <li>Object interaction, advanced movement and level progression.</li>
-                                            </ul>
+                                        <ul>
+                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.
+                                            </li>
+                                            <li>Jumpscare trigger technology as well as an interactive inventory system.
+                                            </li>
+                                            <li>Object interaction, advanced movement and level progression.</li>
+                                        </ul>
                                         </p>
                                         <p>
-                                            This is an early alpha version, so there may be bugs and the game is far from completion. This project served as a general insight into techniques using C# and familiarizing myself with the Unity Engine UX. Feedback is welcome!
+                                            This is an early alpha version, so there may be bugs and the game is far
+                                            from completion. This project served as a general insight into techniques
+                                            using C# and familiarizing myself with the Unity Engine UX. Feedback is
+                                            welcome!
                                         </p>
                                     </div>
                                 </div>
-                                <!-- End Project Card -->
+                                <!-- End Project Card 1 -->
+
+                                <!-- Project Card 2 -->
+                                <div class="project-card">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="download-text">
+                                                <h2 style="font-size: 25px;">Free Roam Game Project</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <div class="download-button-container">
+                                                <a href="https://www.mediafire.com/file/oicujy796c0w37v/FreeRoam_GameProject.zip/file"
+                                                    target="_blank" download class="btn btn-1">Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Toggle Button for More Info -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more
+                                                info</span>
+                                        </div>
+                                    </div>
+                                    <!-- Hidden Information -->
+                                    <div id="hiddenInfo2" class="hidden-info">
+                                        <p>
+                                            This game is a very basic and unfinished attempt at a GTA like game. This is
+                                            a quick mess around more than anything else. Yet still displays use of
+                                            player movement handling, controversial car movement, and car interaction.
+                                        </p>
+                                        <p>
+                                            Bugs to be highly expected.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Project Card 2 -->
                             </div>
                         </div>
                     </div>
@@ -114,6 +157,19 @@
         function toggleInfo() {
             const hiddenInfo = document.getElementById('hiddenInfo');
             const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
+                hiddenInfo.style.display = "block";
+                toggleBtn.textContent = "Click here to hide info";
+            } else {
+                hiddenInfo.style.display = "none";
+                toggleBtn.textContent = "Click here for more info";
+            }
+        }
+
+        function toggleInfo2() {
+            const hiddenInfo = document.getElementById('hiddenInfo2');
+            const toggleBtn = document.querySelectorAll('.toggle-btn')[1];
 
             if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
                 hiddenInfo.style.display = "block";
