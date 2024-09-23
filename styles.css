@@ -3,7 +3,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(-135deg, rgba(8, 0, 15, 1) 25%, rgba(40, 40, 58, 1) 100%);
+  background-image: linear-gradient(-135deg, rgb(0, 2, 26) 25%, rgb(21, 34, 90) 100%);
   overflow: hidden; /* Prevent scrolling */
 }
 
@@ -44,7 +44,7 @@ body, html {
 }
 
 #navbar li a:hover {
-  color: rgba(157, 83, 241, 0.753); /* Dark blue - darker shade */
+  color: rgba(83, 93, 241, 0.753); /* Dark blue - darker shade */
 }
 
 #main-content {
@@ -132,7 +132,7 @@ canvas {
 
 .btn-1 {
   padding: 8px 15px;
-  background-color: #7d24d1; /* Purple background color */
+  background-color: #132c9e; /* Purple background color */
   color: #fff; /* White text color */
   text-decoration: none;
   border-radius: 5px;
@@ -140,7 +140,7 @@ canvas {
 }
 
 .btn-1:hover {
-  background-color: #3c1066; /* Darker purple on hover */
+  background-color: #101d66; /* Darker purple on hover */
   color:white;
 }
 .download-button-container {
