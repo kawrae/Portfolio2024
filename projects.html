@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
+        html,
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
         .project-card {
             margin-top: 20px;
             padding: 20px;
@@ -79,24 +85,20 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more
-                                                info</span>
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide info</span>
                                         </div>
                                     </div>
-                                    <!-- Hidden Information -->
-                                    <div id="hiddenInfo" class="hidden-info">
+                                    <!-- Hidden Information (Initially Displayed) -->
+                                    <div id="hiddenInfo" class="hidden-info" style="display: block;">
                                         <p>
                                             <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror
-                                            experience
-                                            where players navigate through a dark, eerie environment.
+                                            experience where players navigate through a dark, eerie environment.
                                         </p>
                                         <p>
                                             <strong>Features:</strong>
                                         <ul>
-                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.
-                                            </li>
-                                            <li>Jumpscare trigger technology as well as an interactive inventory system.
-                                            </li>
+                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.</li>
+                                            <li>Jumpscare trigger technology as well as an interactive inventory system.</li>
                                             <li>Object interaction, advanced movement and level progression.</li>
                                         </ul>
                                         </p>
@@ -128,15 +130,14 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more
-                                                info</span>
+                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more info</span>
                                         </div>
                                     </div>
-                                    <!-- Hidden Information -->
+                                    <!-- Hidden Information (Initially Hidden) -->
                                     <div id="hiddenInfo2" class="hidden-info">
                                         <p>
-                                            This game is a very basic and unfinished attempt at a GTA like game. This is
-                                            a quick mess around more than anything else. Yet still displays use of
+                                            This game is a very basic and unfinished attempt at a GTA-like game. This is
+                                            a quick mess around more than anything else, yet it still displays use of
                                             player movement handling, controversial car movement, and car interaction.
                                         </p>
                                         <p>
