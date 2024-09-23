@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .project-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #201f1f;
+            border-radius: 8px;
+            background-color: #1a1b1b;
+        }
+
+        .hidden-info {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            color: rgb(128, 124, 124);
+        }
+
+        .toggle-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body id="about-page">
     <div id="navbar">
         <ul>
@@ -14,31 +41,67 @@
             <li><a href="#">Projects</a></li>
             <li><a href="#" class="disabled">Artwork</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#" class="disabled">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
+
     <div class="heading-container">
         <h1 class="heading-text">My Projects</h1>
     </div>
+
     <div id="waves-container2">
         <canvas id="waveCanvas1"></canvas>
         <canvas id="waveCanvas2"></canvas>
     </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
-                                <div class="download-text">
-                                    <h2 style="font-size: 25px;">Horror Game Alpha V1.0</h2>
+                            <div class="col-md-12">
+                                <!-- Project Card -->
+                                <div class="project-card">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="download-text">
+                                                <h2 style="font-size: 25px;">Horror Game Alpha V1.0</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <div class="download-button-container">
+                                                <a href="https://www.mediafire.com/file/wr56nglsllpa2qq/NASTYBJ_HorrorGame.zip/file"
+                                                    target="_blank" download class="btn btn-1">Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Toggle Button for More Info -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more info</span>
+                                        </div>
+                                    </div>
+                                    <!-- Hidden Information -->
+                                    <div id="hiddenInfo" class="hidden-info">
+                                        <p>
+                                            <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror experience 
+                                            where players navigate through a dark, eerie environment.
+                                        </p>
+                                        <p>
+                                            <strong>Features:</strong>
+                                            <ul>
+                                                <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.</li>
+                                                <li>Jumpscare trigger technology as well as an interactive inventory system.</li>
+                                                <li>Object interaction, advanced movement and level progression.</li>
+                                            </ul>
+                                        </p>
+                                        <p>
+                                            This is an early alpha version, so there may be bugs and the game is far from completion. This project served as a general insight into techniques using C# and familiarizing myself with the Unity Engine UX. Feedback is welcome!
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="download-button-container text-right">
-                                    <a href="https://www.mediafire.com/file/wr56nglsllpa2qq/NASTYBJ_HorrorGame.zip/file" target="_blank" download class="btn btn-1">Download</a>
-                                </div>
+                                <!-- End Project Card -->
                             </div>
                         </div>
                     </div>
@@ -46,6 +109,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleInfo() {
+            const hiddenInfo = document.getElementById('hiddenInfo');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
+                hiddenInfo.style.display = "block";
+                toggleBtn.textContent = "Click here to hide info";
+            } else {
+                hiddenInfo.style.display = "none";
+                toggleBtn.textContent = "Click here for more info";
+            }
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
+
 </html>

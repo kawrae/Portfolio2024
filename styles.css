@@ -76,7 +76,7 @@ body, html {
 
 #waves-container2 {
   position: relative;
-  height: 550px;
+  height: 500px;
   margin-top: -180px;
 }
 
@@ -125,11 +125,6 @@ canvas {
   animation: fadeIn 1s ease forwards;
 }
 
-/* Additional CSS for styling */
-#main-content2 h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
 
 .download-text {
   color: #fff;
@@ -154,7 +149,7 @@ canvas {
 }
 
 .heading-container {
-  position: absolute;
+  position: relative;
   top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);

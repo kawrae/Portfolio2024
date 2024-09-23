@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+    </style>
+</head>
+
+<body id="about-page">
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#" class="disabled">Artwork</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="heading-container">
+        <h1 class="heading-text">Contact Me</h1>
+    </div>
+
+    <div id="waves-container2">
+        <canvas id="waveCanvas1"></canvas>
+        <canvas id="waveCanvas2"></canvas>
+    </div>
+    <div class="container-fluid" id="main-content2">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2 class="text-white mb-4">Get In Touch</h2>
+                <form action="mailto:B01651145@studentmail.uws.ac.uk" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name" class="text-white">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-white">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryType" class="text-white">Inquiry Type</label>
+                        <select class="form-control" id="inquiryType" name="inquiryType" required>
+                            <option value="">Select...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="employment">Employment</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="text-white">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white">Topics of Interest</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="webDevelopment" name="interest" value="webDevelopment">
+                            <label class="form-check-label text-white" for="webDevelopment">Web Development</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gameDevelopment" name="interest" value="gameDevelopment">
+                            <label class="form-check-label text-white" for="gameDevelopment">Game Development</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="databaseManagement" name="interest" value="databaseManagement">
+                            <label class="form-check-label text-white" for="databaseManagement">Database Management</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMethod" class="text-white">Preferred Contact Method</label>
+                        <select class="form-control" id="contactMethod" name="contactMethod" required onchange="togglePhoneInput()">
+                            <option value="">Select...</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="phoneGroup" style="display: none;">
+                        <label for="phone" class="text-white">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <button type="submit" class="btn btn-1">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function togglePhoneInput() {
+            const contactMethod = document.getElementById("contactMethod").value;
+            const phoneGroup = document.getElementById("phoneGroup");
+            
+            if (contactMethod === "phone") {
+                phoneGroup.style.display = "block";
+            } else {
+                phoneGroup.style.display = "none";
+            }
+        }
+    </script>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
