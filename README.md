@@ -1,3 +1,3 @@
 Public hosted site:
 
-https://coreyblack2024.tiiny.site/
+https://coreyblack-2024.tiiny.site/
