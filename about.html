@@ -43,6 +43,37 @@
             margin-right: 5px;
             /* Space between icon and text */
         }
+
+        @media screen and (max-width: 770px) {
+            .img-fluid {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .social-links {
+                display: flex;
+                /* Stack links vertically */
+                gap: 10px;
+                /* Space between the links */
+                align-items: center;
+            }
+
+            .btn-social {
+                font-size: 14px;
+                /* Make button text smaller */
+                padding: 8px 16px;
+                /* Adjust padding */
+            }
+
+            #connectWith {
+                font-size: 20px;
+                margin-top: -35px;
+                /* Adjust heading font size */
+                margin-bottom: 0px;
+                /* Adjust margin for better spacing */
+            }
+        }
     </style>
 </head>
 
@@ -104,22 +135,10 @@
                                     style="margin-top: 20px;">
                             </div>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <p>
-                                    <!-- Additional content here if needed -->
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    <!-- Additional content here if needed -->
-                                </p>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="container text-center mt-5">
-                        <h2 class="text-white mb-4">Connect with Me</h2>
+                        <h2 class="text-white mb-5" id="connectWith">Connect with Me</h2>
                         <div class="social-links">
                             <a href="https://github.com/kawrae" target="_blank" class="btn btn-social">
                                 <i class="fab fa-github"></i> GitHub

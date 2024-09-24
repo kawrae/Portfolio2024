@@ -15,6 +15,11 @@
             overflow-y: auto;
         }
 
+        #about-page {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -56,11 +61,15 @@
 
         .toggle-btn {
             cursor: pointer;
-            color: rgb(128, 124, 124);
+            color: rgb(112, 169, 255);
         }
 
         .toggle-btn:hover {
             text-decoration: underline;
+        }
+
+        #main-content2 {
+            height: 100%;
         }
     </style>
 </head>
@@ -105,82 +114,195 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide info</span>
+                                            <span class="toggle-btn"
+                                                onclick="toggleInfo('fullBlogContent1', this)">Click here for more
+                                                info</span>
                                         </div>
                                     </div>
 
                                     <!-- Blog Content (Initially Displayed) -->
-                                    <div id="hiddenInfo" class="hidden-info" style="display: block;">
-                                        <p>As a full-stack web developer and graphic designer, building a solid online presence is crucial for showcasing my portfolio and reaching potential employers...</p>
+                                    <div id="hiddenInfo1" class="hidden-info" style="display: block;">
+                                        <p>As a full-stack web developer and graphic designer, building a solid online
+                                            presence is crucial for showcasing my portfolio and reaching potential
+                                            employers...</p>
 
                                         <!-- Full Blog Content (Initially Hidden) -->
-                                        <div id="fullBlogContent1" class="hidden-info">
+                                        <div id="fullBlogContent1" class="hidden-info" style="display: none;">
                                             <h2>Creating a Good Online Presence: What is the Best Approach?</h2>
                                             <p>
-                                                As a full-stack web developer and graphic designer, building a solid online presence
-                                                is crucial for showcasing my portfolio and reaching potential employers. I find that
-                                                the best approach involves carefully curating the work you showcase, staying
-                                                consistent across platforms, and ensuring your portfolio reflects both technical and
-                                                design capabilities.
+                                                As a full-stack web developer and graphic designer, building a solid
+                                                online presence is crucial for showcasing my portfolio and reaching
+                                                potential employers. I find that the best approach involves carefully
+                                                curating the work you showcase, staying consistent across platforms, and
+                                                ensuring your portfolio reflects both technical and design capabilities.
                                             </p>
                                             <h3>Establishing My Online Presence</h3>
                                             <p>
-                                                First, I built my online presence by creating my personal portfolio website. This
-                                                allows me to control how my work is presented and ensures I can showcase both my
-                                                **front-end** and **back-end** development skills. My website integrates some of the
-                                                projects I’ve developed using technologies like **JavaScript**, **Java**, **HTML**,
-                                                and **CSS**. I've also included sections that feature my **Android Studio** and
-                                                **Kotlin** apps, along with **C# game development** projects.
+                                                First, I built my online presence by creating my personal portfolio
+                                                website. This allows me to control how my work is presented and ensures
+                                                I can showcase both my **front-end** and **back-end** development
+                                                skills. My website integrates some of the projects I’ve developed using
+                                                technologies like **JavaScript**, **Java**, **HTML**, and **CSS**. I've
+                                                also included sections that feature my **Android Studio** and **Kotlin**
+                                                apps, along with **C# game development** projects.
                                             </p>
                                             <h3>Platform Choice</h3>
                                             <p>
-                                                While my personal website serves as my main hub, I also make sure my work is visible
-                                                on platforms like **GitHub**, where I share repositories of my projects and code
-                                                snippets. My **LinkedIn** profile highlights my professional accomplishments,
-                                                allowing me to network with industry professionals. Additionally, I use
-                                                **ArtStation** and **Behance** to share graphic design work, and **Steam** for the
-                                                games I’ve developed.
+                                                While my personal website serves as my main hub, I also make sure my
+                                                work is visible on platforms like **GitHub**, where I share repositories
+                                                of my projects and code snippets. My **LinkedIn** profile highlights my
+                                                professional accomplishments, allowing me to network with industry
+                                                professionals. Additionally, I use **ArtStation** and **Behance** to
+                                                share graphic design work, and **Steam** for the games I’ve developed.
                                             </p>
                                             <h3>What to Showcase</h3>
                                             <p>
-                                                It's essential to include work that demonstrates versatility. For my portfolio, I
-                                                feature examples of web development projects, complete with source code hosted on
-                                                **GitHub** and live links to the actual websites I’ve built. I make sure to update
-                                                my portfolio regularly to show employers the breadth of my experience.
+                                                It's essential to include work that demonstrates versatility. For my
+                                                portfolio, I feature examples of web development projects, complete with
+                                                source code hosted on **GitHub** and live links to the actual websites
+                                                I’ve built. I make sure to update my portfolio regularly to show
+                                                employers the breadth of my experience.
                                             </p>
                                             <h3>Getting Noticed</h3>
                                             <p>
-                                                To stand out, I focus on **engagement**. A clean, responsive website combined with
-                                                intuitive user interfaces, SEO optimization, and regular updates ensures my
-                                                portfolio gets noticed by both search engines and potential employers. I also engage
-                                                in networking events, online communities, and platforms like **LinkedIn** where I
-                                                can ask for feedback on my projects and expand my reach.
+                                                To stand out, I focus on **engagement**. A clean, responsive website
+                                                combined with intuitive user interfaces, SEO optimization, and regular
+                                                updates ensures my portfolio gets noticed by both search engines and
+                                                potential employers. I also engage in networking events, online
+                                                communities, and platforms like **LinkedIn** where I can ask for
+                                                feedback on my projects and expand my reach.
                                             </p>
                                             <h3>Advice for Fellow Developers</h3>
                                             <p>
-                                                For anyone in the web development space, I suggest starting with a simple, clean
-                                                portfolio site that reflects your skill level, and gradually updating it as you take
-                                                on more challenging projects. Don’t forget to showcase your **process**, not just
-                                                your final product—code snippets, design mockups, and even failures can give
-                                                potential employers insight into how you think and solve problems.
+                                                For anyone in the web development space, I suggest starting with a
+                                                simple, clean portfolio site that reflects your skill level, and
+                                                gradually updating it as you take on more challenging projects. Don’t
+                                                forget to showcase your **process**, not just your final product—code
+                                                snippets, design mockups, and even failures can give potential employers
+                                                insight into how you think and solve problems.
                                             </p>
                                             <p>
-                                                Finally, always make sure to have a **consistent online presence** across multiple
-                                                platforms to boost visibility. Keep your **LinkedIn**, **GitHub**, and personal
-                                                website up to date with the latest projects and achievements.
+                                                Finally, always make sure to have a **consistent online presence**
+                                                across multiple platforms to boost visibility. Keep your **LinkedIn**,
+                                                **GitHub**, and personal website up to date with the latest projects and
+                                                achievements.
                                             </p>
                                             <p>
-                                                Creating a strong online presence is the first step to standing out in an
-                                                increasingly competitive job market, particularly in web development and the
-                                                creative industries. It’s an ongoing process that requires effort, but the payoff in
-                                                terms of visibility and opportunities is well worth it.
+                                                Creating a strong online presence is the first step to standing out in
+                                                an increasingly competitive job market, particularly in web development
+                                                and the creative industries. It’s an ongoing process that requires
+                                                effort, but the payoff in terms of visibility and opportunities is well
+                                                worth it.
                                             </p>
                                         </div>
                                     </div>
+
+                                    <!-- Date Section -->
+                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
+                                        <p>Published on: September 24, 2024</p>
+                                    </div>
                                 </div>
+
                                 <!-- End Blog Post 1 -->
 
-                                <!-- Add more blog posts in the same structure -->
+                                <!-- Blog Post 2 -->
+                                <div class="blog-card">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="post-title">
+                                                <h2 style="font-size: 25px;">Understanding the Basics of Web Development
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Toggle Button for More Info -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="toggle-btn"
+                                                onclick="toggleInfo('fullBlogContent2', this)">Click here for more
+                                                info</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Content (Initially Displayed) -->
+                                    <div id="hiddenInfo2" class="hidden-info" style="display: block;">
+                                        <p>Web development encompasses a variety of skills and technologies...</p>
+
+                                        <!-- Full Blog Content (Initially Hidden) -->
+                                        <div id="fullBlogContent2" class="hidden-info" style="display: none;">
+                                            <h2>Understanding Web Development: A Beginner's Guide</h2>
+                                            <p>
+                                                Web development is a broad field that involves various disciplines and
+                                                technologies. At its core, it consists of two main areas: front-end and
+                                                back-end development.
+                                            </p>
+                                            <h3>Front-End Development</h3>
+                                            <p>
+                                                Front-end development focuses on the visual aspects of a website that
+                                                users interact with directly. This includes the layout, design, and
+                                                functionality of a site. Key technologies involved in front-end
+                                                development are **HTML**, **CSS**, and **JavaScript**. Mastering these
+                                                technologies allows developers to create engaging and interactive user
+                                                experiences.
+                                            </p>
+                                            <h3>Back-End Development</h3>
+                                            <p>
+                                                Back-end development deals with the server-side of a web application. It
+                                                is responsible for managing the database, server, and application logic.
+                                                Technologies commonly used in back-end development include server-side
+                                                languages like **PHP**, **Ruby**, **Python**, and **Java**, as well as
+                                                databases like **MySQL** and **MongoDB**. Understanding how these
+                                                technologies work together is essential for building robust web
+                                                applications.
+                                            </p>
+                                            <h3>Full-Stack Development</h3>
+                                            <p>
+                                                Full-stack development combines both front-end and back-end skills.
+                                                Full-stack developers are versatile and can work on all parts of a web
+                                                application. This skill set is particularly valuable in smaller teams
+                                                where developers need to wear multiple hats. Learning both sides of
+                                                development opens up more job opportunities and allows for better
+                                                collaboration with other team members.
+                                            </p>
+                                            <h3>Responsive Design</h3>
+                                            <p>
+                                                In today's digital age, it's vital for web developers to create
+                                                responsive designs that work on a variety of devices, from desktops to
+                                                smartphones. Responsive design involves using **media queries** in CSS
+                                                to adapt the layout of a website based on the size of the screen. This
+                                                ensures that all users have a positive experience, regardless of the
+                                                device they are using.
+                                            </p>
+                                            <h3>Best Practices for Web Development</h3>
+                                            <p>
+                                                As a beginner in web development, it's essential to follow best
+                                                practices to ensure code quality and maintainability. Some key practices
+                                                include writing semantic HTML, organizing your CSS for scalability, and
+                                                using version control systems like **Git** to track changes in your
+                                                code. Additionally, always prioritize accessibility to make sure your
+                                                websites can be used by everyone, including those with disabilities.
+                                            </p>
+                                            <h3>Conclusion</h3>
+                                            <p>
+                                                Understanding the basics of web development is the first step toward
+                                                building a successful career in this field. With a mix of technical
+                                                skills and best practices, anyone can start their journey into the world
+                                                of web development. Continuous learning and staying updated with the
+                                                latest trends and technologies will help you succeed in this
+                                                ever-evolving landscape.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Date Section -->
+                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
+                                        <p>Published on: September 24, 2024</p>
+                                    </div>
+
+                                </div>
+                                <!-- End Blog Post 2 -->
+
                             </div>
                         </div>
 
@@ -207,10 +329,8 @@
     </div>
 
     <script>
-        function toggleInfo() {
-            const hiddenInfo = document.getElementById('hiddenInfo');
-            const fullBlogContent = document.getElementById('fullBlogContent1');
-            const toggleBtn = document.querySelector('.toggle-btn');
+        function toggleInfo(contentId, toggleBtn) {
+            const fullBlogContent = document.getElementById(contentId);
 
             if (fullBlogContent.style.display === "none" || fullBlogContent.style.display === "") {
                 fullBlogContent.style.display = "block";
@@ -221,6 +341,7 @@
             }
         }
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
