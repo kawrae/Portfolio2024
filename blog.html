@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-social {
+            background-color: #132c9e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-social:hover {
+            background-color: #101d66;
+            color: white;
+        }
+
+        .fab {
+            margin-right: 5px;
+        }
+
+        .blog-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #201f1f;
+            border-radius: 8px;
+            background-color: #1a1b1b;
+        }
+
+        .hidden-info {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            color: rgb(128, 124, 124);
+        }
+
+        .toggle-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body id="about-page">
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="heading-container">
+        <h1 class="heading-text">Blog</h1>
+    </div>
+
+    <div id="waves-container2">
+        <canvas id="waveCanvas1"></canvas>
+        <canvas id="waveCanvas2"></canvas>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col pl-0">
+                <div id="main-content2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Blog Post 1 -->
+                                <div class="blog-card">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="post-title">
+                                                <h2 style="font-size: 25px;">Creating a Good Online Presence</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Toggle Button for More Info -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide info</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Content (Initially Displayed) -->
+                                    <div id="hiddenInfo" class="hidden-info" style="display: block;">
+                                        <p>As a full-stack web developer and graphic designer, building a solid online presence is crucial for showcasing my portfolio and reaching potential employers...</p>
+
+                                        <!-- Full Blog Content (Initially Hidden) -->
+                                        <div id="fullBlogContent1" class="hidden-info">
+                                            <h2>Creating a Good Online Presence: What is the Best Approach?</h2>
+                                            <p>
+                                                As a full-stack web developer and graphic designer, building a solid online presence
+                                                is crucial for showcasing my portfolio and reaching potential employers. I find that
+                                                the best approach involves carefully curating the work you showcase, staying
+                                                consistent across platforms, and ensuring your portfolio reflects both technical and
+                                                design capabilities.
+                                            </p>
+                                            <h3>Establishing My Online Presence</h3>
+                                            <p>
+                                                First, I built my online presence by creating my personal portfolio website. This
+                                                allows me to control how my work is presented and ensures I can showcase both my
+                                                **front-end** and **back-end** development skills. My website integrates some of the
+                                                projects I’ve developed using technologies like **JavaScript**, **Java**, **HTML**,
+                                                and **CSS**. I've also included sections that feature my **Android Studio** and
+                                                **Kotlin** apps, along with **C# game development** projects.
+                                            </p>
+                                            <h3>Platform Choice</h3>
+                                            <p>
+                                                While my personal website serves as my main hub, I also make sure my work is visible
+                                                on platforms like **GitHub**, where I share repositories of my projects and code
+                                                snippets. My **LinkedIn** profile highlights my professional accomplishments,
+                                                allowing me to network with industry professionals. Additionally, I use
+                                                **ArtStation** and **Behance** to share graphic design work, and **Steam** for the
+                                                games I’ve developed.
+                                            </p>
+                                            <h3>What to Showcase</h3>
+                                            <p>
+                                                It's essential to include work that demonstrates versatility. For my portfolio, I
+                                                feature examples of web development projects, complete with source code hosted on
+                                                **GitHub** and live links to the actual websites I’ve built. I make sure to update
+                                                my portfolio regularly to show employers the breadth of my experience.
+                                            </p>
+                                            <h3>Getting Noticed</h3>
+                                            <p>
+                                                To stand out, I focus on **engagement**. A clean, responsive website combined with
+                                                intuitive user interfaces, SEO optimization, and regular updates ensures my
+                                                portfolio gets noticed by both search engines and potential employers. I also engage
+                                                in networking events, online communities, and platforms like **LinkedIn** where I
+                                                can ask for feedback on my projects and expand my reach.
+                                            </p>
+                                            <h3>Advice for Fellow Developers</h3>
+                                            <p>
+                                                For anyone in the web development space, I suggest starting with a simple, clean
+                                                portfolio site that reflects your skill level, and gradually updating it as you take
+                                                on more challenging projects. Don’t forget to showcase your **process**, not just
+                                                your final product—code snippets, design mockups, and even failures can give
+                                                potential employers insight into how you think and solve problems.
+                                            </p>
+                                            <p>
+                                                Finally, always make sure to have a **consistent online presence** across multiple
+                                                platforms to boost visibility. Keep your **LinkedIn**, **GitHub**, and personal
+                                                website up to date with the latest projects and achievements.
+                                            </p>
+                                            <p>
+                                                Creating a strong online presence is the first step to standing out in an
+                                                increasingly competitive job market, particularly in web development and the
+                                                creative industries. It’s an ongoing process that requires effort, but the payoff in
+                                                terms of visibility and opportunities is well worth it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Blog Post 1 -->
+
+                                <!-- Add more blog posts in the same structure -->
+                            </div>
+                        </div>
+
+                        <div class="container text-center mt-5">
+                            <h2 class="text-white mb-4">Connect with Me</h2>
+                            <div class="social-links">
+                                <a href="https://github.com/kawrae" target="_blank" class="btn btn-social">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                                    class="btn btn-social">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://steamcommunity.com/id/nastybj" target="_blank" class="btn btn-social">
+                                    <i class="fab fa-steam"></i> Steam
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const hiddenInfo = document.getElementById('hiddenInfo');
+            const fullBlogContent = document.getElementById('fullBlogContent1');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (fullBlogContent.style.display === "none" || fullBlogContent.style.display === "") {
+                fullBlogContent.style.display = "block";
+                toggleBtn.textContent = "Click here to hide info";
+            } else {
+                fullBlogContent.style.display = "none";
+                toggleBtn.textContent = "Click here for more info";
+            }
+        }
+    </script>
+</body>
+
+</html>
