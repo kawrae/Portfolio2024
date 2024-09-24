@@ -41,6 +41,7 @@ function animate() {
   drawParticles(ctx2);
 }
 
+// Draw waves
 function drawWave(ctx, frequency, color, timestamp) {
   const opacity = Math.min((timestamp / 1000) * 1, 1); // Adjust the multiplier for faster fading
   ctx.globalAlpha = opacity; // Set global alpha for the wave
@@ -61,7 +62,7 @@ function drawWave(ctx, frequency, color, timestamp) {
   ctx.globalAlpha = 1; // Reset global alpha
 }
 
-
+// Update particles
 function updateParticles() {
   // Update particle positions and lifetimes
   for (let i = 0; i < particles.length; i++) {
@@ -89,6 +90,7 @@ function updateParticles() {
   }
 }
 
+// Draw particles
 function drawParticles(ctx) {
   for (let i = 0; i < particles.length; i++) {
     const opacity = particles[i].alpha; // Use the alpha value directly for particles
