@@ -36,7 +36,6 @@
         .about-card {
             margin-top: 20px;
             padding: 20px;
-            border: 1px solid #2c2f33;
             border-radius: 12px;
             background-color: rgb(25, 31, 55);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -48,6 +47,13 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
         }
 
+        .front-end-card,
+        .back-end-card,
+        .game-dev-card,
+        .mobile-dev-card {
+            background-color: rgb(25, 31, 55);
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -57,10 +63,50 @@
         .btn-social {
             background-color: #7289da;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 40px;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+        }
+
+        .btn-github {
+            background-color: rgb(129, 86, 207);
+            color: white;
+            padding: 10px 50px;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+            border-color: rgb(156, 106, 250);
+            box-shadow: rgb(156, 106, 250) 0px 0px 10px;
+        }
+
+        .btn-linkedin {
+            background-color: rgb(254, 159, 68);
+            color: white;
+            padding: 10px 50px;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+            border-color: rgb(250, 180, 115);
+            box-shadow: rgb(250, 180, 115) 0px 0px 10px;
+        }
+
+        .btn-steam {
+            background-color: rgb(28, 187, 155);
+            color: white;
+            padding: 10px 50px;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+            border-color: rgb(79, 243, 210);
+            box-shadow: rgb(79, 243, 210) 0px 0px 10px;
+        }
+
+        .btn-github:hover,
+        .btn-linkedin:hover,
+        .btn-steam:hover {
+            text-decoration: none;
+            color:rgb(25, 31, 55);
         }
 
         .btn-social:hover {
@@ -71,13 +117,16 @@
             margin-right: 5px;
         }
 
-        h2 {
+        h2,
+        h3 {
             font-size: 24px;
         }
 
         @media screen and (max-width: 770px) {
             .img-fluid {
-                display: none;
+                width: 100%;
+                /* Responsive image */
+                height: auto;
             }
         }
 
@@ -127,84 +176,115 @@
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
-
                         <div class="about-heading-container">
                             <div class="about-me-heading">
                                 <span class="colored-bar"></span>About Me
                             </div>
                         </div>
+                        <!-- About Me Section -->
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="about-card">
+                                    <h3><i class="fas fa-user"></i> About Corey Black</h3>
+                                    <p>
+                                        I am a passionate <strong>Full Stack Developer</strong> with a diverse skill
+                                        set in front-end, back-end, and mobile technologies. My aim is to deliver
+                                        high-quality digital solutions that merge both
+
+                                        functionality and aesthetics.
+                                    </p>
+                                    <p>
+                                        With experience working on various projects, I am dedicated to continuous
+                                        learning and adapting to new challenges in the ever-evolving tech landscape.
+                                    </p>
+                                    <p>
+                                        In my spare time, I enjoy gaming, design, and exploring innovative
+                                        technologies.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 d-flex">
+                                <!-- Front-End Development Card -->
+                                <div class="about-card front-end-card flex-fill">
+                                    <h3><i class="fas fa-laptop-code"></i> Front-End Expertise</h3>
+                                    <p>
+                                        I specialize in developing responsive, intuitive user interfaces using:
+                                    </p>
+                                    <ul>
+                                        <li><i class="fas fa-code"></i> <strong>HTML, CSS, JavaScript</strong> – Building dynamic and accessible web pages.</li>
+                                        <li><i class="fas fa-paint-brush"></i> <strong>UI/UX Design</strong> – Crafting visually engaging user experiences.</li>
+                                        <li><i class="fas fa-laptop"></i> <strong>Java</strong> – Leveraging powerful tools for interactive web applications.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <!-- Game Development Card -->
+                                <div class="about-card game-dev-card flex-fill">
+                                    <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+                                    <p>
+                                        My background in <strong>C#</strong> and <strong>Unity</strong> allows me to creatively approach challenges, especially in game development:
+                                    </p>
+                                    <ul>
+                                        <li><i class="fas fa-lightbulb"></i> <strong>Creative Problem Solving</strong> – Applying game design principles to real-world coding problems.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 d-flex">
+                                <!-- Mobile Development Card -->
+                                <div class="about-card mobile-dev-card flex-fill">
+                                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                                    <p>
+                                        I have hands-on experience developing mobile applications with:
+                                    </p>
+                                    <ul>
+                                        <li><i class="fas fa-android"></i><strong>Android Studio & Kotlin</strong> – Building native, high-performance Android apps.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <!-- Back-End Development Card -->
+                                <div class="about-card back-end-card flex-fill">
+                                    <h3><i class="fas fa-server"></i> Back-End Expertise</h3>
+                                    <p>
+                                        I am proficient in database management and back-end development:
+                                    </p>
+                                    <ul>
+                                        <li><i class="fas fa-database"></i> <strong>SQL & PHP</strong> – Designing and managing robust databases.</li>
+                                        <li><i class="fas fa-lock"></i> <strong>Security</strong> – Building reliable, secure systems that protect user data.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- About Card -->
                                 <div class="about-card">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <h2>Corey Black</h2>
-                                            <p>
-                                                I am a passionate full stack developer with a strong foundation in both
-                                                front-end and back-end technologies. My experience spans a wide range of
-                                                programming languages and tools, making me a versatile and adaptive
-                                                problem solver.
-                                            </p>
-                                            <p>
-                                                On the front-end, I am proficient in HTML, CSS, and JavaScript, building
-                                                responsive and intuitive user interfaces. I have worked extensively with
-                                                Java, leveraging its capabilities to create dynamic web applications.
-                                                Additionally, my background in game development with C# allows me to
-                                                approach coding challenges creatively and efficiently.
-                                            </p>
-                                            <p>
-                                                On the Android development side, I am well-versed in Android Studio and
-                                                Kotlin, building robust mobile applications tailored to the platform's
-                                                unique needs.
-                                            </p>
-                                            <p>
-                                                In terms of back-end development, I have extensive experience in
-                                                creating and managing databases, with strong proficiency in SQL and
-                                                working knowledge of PHP. I understand the importance of building
-                                                reliable, secure, and scalable systems that support smooth user
-                                                experiences.
-                                            </p>
-                                            <p>
-                                                Whether working on front-end or back-end projects, I strive to bridge
-                                                the gap between technology and user experience, delivering high-quality
-                                                results that meet both functional and aesthetic goals.
-                                            </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <img src="imgs/me.png" alt="Corey Black" class="img-fluid"
-                                                style="margin-top: 20px;">
-                                        </div>
-                                    </div>
-                                    <!-- Social Links -->
-                                    <div class="container text-center mt-5 mb-5">
-                                        <h2 class="text-white mb-4" id="connectWith">Connect with Me</h2>
+                                    <h3><i class="fas fa-share-alt"></i> Connect With Me</h3>
+                                    <div id="connectWith">
                                         <div class="social-links">
-                                            <a href="https://github.com/kawrae" target="_blank" class="btn btn-social">
-                                                <i class="fab fa-github"></i> GitHub
-                                            </a>
-                                            <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
-                                                class="btn btn-social">
-                                                <i class="fab fa-linkedin"></i> LinkedIn
-                                            </a>
-                                            <a href="https://steamcommunity.com/id/nastybj" target="_blank"
-                                                class="btn btn-social">
-                                                <i class="fab fa-steam"></i> Steam
-                                            </a>
+                                            <a href="https://github.com/B01651145" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                            <a href="https://www.linkedin.com/in/corey-black-9733461b9/" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                            <a href="https://steamcommunity.com/id/Sephiroth28/" target="_blank" class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
                                         </div>
                                     </div>
-                                    <!-- End Social Links -->
                                 </div>
-                                <!-- End About Card -->
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 
