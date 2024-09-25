@@ -15,10 +15,13 @@ html {
   padding: 10px;
   position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
   z-index: 100;
   display: flex;
   justify-content: center;
-  /* Center the navbar horizontally */
+  border-bottom: 0.5px solid rgba(69, 113, 235, 0.170);
+  border-top: 0.5px solid rgba(69, 113, 235, 0.170);
 }
 
 #navbar ul {
@@ -32,15 +35,6 @@ html {
   float: left;
 }
 
-#navbar .disabled {
-  color: rgba(255, 255, 255, 0.342);
-  /* Change color to gray */
-  pointer-events: none;
-  /* Disable pointer events */
-  cursor: default;
-  /* Set cursor to default */
-}
-
 #navbar li a {
   display: block;
   color: white;
@@ -49,10 +43,6 @@ html {
   text-decoration: none;
 }
 
-#navbar li a:hover {
-  color: rgba(83, 93, 241, 0.753);
-  /* Dark blue - darker shade */
-}
 
 #main-content {
   margin-top: 300px;
