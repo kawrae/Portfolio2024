@@ -6,13 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             overflow-y: auto;
+            background-color: #111;
+            color: #fff;
         }
 
+        .about-me-heading {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .colored-bar {
+            width: 5px;
+            height: 24px;
+            background-color: #7289da;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .about-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #2c2f33;
+            border-radius: 12px;
+            background-color: rgb(25, 31, 55);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .about-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-social {
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background-color: #4e66a3;
+        }
+
+        .fab {
+            margin-right: 5px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 770px) {
+            .img-fluid {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .social-links {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .btn-social {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #connectWith {
+                font-size: 20px;
+                margin-top: -35px;
+                margin-bottom: 0px;
+            }
+        }
     </style>
 </head>
 
@@ -23,7 +109,7 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
@@ -35,79 +121,98 @@
         <canvas id="waveCanvas1"></canvas>
         <canvas id="waveCanvas2"></canvas>
     </div>
-    <div class="container-fluid" id="main-content2">
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h2 class="text-white mb-4">Get In Touch</h2>
-                <form action="mailto:B01651145@studentmail.uws.ac.uk" method="POST" enctype="text/plain">
-                    <div class="form-group">
-                        <label for="name" class="text-white">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="text-white">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiryType" class="text-white">Inquiry Type</label>
-                        <select class="form-control" id="inquiryType" name="inquiryType" required>
-                            <option value="">Select...</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="support">Support</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="employment">Employment</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="text-white">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white">Topics of Interest</label><br>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="webDevelopment" name="interest" value="webDevelopment">
-                            <label class="form-check-label text-white" for="webDevelopment">Web Development</label>
+            <div class="col pl-0">
+                <div id="main-content2">
+                    <div class="container">
+
+                        <div class="about-heading-container">
+                            <div class="about-me-heading">
+                                <span class="colored-bar"></span>Get In Touch
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gameDevelopment" name="interest" value="gameDevelopment">
-                            <label class="form-check-label text-white" for="gameDevelopment">Game Development</label>
+                        <div class="row">
+                            <div class="col-md-12 mx-auto">
+                                <div class="about-card">
+                                    <!-- <h2 class="text-white mb-4">Get In Touch</h2> -->
+                                    <form action="mailto:B01651145@studentmail.uws.ac.uk" method="POST"
+                                        enctype="text/plain">
+                                        <div class="form-group">
+                                            <label for="name" class="text-white">Your Name</label>
+                                            <input type="text" class="form-control" id="name" name="name"
+                                                placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="text-white">Email address</label>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inquiryType" class="text-white">Inquiry Type</label>
+                                            <select class="form-control" id="inquiryType" name="inquiryType" required>
+                                                <option value="">Select...</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="support">Support</option>
+                                                <option value="feedback">Feedback</option>
+                                                <option value="employment">Employment</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message" class="text-white">Message</label>
+                                            <textarea class="form-control" id="message" name="message" rows="4"
+                                                placeholder="Write your message here..." required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-white">Topics of Interest</label><br>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="webDevelopment"
+                                                    name="interest" value="webDevelopment">
+                                                <label class="form-check-label text-white" for="webDevelopment">Web
+                                                    Development</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gameDevelopment"
+                                                    name="interest" value="gameDevelopment">
+                                                <label class="form-check-label text-white" for="gameDevelopment">Game
+                                                    Development</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="databaseManagement"
+                                                    name="interest" value="databaseManagement">
+                                                <label class="form-check-label text-white"
+                                                    for="databaseManagement">Database
+                                                    Management</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactMethod" class="text-white">Preferred Contact
+                                                Method</label>
+                                            <select class="form-control" id="contactMethod" name="contactMethod"
+                                                required onchange="togglePhoneInput()">
+                                                <option value="">Select...</option>
+                                                <option value="email">Email</option>
+                                                <option value="phone">Phone</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" id="phoneGroup" style="display: none;">
+                                            <label for="phone" class="text-white">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone"
+                                                placeholder="Enter your phone number">
+                                        </div>
+                                        <button type="submit" class="btn btn-1">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="databaseManagement" name="interest" value="databaseManagement">
-                            <label class="form-check-label text-white" for="databaseManagement">Database Management</label>
-                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="contactMethod" class="text-white">Preferred Contact Method</label>
-                        <select class="form-control" id="contactMethod" name="contactMethod" required onchange="togglePhoneInput()">
-                            <option value="">Select...</option>
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="phoneGroup" style="display: none;">
-                        <label for="phone" class="text-white">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
-                    </div>
-                    <button type="submit" class="btn btn-1">Submit</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-    
-    <script>
-        function togglePhoneInput() {
-            const contactMethod = document.getElementById("contactMethod").value;
-            const phoneGroup = document.getElementById("phoneGroup");
-            
-            if (contactMethod === "phone") {
-                phoneGroup.style.display = "block";
-            } else {
-                phoneGroup.style.display = "none";
-            }
-        }
-    </script>
-    
+    </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

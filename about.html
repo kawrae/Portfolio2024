@@ -33,7 +33,6 @@
             border-radius: 4px;
         }
 
-
         .about-card {
             margin-top: 20px;
             padding: 20px;
@@ -70,13 +69,6 @@
 
         .fab {
             margin-right: 5px;
-        }
-
-        .hidden-info {
-            display: none;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #4e4f52;
         }
 
         h2 {
@@ -142,7 +134,6 @@
                             </div>
                         </div>
 
-
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- About Card -->
@@ -180,14 +171,6 @@
                                                 the gap between technology and user experience, delivering high-quality
                                                 results that meet both functional and aesthetic goals.
                                             </p>
-
-                                            <!-- Toggle Button for More Info -->
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more
-                                                info</span>
-                                            <!-- Hidden Information (Initially Hidden) -->
-                                            <div id="hiddenInfo" class="hidden-info">
-                                                <p>Additional information about my journey and skills goes here...</p>
-                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <img src="imgs/me.png" alt="Corey Black" class="img-fluid"
@@ -221,20 +204,7 @@
             </div>
         </div>
     </div>
-    <script>
-        function toggleInfo() {
-            const hiddenInfo = document.getElementById('hiddenInfo');
-            const toggleBtn = document.querySelector('.toggle-btn');
 
-            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
-                hiddenInfo.style.display = "block";
-                toggleBtn.textContent = "Click here to hide info";
-            } else {
-                hiddenInfo.style.display = "none";
-                toggleBtn.textContent = "Click here for more info";
-            }
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 
