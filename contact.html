@@ -214,6 +214,19 @@
     </div>
     </div>
 
+    <script>
+        function togglePhoneInput() {
+            const contactMethod = document.getElementById("contactMethod").value;
+            const phoneGroup = document.getElementById("phoneGroup");
+
+            if (contactMethod === "phone") {
+                phoneGroup.style.display = "block";
+            } else {
+                phoneGroup.style.display = "none";
+            }
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
 
