@@ -20,9 +20,17 @@ html {
   z-index: 100;
   display: flex;
   justify-content: center;
-  border-bottom: 0.5px solid rgba(69, 113, 235, 0.170);
-  border-top: 0.5px solid rgba(69, 113, 235, 0.170);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* #navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Adds a shadow to differentiate it when scrolling */
+/* } */ 
 
 #navbar ul {
   list-style-type: none;
