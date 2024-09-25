@@ -12,7 +12,7 @@ html {
 #navbar {
   background-image: linear-gradient(-135deg, rgba(8, 0, 15, 0.15) 25%, rgba(40, 40, 58, 0.15) 100%);
   color: white;
-  padding: 10px;
+  padding-top: 10px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -35,12 +35,12 @@ html {
 #navbar ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
 }
 
 #navbar li {
   float: left;
+  padding-bottom: 10px;
 }
 
 #navbar li a {
@@ -49,6 +49,11 @@ html {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+#navbar li:hover {
+  border-bottom: 2px solid white; /* Add border on hover */
+  color: #101d66; /* Change text color on hover */
 }
 
 
@@ -175,7 +180,7 @@ canvas {
   /* Ensure the heading is above the waves */
 }
 
-/* Subtle Pulsing Glow Effect */
+/* Intense Pulsing Glow Effect */
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
@@ -183,8 +188,8 @@ canvas {
   }
 
   50% {
-    text-shadow: 0 0 20px rgba(185, 176, 241, 0.8);
-    /* Small glow */
+    text-shadow: 0 0 11px rgb(209, 203, 250), 0 0 60px rgba(185, 176, 241, 0.7);
+    /* More intense glow */
   }
 
   100% {
@@ -198,7 +203,6 @@ canvas {
   font-size: 40px;
   animation: pulse-glow 3s infinite;
 }
-
 /* Add CSS for hamburger icon and collapsible navbar */
 .navbar-container {
   display: flex;
