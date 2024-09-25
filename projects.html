@@ -12,30 +12,82 @@
         body {
             overflow-x: hidden;
             overflow-y: auto;
+            background-color: #111;
+            color: #fff;
         }
 
         .project-card {
             margin-top: 20px;
             padding: 20px;
-            border: 1px solid #201f1f;
-            border-radius: 8px;
-            background-color: #1a1b1b;
+            border: 1px solid #2c2f33;
+            border-radius: 12px;
+            background-color: rgb(25, 31, 55);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .download-button-container a {
+            background-color: #7289da;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .download-button-container a:hover {
+            background-color: #4e66a3;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            color: #7289da;
+        }
+
+        .toggle-btn:hover {
+            text-decoration: underline;
         }
 
         .hidden-info {
             display: none;
             margin-top: 15px;
             padding-top: 10px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #4e4f52;
         }
 
-        .toggle-btn {
-            cursor: pointer;
-            color: rgb(128, 124, 124);
+        h2 {
+            font-size: 24px;
         }
 
-        .toggle-btn:hover {
-            text-decoration: underline;
+        .past-projects-heading {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .colored-bar {
+            width: 5px;
+            height: 24px;
+            background-color: #7289da;
+            /* This is the color of the small bar, adjust as needed */
+            margin-right: 10px;
+            /* Space between the bar and text */
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 770px) {
+            .download-button-container a {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
@@ -65,6 +117,12 @@
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
+
+                        <!-- Content heading -->
+                        <div class="past-projects-heading">
+                            <span class="colored-bar"></span>Past Projects
+                        </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- Project Card 1 -->
@@ -72,7 +130,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
-                                                <h2 style="font-size: 25px;">Horror Game Alpha V1.0</h2>
+                                                <h2>Horror Game Alpha V1.0</h2>
                                             </div>
                                         </div>
                                         <div class="col text-right">
@@ -85,7 +143,8 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide info</span>
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide
+                                                info</span>
                                         </div>
                                     </div>
                                     <!-- Hidden Information (Initially Displayed) -->
@@ -97,9 +156,11 @@
                                         <p>
                                             <strong>Features:</strong>
                                         <ul>
-                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.</li>
-                                            <li>Jumpscare trigger technology as well as an interactive inventory system.</li>
-                                            <li>Object interaction, advanced movement and level progression.</li>
+                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.
+                                            </li>
+                                            <li>Jumpscare trigger technology as well as an interactive inventory system.
+                                            </li>
+                                            <li>Object interaction, advanced movement, and level progression.</li>
                                         </ul>
                                         </p>
                                         <p>
@@ -117,7 +178,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
-                                                <h2 style="font-size: 25px;">Free Roam Game Project</h2>
+                                                <h2>Free Roam Game Project</h2>
                                             </div>
                                         </div>
                                         <div class="col text-right">
@@ -130,7 +191,8 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more info</span>
+                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more
+                                                info</span>
                                         </div>
                                     </div>
                                     <!-- Hidden Information (Initially Hidden) -->

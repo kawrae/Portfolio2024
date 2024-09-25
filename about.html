@@ -7,7 +7,6 @@
     <title>About Me</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         html,
@@ -16,16 +15,23 @@
             overflow-y: auto;
         }
 
+        .about-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #201f1f;
+            border-radius: 8px;
+            background-color: #1a1b1b;
+            color: white;
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
-            /* Space between buttons */
         }
 
         .btn-social {
             background-color: #132c9e;
-            /* Match your button style */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -36,12 +42,10 @@
         .btn-social:hover {
             background-color: #101d66;
             color: white;
-            /* Darker shade on hover */
         }
 
         .fab {
             margin-right: 5px;
-            /* Space between icon and text */
         }
 
         @media screen and (max-width: 770px) {
@@ -53,25 +57,19 @@
         @media screen and (max-width: 500px) {
             .social-links {
                 display: flex;
-                /* Stack links vertically */
                 gap: 10px;
-                /* Space between the links */
                 align-items: center;
             }
 
             .btn-social {
                 font-size: 14px;
-                /* Make button text smaller */
                 padding: 8px 16px;
-                /* Adjust padding */
             }
 
             #connectWith {
                 font-size: 20px;
                 margin-top: -35px;
-                /* Adjust heading font size */
                 margin-bottom: 0px;
-                /* Adjust margin for better spacing */
             }
         }
     </style>
@@ -100,59 +98,74 @@
                 <div id="main-content2">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-9">
-                                <h2>Corey Black</h2>
-                                <p>
-                                    I am a passionate full stack developer with a strong foundation in both front-end
-                                    and back-end technologies. My experience spans a wide range of programming languages
-                                    and tools, making me a versatile and adaptive problem solver.
-                                </p>
-                                <p>
-                                    On the front-end, I am proficient in HTML, CSS, and JavaScript, building responsive
-                                    and intuitive user interfaces. I have worked extensively with Java, leveraging its
-                                    capabilities to create dynamic web applications. Additionally, my background in game
-                                    development with C# allows me to approach coding challenges creatively and
-                                    efficiently.
-                                </p>
-                                <p>
-                                    On the Android development side, I am well-versed in Android Studio and Kotlin,
-                                    building robust mobile applications tailored to the platform's unique needs.
-                                </p>
-                                <p>
-                                    In terms of back-end development, I have extensive experience in creating and
-                                    managing databases, with strong proficiency in SQL and working knowledge of PHP. I
-                                    understand the importance of building reliable, secure, and scalable systems that
-                                    support smooth user experiences.
-                                </p>
-                                <p>
-                                    Whether working on front-end or back-end projects, I strive to bridge the gap
-                                    between technology and user experience, delivering high-quality results that meet
-                                    both functional and aesthetic goals.
-                                </p>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="imgs/me.png" alt="Placeholder Image" class="img-fluid"
-                                    style="margin-top: 20px;">
+                            <div class="col-md-12">
+                                <!-- About Card -->
+                                <div class="about-card">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h2>Corey Black</h2>
+                                            <p>
+                                                I am a passionate full stack developer with a strong foundation in both
+                                                front-end and back-end technologies. My experience spans a wide range of
+                                                programming languages and tools, making me a versatile and adaptive
+                                                problem solver.
+                                            </p>
+                                            <p>
+                                                On the front-end, I am proficient in HTML, CSS, and JavaScript, building
+                                                responsive and intuitive user interfaces. I have worked extensively with
+                                                Java, leveraging its capabilities to create dynamic web applications.
+                                                Additionally, my background in game development with C# allows me to
+                                                approach coding challenges creatively and efficiently.
+                                            </p>
+                                            <p>
+                                                On the Android development side, I am well-versed in Android Studio and
+                                                Kotlin, building robust mobile applications tailored to the platform's
+                                                unique needs.
+                                            </p>
+                                            <p>
+                                                In terms of back-end development, I have extensive experience in
+                                                creating and managing databases, with strong proficiency in SQL and
+                                                working knowledge of PHP. I understand the importance of building
+                                                reliable, secure, and scalable systems that support smooth user
+                                                experiences.
+                                            </p>
+                                            <p>
+                                                Whether working on front-end or back-end projects, I strive to bridge
+                                                the gap between technology and user experience, delivering high-quality
+                                                results that meet both functional and aesthetic goals.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="imgs/me.png" alt="Placeholder Image" class="img-fluid"
+                                                style="margin-top: 20px;">
+                                        </div>
+
+                                        <!-- Social Links -->
+                                        <div class="container text-center mt-5 mb-5">
+                                            <h2 class="text-white mb-4" id="connectWith">Connect with Me</h2>
+                                            <div class="social-links">
+                                                <a href="https://github.com/kawrae" target="_blank"
+                                                    class="btn btn-social">
+                                                    <i class="fab fa-github"></i> GitHub
+                                                </a>
+                                                <a href="https://www.linkedin.com/in/corey-black-92526532b/"
+                                                    target="_blank" class="btn btn-social">
+                                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                                </a>
+                                                <a href="https://steamcommunity.com/id/nastybj" target="_blank"
+                                                    class="btn btn-social">
+                                                    <i class="fab fa-steam"></i> Steam
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Social Links -->
+
+                                    </div>
+                                </div>
+                                <!-- End About Card -->
                             </div>
                         </div>
                     </div>
-
-                    <div class="container text-center mt-5">
-                        <h2 class="text-white mb-5" id="connectWith">Connect with Me</h2>
-                        <div class="social-links">
-                            <a href="https://github.com/kawrae" target="_blank" class="btn btn-social">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
-                                class="btn btn-social">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://steamcommunity.com/id/nastybj" target="_blank" class="btn btn-social">
-                                <i class="fab fa-steam"></i> Steam
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
