@@ -13,15 +13,23 @@
         body {
             overflow-x: hidden;
             overflow-y: auto;
+            background-color: #111;
+            color: #fff;
         }
 
         .about-card {
             margin-top: 20px;
             padding: 20px;
-            border: 1px solid #201f1f;
-            border-radius: 8px;
-            background-color: #1a1b1b;
-            color: white;
+            border: 1px solid #2c2f33;
+            border-radius: 12px;
+            background-color: rgb(25, 31, 55);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .about-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
         }
 
         .social-links {
@@ -31,21 +39,31 @@
         }
 
         .btn-social {
-            background-color: #132c9e;
+            background-color: #7289da;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.3s ease;
         }
 
         .btn-social:hover {
-            background-color: #101d66;
-            color: white;
+            background-color: #4e66a3;
         }
 
         .fab {
             margin-right: 5px;
+        }
+
+        .hidden-info {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #4e4f52;
+        }
+
+        h2 {
+            font-size: 24px;
         }
 
         @media screen and (max-width: 770px) {
@@ -134,33 +152,34 @@
                                                 the gap between technology and user experience, delivering high-quality
                                                 results that meet both functional and aesthetic goals.
                                             </p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <img src="imgs/me.png" alt="Placeholder Image" class="img-fluid"
-                                                style="margin-top: 20px;">
-                                        </div>
 
-                                        <!-- Social Links -->
-                                        <div class="container text-center mt-5 mb-5">
-                                            <h2 class="text-white mb-4" id="connectWith">Connect with Me</h2>
-                                            <div class="social-links">
-                                                <a href="https://github.com/kawrae" target="_blank"
-                                                    class="btn btn-social">
-                                                    <i class="fab fa-github"></i> GitHub
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/corey-black-92526532b/"
-                                                    target="_blank" class="btn btn-social">
-                                                    <i class="fab fa-linkedin"></i> LinkedIn
-                                                </a>
-                                                <a href="https://steamcommunity.com/id/nastybj" target="_blank"
-                                                    class="btn btn-social">
-                                                    <i class="fab fa-steam"></i> Steam
-                                                </a>
+                                            <!-- Toggle Button for More Info -->
+                                            <span class="toggle-btn" onclick="toggleInfo()">Click here for more info</span>
+                                            <!-- Hidden Information (Initially Hidden) -->
+                                            <div id="hiddenInfo" class="hidden-info">
+                                                <p>Additional information about my journey and skills goes here...</p>
                                             </div>
                                         </div>
-                                        <!-- End Social Links -->
-
+                                        <div class="col-md-3">
+                                            <img src="imgs/me.png" alt="Corey Black" class="img-fluid" style="margin-top: 20px;">
+                                        </div>
                                     </div>
+                                    <!-- Social Links -->
+                                    <div class="container text-center mt-5 mb-5">
+                                        <h2 class="text-white mb-4" id="connectWith">Connect with Me</h2>
+                                        <div class="social-links">
+                                            <a href="https://github.com/kawrae" target="_blank" class="btn btn-social">
+                                                <i class="fab fa-github"></i> GitHub
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="btn btn-social">
+                                                <i class="fab fa-linkedin"></i> LinkedIn
+                                            </a>
+                                            <a href="https://steamcommunity.com/id/nastybj" target="_blank" class="btn btn-social">
+                                                <i class="fab fa-steam"></i> Steam
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Social Links -->
                                 </div>
                                 <!-- End About Card -->
                             </div>
@@ -170,6 +189,20 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleInfo() {
+            const hiddenInfo = document.getElementById('hiddenInfo');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
+                hiddenInfo.style.display = "block";
+                toggleBtn.textContent = "Click here to hide info";
+            } else {
+                hiddenInfo.style.display = "none";
+                toggleBtn.textContent = "Click here for more info";
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 
