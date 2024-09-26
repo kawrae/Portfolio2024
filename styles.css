@@ -63,6 +63,87 @@ html {
   color: white;
 }
 
+/* Social Links Start */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.btn-social {
+  background-color: #7289da;
+  color: white;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-github {
+  background-color: rgb(129, 86, 207);
+  color: white;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  border: 1px solid;
+  border-color: rgb(190, 156, 252);
+  box-shadow: rgb(167, 122, 250) 0px 0px 10px;
+}
+
+.btn-linkedin {
+  background-color: rgb(254, 159, 68);
+  color: white;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  transition: background-color 0.3s ease;
+  border-color: rgb(248, 209, 173);
+  box-shadow: rgb(250, 180, 115) 0px 0px 10px;
+}
+
+.btn-steam {
+  background-color: rgb(28, 187, 155);
+  color: white;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  transition: background-color 0.3s ease;
+  border-color: rgb(120, 250, 224);
+  box-shadow: rgb(79, 243, 210) 0px 0px 10px;
+}
+
+.btn-vscode {
+  background-color: rgb(27, 66, 240);
+  color: white;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  transition: background-color 0.3s ease;
+  border-color: rgb(161, 209, 255);
+  box-shadow: rgb(139, 159, 250) 0px 0px 10px;
+}
+
+.btn-vscode i {
+  margin-right: 5px;
+}
+
+.btn-github:hover,
+.btn-linkedin:hover,
+.btn-steam:hover {
+  text-decoration: none;
+  color:rgb(25, 31, 55);
+}
+
+.btn-social:hover {
+  background-color: #4e66a3;
+}
+/* Social Links End */
+
 #main-text {
   padding-top: 50px;
 }
