@@ -45,16 +45,6 @@
             margin-right: 5px;
         }
 
-        .blog-card {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #2c2f33;
-            border-radius: 12px;
-            background-color: rgb(25, 31, 55);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
         .blog-card:hover {
             transform: scale(1.02);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
@@ -437,12 +427,14 @@
                                         </div>
                                     </div>
 
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
+                                       <!-- Toggle Button for More Info -->
+                                       <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn"
-                                                onclick="toggleInfo('fullBlogContent2', this)">Click here for more
-                                                info</span>
+                                            <button class="toggle-btn btn btn-link"
+                                                onclick="toggleInfo('fullBlogContent2', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                Click here for more info
+                                            </button>
                                         </div>
                                     </div>
 

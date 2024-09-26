@@ -331,18 +331,31 @@ canvas {
 /* About Card Styling */
 .about-card {
   margin-top: 20px;
-  padding: 20px 30px;
-  border-radius: 16px;
+  padding: 20px;
+  border-radius: 12px;
   background-color: rgb(25, 31, 55);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-left: 2px solid #1e3debc9;
   position: relative;
-  overflow: hidden; /* Keep content within the card */
+  padding-right: 100px;
+  /* Subtle border to add a pop of color */
 }
 
 .about-card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.blog-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2c2f33;
+  background-color: rgb(25, 31, 55);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-left: 2px solid #1e3debc9;
 }
 
 /* Image Adjustments */

@@ -118,7 +118,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- Project Card 1 -->
-                                <div class="project-card">
+                                <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
@@ -135,12 +135,15 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo()">Click here to hide
-                                                info</span>
+                                            <button class="toggle-btn btn btn-link"
+                                                onclick="toggleInfo('hiddenInfo1', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                Click here for more info
+                                            </button>
                                         </div>
                                     </div>
-                                    <!-- Hidden Information (Initially Displayed) -->
-                                    <div id="hiddenInfo" class="hidden-info" style="display: block;">
+                                    <!-- Hidden Information -->
+                                    <div id="hiddenInfo1" class="hidden-info">
                                         <p>
                                             <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror
                                             experience where players navigate through a dark, eerie environment.
@@ -166,7 +169,7 @@
                                 <!-- End Project Card 1 -->
 
                                 <!-- Project Card 2 -->
-                                <div class="project-card">
+                                <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
@@ -183,11 +186,14 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn" onclick="toggleInfo2()">Click here for more
-                                                info</span>
+                                            <button class="toggle-btn btn btn-link"
+                                                onclick="toggleInfo('hiddenInfo2', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                Click here for more info
+                                            </button>
                                         </div>
                                     </div>
-                                    <!-- Hidden Information (Initially Hidden) -->
+                                    <!-- Hidden Information -->
                                     <div id="hiddenInfo2" class="hidden-info">
                                         <p>
                                             This game is a very basic and unfinished attempt at a GTA-like game. This is
@@ -217,10 +223,15 @@
                 </div>
                 <div class="col-md-6 text-md-right">
                     <div class="social-links">
-                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i class="fab fa-steam"></i></a>
-                    </div>
+                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                            class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i
+                                class="fab fa-steam"></i></a>
+                    </div
+
+>
                 </div>
             </div>
             <div class="footer-bottom text-center">
@@ -230,29 +241,20 @@
     </footer>
 
     <script>
-        function toggleInfo() {
-            const hiddenInfo = document.getElementById('hiddenInfo');
-            const toggleBtn = document.querySelector('.toggle-btn');
+        function toggleInfo(contentId, button) {
+            const content = document.getElementById(contentId);
+            const arrow = button.querySelector('.arrow i');
 
-            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
-                hiddenInfo.style.display = "block";
-                toggleBtn.textContent = "Click here to hide info";
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                arrow.classList.remove('fa-arrow-down');
+                arrow.classList.add('fa-arrow-up');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Click here to hide info';
             } else {
-                hiddenInfo.style.display = "none";
-                toggleBtn.textContent = "Click here for more info";
-            }
-        }
-
-        function toggleInfo2() {
-            const hiddenInfo = document.getElementById('hiddenInfo2');
-            const toggleBtn = document.querySelectorAll('.toggle-btn')[1];
-
-            if (hiddenInfo.style.display === "none" || hiddenInfo.style.display === "") {
-                hiddenInfo.style.display = "block";
-                toggleBtn.textContent = "Click here to hide info";
-            } else {
-                hiddenInfo.style.display = "none";
-                toggleBtn.textContent = "Click here for more info";
+                content.style.display = "none";
+                arrow.classList.remove('fa-arrow-up');
+                arrow.classList.add('fa-arrow-down');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Click here for more info';
             }
         }
     </script>
