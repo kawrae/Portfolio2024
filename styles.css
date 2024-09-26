@@ -92,6 +92,10 @@ html {
   box-shadow: rgb(167, 122, 250) 0px 0px 10px;
 }
 
+#git1 {
+  pointer-events: none;
+}
+
 .btn-linkedin {
   background-color: rgb(254, 159, 68);
   color: white;
@@ -129,8 +133,34 @@ html {
   pointer-events: none;
 }
 
+.btn-x {
+  background-color: rgb(254, 68, 68);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  transition: background-color 0.3s ease;
+  border-color: lightcoral;
+  box-shadow: lightcoral 0px 0px 10px;
+  pointer-events: none;
+}
+
 .btn-vscode i {
   margin-right: 5px;
+}
+
+.btn-chrome {
+  background-color: rgb(254, 159, 68);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  transition: background-color 0.3s ease;
+  border-color: rgb(248, 209, 173);
+  box-shadow: rgb(248, 209, 173) 0px 0px 10px;
+  pointer-events: none;
 }
 
 .btn-github:hover,

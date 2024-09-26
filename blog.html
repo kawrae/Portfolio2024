@@ -98,6 +98,38 @@
         #main-content2 {
             height: 100%;
         }
+
+        .row .col-md-6 img {
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .row .col-md-6 p {
+            margin-bottom: 15px;
+        }
+
+        .row.align-items-center {
+            padding-top: 20px;
+        }
+
+        .img-fluid {
+            width: 100%;
+            /* Make images responsive */
+            height: auto;
+            /* Keep aspect ratio */
+            max-height: 200px;
+            /* Set a max height for uniformity */
+            object-fit: cover;
+            /* Crop the images to fill the container */
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+            /* Ensure text blocks have equal height */
+        }
     </style>
 </head>
 
@@ -148,37 +180,55 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="toggle-btn"
-                                                onclick="toggleInfo('fullBlogContent1', this)">Click here for more info</span>
+                                                onclick="toggleInfo('fullBlogContent1', this)">Click here for more
+                                                info</span>
                                         </div>
                                     </div>
 
                                     <!-- Blog Content (Initially Displayed) -->
                                     <div id="hiddenInfo1" class="hidden-info" style="display: block;">
                                         <p>
-                                            <!-- If you want to add a card preview -->
+                                            <!-- Potential Card Preview Spot -->
                                         </p>
 
                                         <!-- Full Blog Content (Initially Hidden) -->
                                         <div id="fullBlogContent1" class="hidden-info" style="display: none;">
                                             <!-- Blog content goes here -->
-                                             <h2>
+                                            <h2>
                                                 Creating a Good Online Presence: What is the best Approach?
-                                             </h2>
-                                             <p>
-                                                Creating a strong online presence is crucial in today’s digital age, especially for those of us in the creative industries. Whether you are an animator, graphic designer, web or game developer, having an online portfolio to showcase your work and talents is essential for standing out in a crowded market. In this blog post, we’ll discover some of the best approaches to establishing and maintaining a solid online presence that will benefit you greatly, at being noticed by potential employers, and clients.
-                                             </p>
-                                             <h3>
+                                            </h2>
+                                            <p>
+                                                Creating a strong online presence is crucial in today’s digital age,
+                                                especially for those of us in the creative industries. Whether you are
+                                                an animator, graphic designer, web or game developer, having an online
+                                                portfolio to showcase your work and talents is essential for standing
+                                                out in a crowded market. In this blog post, we’ll discover some of the
+                                                best approaches to establishing and maintaining a solid online presence
+                                                that will benefit you greatly, at being noticed by potential employers,
+                                                and clients.
+                                            </p>
+                                            <h3>
                                                 How to Establish an Online Presence
-                                             </h3>
-                                             <p>
-                                                To establish an online presence, you must decide what platforms/tools you will use to showcase your work. For many creatives, building your own personal website is one of the best approaches, which I have also chosen to do. This gives you complete control over how your work is presented, and perceived. There are free, online website builders and Content Management Systems (CMS) available, such as Wix and WordPress, that make it easy to create a site.
-                                             </p>
+                                            </h3>
+                                            <p>
+                                                To establish an online presence, you must decide what platforms/tools
+                                                you will use to showcase your work. For many creatives, building your
+                                                own personal website is one of the best approaches, which I have also
+                                                chosen to do. This gives you complete control over how your work is
+                                                presented, and perceived. There are free, online website builders and
+                                                Content Management Systems (CMS) available, such as Wix and WordPress,
+                                                that make it easy to create a site.
+                                            </p>
 
-                                             <div id="connectWith">
-                                                <div class="social-links" style="justify-content: left;">
-                                                    <a href="https://github.com/kawrae" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                            <div id="connectWith">
+                                                <div class="social-links mb-2 mr-4" style="justify-content: right;">
+                                                    <a href="#" target="_blank" class="btn-chrome"><i class="fab fa-chrome"></i>Chrome</a>
+                                                    <a href="https://github.com/kawrae" target="_blank"
+                                                        class="btn-github" id="git1"><i class="fab fa-github"></i> GitHub</a>
                                                     <a class="btn-vscode">
-                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code Logo" width="20px" style="margin-right: 5px;"> Visual Studio Code
+                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                                            alt="VS Code Logo" width="20px" style="margin-right: 5px;">
+                                                        Visual Studio Code
                                                     </a>
                                                 </div>
                                             </div>
@@ -187,23 +237,181 @@
                                                 Personal Decisions and Experience
                                             </h3>
                                             <p>
-                                                To bring my website to life, I used the wonderful Visual Studio Code as my primary development environment. This powerful code editor not only offers a plethora of extensions that enhance productivity in most ways imaginable, but also provides a seamless coding experience if using integrated features like Git or IntelliSense. 
+                                                To bring my website to life, I used the wonderful Visual Studio Code as
+                                                my primary development environment. This powerful code editor not only
+                                                offers a plethora of extensions that enhance productivity in most ways
+                                                imaginable, but also provides a seamless coding experience if using
+                                                integrated features like Git or IntelliSense.
                                             </p>
                                             <p>
-                                                Keeping my project organized and in sync with GitHub has been invaluable, especially as I am to build a strong online presence. 
+                                                Keeping my project organized and in sync with GitHub has been
+                                                invaluable, especially as I am to build a strong online presence.
                                             </p>
                                             <p>
-                                                GitHub serves as a version control system, allowing me to track changes precisely, utilizing features like Push and Commit helps maintain an organized workflow. By showcasing my proficiency with these platforms early on, does it not only attract future employers but also demonstrates commitment to professional standards in the digital space.
+                                                GitHub serves as a version control system, allowing me to track changes
+                                                precisely, utilizing features like Push and Commit helps maintain an
+                                                organized workflow. By showcasing my proficiency with these platforms
+                                                early on, does it not only attract future employers but also
+                                                demonstrates commitment to professional standards in the digital space.
                                             </p>
-                                            <div class="col-md-6">
-                                                
+                                            <div class="row align-items-center mb-3">
+                                                <div class="col-md-6">
+                                                    <a href="https://gyazo.com/3bf08994cafc40c219427e964af7ceb7"
+                                                        target="_blank">
+                                                        <img src="https://i.gyazo.com/3bf08994cafc40c219427e964af7ceb7.gif"
+                                                            alt="Image from Gyazo" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6 text-content">
+                                                    <p>
+                                                        <strong>Commit Changes:</strong> This button allows me to save
+                                                        my progress and document changes to my project. Committing
+                                                        frequently not only helps me maintain a clear history of my
+                                                        development process but also enables me to revert to previous
+                                                        versions if needed. It's a crucial part of ensuring my work is
+                                                        organized and manageable as I continually refine and enhance my
+                                                        portfolio.
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
 
+                                            <div class="row align-items-center mb-3">
+                                                <div class="col-md-6 text-content">
+                                                    <p>
+                                                        <strong>Source Control Graph:</strong> Within Visual Studio
+                                                        Code, the Source Control Graph provides a visual representation
+                                                        of all my commits and their names. This feature makes it easy to
+                                                        track the evolution of my project and also contributes towards
+                                                        establishing your online presence.
+                                                    </p>
+                                                    <h4 class="mb-3" style="color: rgb(103, 108, 217);"><strong>My Portfolio Repository</strong></h4>
+                                                    <a href="https://github.com/kawrae/Portfolio2024" target="_blank"
+                                                    class="btn btn-github"><i class="fab fa-github"></i>My Github</a>
+                                                </div>  
+                                                <div class="col-md-6">
+                                                    <img src="imgs/code1.png" alt="Source Control Graph"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <h3>Thoughtful UX Design Ehancements</h3>
+                                            <p>
+                                                Having ample experience in User Experience, the layout of my page is
+                                                designed with this in mind. I’ve implemented dynamic elements that
+                                                enhance interactivity, the likes of dynamic hover effects on project
+                                                cards, these subtly scale and cast a shadow for a polished look.
+                                            </p>
+                                            <div class="row align-items-center mb-3">
+                                                <div class="col-md-8">
+                                                    <a href="https://gyazo.com/594dadde4a47f49ac570def43f56901d" target="_blank">
+                                                        <img src="https://i.gyazo.com/594dadde4a47f49ac570def43f56901d.gif" alt="Image from Gyazo" width="100%"  style="border-radius: 15px;"/>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>
+                                                        The glowing text on the headings adds an eye-catching element
+                                                        that draw’s the user’s attention, this also creates a sense of
+                                                        depth.
+                                                    </p><br>
+                                                    <p>
+                                                        My portfolio makes use of soft, bright colours for the interactive features,
+                                                        which really draw it out from the darker background.
+                                                    </p><br>
+                                                    <p>
+                                                        My navigation bar is concise and simple, ensuring users can
+                                                        easily navigate between the desired pages.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <p class="mt-2">
+                                                Additionally, by far the most notable dynamic event is the visually
+                                                appealing wave and particle effect system in the background, which I
+                                                created using JavaScript. This effect brings my portfolio together and
+                                                adds a professional, polished look. This background also engages the
+                                                user, creating an immersive atmosphere that reflects my creativity and
+                                                technical skills.
+                                            </p>
+                                            <p>
+                                                As opposed to web development, if you are a game developer, using GitHub
+                                                to share code repositories or ArtStation for your concept art and 3D
+                                                models can be particularly useful. Additionally, platforms such as
+                                                LinkedIn can serve a dual purpose, not only as a portfolio but also for
+                                                networking with potential employers.
+                                            </p>
+                                            <h3>
+                                                Promoting Your Work Online
+                                            </h3>
+                                            <p>
+                                                Once you have your platform in place, the next step is promoting your
+                                                work. In the modern world, social media is extremely effective.
+                                                Platforms like X, LinkedIn and even Instagram allow you to share updates
+                                                about potential projects or releases. These platforms also give you the
+                                                opportunity to reach new audiences, and even connect with industry
+                                                leaders. To be effective, you must ensure your profiles are professional
+                                                and updated regularly.
+                                            </p>
+
+                                            <div id="connectWith">
+                                                <div class="social-links mb-2 mr-4" style="justify-content: right;">
+                                                    <a href="https://github.com/kawrae" target="_blank"
+                                                    class="btn-x" id="git1"><i class="fab fa-github"></i> X</a>
+                                                    <a href="#" target="_blank" class="btn-chrome"><i class="fab fa-chrome"></i> Instagram</a>
+                                                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                                                        class="btn btn-steam" style="pointer-events: none;">
+                                                        <i class="fab fa-linkedin"></i> LinkedIn
+                                                    </a>
+                                                </div>
                                             </div>
 
-                                             <br><br><a href="https://gyazo.com/594dadde4a47f49ac570def43f56901d"  target="_blank"><img src="https://i.gyazo.com/594dadde4a47f49ac570def43f56901d.gif" alt="Image from Gyazo" width="100%"/></a>
-
+                                            <h3>
+                                                Consistency
+                                            </h3>
+                                            <p>
+                                                A crucial aspect anyone seeking an online presence will come to find,
+                                                consistency is crucial. You must update your work regularly to show that
+                                                you are active and always engaging/improving your talents. If you are a
+                                                game developer, for instance, you can share your finished games, but
+                                                potentially glimpses into projects under construction, simply ensuring
+                                                you are consistent with engaging with your audience.
+                                            </p>
+                                            <h3>
+                                                Setting Yourself Apart
+                                            </h3>
+                                            <p>
+                                                In the extremely competitive world that is the creative industries, what
+                                                sets you apart from others is often your personal brand. Are you known
+                                                for a specific style of design? Maybe you bring something unique to web
+                                                design or game development? To identify these qualities and showcase
+                                                them in your online presence, makes a world of difference. This personal
+                                                branding will help make you memorable to your audience and make a
+                                                lasting impression on those viewing your work.
+                                            </p>
+                                            <h3>
+                                                Examples of work
+                                            </h3>
+                                            <p>
+                                                To create a strong impact on viewers, providing examples of your work is
+                                                critical. If you’re a game developer, you could include links to videos
+                                                showcasing gameplay, a trailer, demo reels etc. If you’re an
+                                                animator/visual artist, high-quality images or GIFs can be effective to
+                                                showcase your work. Or if you’re a web designer/developer like me, you
+                                                can include links to websites you’ve built, website designs, interactive
+                                                ideas and so on.
+                                            </p>
+                                            <h3>
+                                                Conclusion
+                                            </h3>
+                                            <p>
+                                                In conclusion, I recommend to others in the creative industries to start
+                                                small and gain your balance, but aim big, aspire to grab the employer’s
+                                                attention, to stand out as a professional and consistent individual in
+                                                your discipline area. Another important note is remembering that what
+                                                you create today might not represent your abilities tomorrow, so keep
+                                                refining and updating. A well-maintained online presence can open doors
+                                                to new opportunities, whether you’re seeking freelance work or full-time
+                                                employment. Make sure to sculpt the right strategy that works for you
+                                                and remember to regularly improve it as you progress in your career.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -246,7 +454,7 @@
 
                                     <!-- Date Section -->
                                     <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: September 24, 2024</p>
+                                        <p>Published on: N/A</p>
                                     </div>
                                 </div>
                                 <!-- End Blog Post 2 -->
