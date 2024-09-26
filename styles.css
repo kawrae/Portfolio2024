@@ -264,6 +264,23 @@ canvas {
   z-index: 102;
 }
 
+/* Common styles for expand/collapse buttons */
+.toggle-btn, .collapse-btn {
+  cursor: pointer;
+  color: #7289da; /* Matching the existing button color */
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover, .collapse-btn:hover {
+  color: #4e66a3; /* Matching hover effect */
+  text-decoration: none;
+}
+
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
