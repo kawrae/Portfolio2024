@@ -184,9 +184,13 @@ html {
 
 #waves-container2 {
   position: relative;
-  height: 340px;
+  height: 400px;
+  width: 100%; /* Ensure it takes the full width of its parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
-  /* Ensure waves are above other content */
+  overflow: hidden; /* Prevent any content from overflowing */
 }
 
 canvas {
@@ -195,14 +199,10 @@ canvas {
   top: 1;
   left: 0;
   width: 100%;
-  /* Ensure canvas fills the container */
   height: 100%;
-  /* Make the canvas fill the waves container */
   pointer-events: none;
   z-index: 11;
-  /* Ensure canvas is visible over other elements */
   opacity: 0.7;
-  /* Slight transparency if needed */
 }
 
 #main-content2 h1 {
@@ -256,10 +256,10 @@ canvas {
 }
 
 .heading-container {
-  position: relative;
-  top: 23%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   z-index: 102;
 }
@@ -282,27 +282,16 @@ canvas {
   color: white;
   font-size: 46px;
   font-weight: bold;
-  animation: pulse-glow 3s infinite;
+  animation: pulse-glow 3s infinite; /* Optional animation */
 }
 
-.heading-container {
-  text-align: center;
-  /* Center the content */
-  margin-bottom: 20px;
-  /* Add some spacing below */
-}
 
 .heading-underline {
   width: 50px;
-  /* Width of the line */
   height: 4px;
-  /* Height of the line */
   background-color: #1b4b91;
-  /* Dark blue color */
   margin: 10px auto 0 auto;
-  /* Center the line and add spacing from the heading */
   border-radius: 2px;
-  /* Rounded corners for a professional look */
 }
 
 .navbar-container {
