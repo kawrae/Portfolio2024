@@ -117,15 +117,16 @@ html {
 }
 
 .btn-vscode {
-  background-color: rgb(27, 66, 240);
+  background-color: rgb(23, 188, 243);
   color: white;
   padding: 10px 50px;
   text-decoration: none;
   border-radius: 15px;
   border: 1px solid;
   transition: background-color 0.3s ease;
-  border-color: rgb(161, 209, 255);
+  border-color: rgb(160, 205, 248);
   box-shadow: rgb(139, 159, 250) 0px 0px 10px;
+  pointer-events: none;
 }
 
 .btn-vscode i {
