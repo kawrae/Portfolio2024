@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         html,
@@ -73,16 +74,6 @@
             color: #ffffff;
         }
 
-        .colored-bar {
-            width: 5px;
-            height: 24px;
-            background-color: #7289da;
-            /* This is the color of the small bar, adjust as needed */
-            margin-right: 10px;
-            /* Space between the bar and text */
-            border-radius: 4px;
-        }
-
         @media screen and (max-width: 770px) {
             .download-button-container a {
                 font-size: 12px;
@@ -105,6 +96,7 @@
 
     <div class="heading-container">
         <h1 class="heading-text">My Projects</h1>
+        <div class="heading-underline"></div>
     </div>
 
     <div id="waves-container2">
@@ -215,6 +207,27 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Corey Black</h5>
+                    <p class="footer-description">Aspiring Full Stack Developer.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <div class="social-links">
+                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i class="fab fa-steam"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2024 Corey Black. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         function toggleInfo() {

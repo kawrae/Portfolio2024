@@ -6,7 +6,6 @@ html {
   font-family: Arial, sans-serif;
   background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 100%);
   overflow: hidden;
-  /* Prevent scrolling */
 }
 
 #navbar {
@@ -22,15 +21,6 @@ html {
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-/* #navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  /* Adds a shadow to differentiate it when scrolling */
-/* } */ 
 
 #navbar ul {
   list-style-type: none;
@@ -52,10 +42,11 @@ html {
 }
 
 #navbar li:hover {
-  border-bottom: 2px solid white; /* Add border on hover */
-  color: #101d66; /* Change text color on hover */
+  border-bottom: 2px solid white;
+  /* Add border on hover */
+  color: #101d66;
+  /* Change text color on hover */
 }
-
 
 #main-content {
   margin-top: 300px;
@@ -63,7 +54,6 @@ html {
   color: white;
 }
 
-/* Social Links Start */
 .social-links {
   display: flex;
   justify-content: center;
@@ -71,155 +61,150 @@ html {
   padding-top: 15px;
 }
 
+.btn-social,
+.btn-github,
+.btn-linkedin,
+.btn-steam,
+.btn-vscode,
+.btn-x,
+.btn-chrome {
+  color: white;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 1px solid;
+  box-shadow: 0 2px 8px rgba(185, 176, 241, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.non-clickable {
+  pointer-events: none;
+  cursor: default;
+  /* Optional: change cursor to indicate it's not clickable */
+}
+
+.hidden-info {
+  display: none;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #4e4f52;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.hidden-info.show {
+  display: block;
+  /* Override for showing */
+  max-height: 1000px;
+  /* Set a high value for smooth expansion */
+  opacity: 1;
+  /* Fully visible */
+}
+
+.hidden-info.hide {
+  max-height: 0;
+  opacity: 0;
+  /* Invisible */
+}
+
+.toggle-btn {
+  cursor: pointer;
+  color: #7289da;
+  transition: color 0.3s;
+  border: 0;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+  border: 0;
+}
+
 .btn-social {
   background-color: #7289da;
-  color: white;
-  padding: 10px 40px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .btn-github {
   background-color: rgb(129, 86, 207);
-  color: white;
-  padding: 10px 50px;
-  text-decoration: none;
-  border-radius: 15px;
-  transition: background-color 0.3s ease;
-  border: 1px solid;
   border-color: rgb(190, 156, 252);
-  box-shadow: rgb(167, 122, 250) 0px 0px 10px;
-}
-
-#git1 {
-  pointer-events: none;
 }
 
 .btn-linkedin {
   background-color: rgb(254, 159, 68);
-  color: white;
-  padding: 10px 50px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  transition: background-color 0.3s ease;
   border-color: rgb(248, 209, 173);
-  box-shadow: rgb(250, 180, 115) 0px 0px 10px;
 }
 
 .btn-steam {
   background-color: rgb(28, 187, 155);
-  color: white;
-  padding: 10px 50px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  transition: background-color 0.3s ease;
   border-color: rgb(120, 250, 224);
-  box-shadow: rgb(79, 243, 210) 0px 0px 10px;
 }
 
 .btn-vscode {
   background-color: rgb(23, 188, 243);
-  color: white;
-  padding: 10px 50px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  transition: background-color 0.3s ease;
   border-color: rgb(160, 205, 248);
-  box-shadow: rgb(139, 159, 250) 0px 0px 10px;
-  pointer-events: none;
 }
 
 .btn-x {
   background-color: rgb(254, 68, 68);
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  transition: background-color 0.3s ease;
   border-color: lightcoral;
-  box-shadow: lightcoral 0px 0px 10px;
-  pointer-events: none;
-}
-
-.btn-vscode i {
-  margin-right: 5px;
 }
 
 .btn-chrome {
   background-color: rgb(254, 159, 68);
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  transition: background-color 0.3s ease;
   border-color: rgb(248, 209, 173);
-  box-shadow: rgb(248, 209, 173) 0px 0px 10px;
-  pointer-events: none;
 }
 
 .btn-github:hover,
 .btn-linkedin:hover,
 .btn-steam:hover {
+  color: rgb(25, 31, 55);
   text-decoration: none;
-  color:rgb(25, 31, 55);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
 
 .btn-social:hover {
   background-color: #4e66a3;
 }
-/* Social Links End */
 
 #main-text {
   padding-top: 50px;
 }
 
 #main-content2 {
-  padding-top: 30px;
-  /* Adjust to fit the navbar height and move waves down */
-  text-align: left;
   padding: 50px;
   color: white;
   background-color: rgb(18, 21, 38);
-  height: 100vh;
+  min-height: 100vh; /* Set minimum height to viewport height */
   position: relative;
-  /* Ensure positioning context */
   z-index: 101;
-  /* Ensure main-content2 is above the waves */
   width: 100vw;
-}
-
-#waves-container {
-  position: relative;
-  margin-top: 0px;
+  overflow: visible; /* Allow content to overflow naturally */
+  display: flex;
+  flex-direction: column;
 }
 
 #waves-container2 {
   position: relative;
-  height: 500px;
-  margin-top: -180px;
-}
-
-#main-text2 {
-  margin-left: 300px;
-  margin-right: 300px;
+  height: 340px;
+  z-index: 10;
+  /* Ensure waves are above other content */
 }
 
 canvas {
   display: block;
   position: absolute;
-  top: 0;
+  top: 1;
   left: 0;
+  width: 100%;
+  /* Ensure canvas fills the container */
+  height: 100%;
+  /* Make the canvas fill the waves container */
   pointer-events: none;
-  /* Prevent canvas from blocking mouse events */
+  z-index: 11;
+  /* Ensure canvas is visible over other elements */
+  opacity: 0.7;
+  /* Slight transparency if needed */
 }
 
-/* Added styles */
 #main-content2 h1 {
   font-size: 32px;
   margin-bottom: 20px;
@@ -228,10 +213,6 @@ canvas {
 .img-fluid {
   max-width: 100%;
   height: auto;
-}
-
-#about-page body {
-  overflow: visible;
 }
 
 @keyframes fadeIn {
@@ -252,7 +233,6 @@ canvas {
   animation: fadeIn 1s ease forwards;
 }
 
-
 .download-text {
   color: #fff;
 }
@@ -260,26 +240,19 @@ canvas {
 .btn-1 {
   padding: 8px 15px;
   background-color: #132c9e;
-  /* Purple background color */
   color: #fff;
-  /* White text color */
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.2s ease;
-  /* Smooth transition */
 }
 
 .btn-1:hover {
   background-color: #101d66;
-  /* Darker purple on hover */
-  color: white;
 }
 
 .download-button-container {
   text-align: right;
-  /* Align the button to the right */
   margin-top: 10px;
-  /* Add margin to the top */
 }
 
 .heading-container {
@@ -289,33 +262,49 @@ canvas {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 102;
-  /* Ensure the heading is above the waves */
 }
 
-/* Intense Pulsing Glow Effect */
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
-    /* No glow */
   }
 
   50% {
     text-shadow: 0 0 11px rgb(209, 203, 250), 0 0 60px rgba(185, 176, 241, 0.7);
-    /* More intense glow */
   }
 
   100% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
-    /* No glow */
   }
 }
 
 .heading-text {
   color: white;
-  font-size: 40px;
+  font-size: 46px;
+  font-weight: bold;
   animation: pulse-glow 3s infinite;
 }
-/* Add CSS for hamburger icon and collapsible navbar */
+
+.heading-container {
+  text-align: center;
+  /* Center the content */
+  margin-bottom: 20px;
+  /* Add some spacing below */
+}
+
+.heading-underline {
+  width: 50px;
+  /* Width of the line */
+  height: 4px;
+  /* Height of the line */
+  background-color: #1b4b91;
+  /* Dark blue color */
+  margin: 10px auto 0 auto;
+  /* Center the line and add spacing from the heading */
+  border-radius: 2px;
+  /* Rounded corners for a professional look */
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -330,7 +319,6 @@ canvas {
 .navbar-toggle {
   cursor: pointer;
   display: none;
-  /* Hide by default */
 }
 
 .bar {
@@ -340,37 +328,124 @@ canvas {
   margin: 5px 0;
 }
 
-@media screen and (max-width: 768px) {
+/* About Card Styling */
+.about-card {
+  margin-top: 20px;
+  padding: 20px 30px;
+  border-radius: 16px;
+  background-color: rgb(25, 31, 55);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Keep content within the card */
+}
 
-  /* Adjust styles for smaller screens */
+.about-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Adjustments */
+.laptop-image {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%) rotate(5deg);
+  max-height: 250px;
+  opacity: 0.85;
+  filter: drop-shadow(-30px 20px 10px rgba(0, 0, 0, 0.15));
+  z-index: 0;
+}
+
+/* Card Title Styling */
+.about-me-heading {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.colored-bar {
+  width: 5px;
+  height: 24px;
+  background-color: #1e3debc9;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* Footer Start */
+.footer {
+  padding: 30px 0;
+  color: #d4d4dc;
+  font-size: 14px;
+  border-top: 2px solid #7289da;
+}
+
+.footer h5 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-social-link {
+  color: #d4d4dc;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: #7289da;
+  /* Matching the accent color of your page */
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #8e8e9e;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer .text-md-right {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-social-link {
+    margin: 0 10px;
+  }
+}
+
+/* Footer End */
+
+
+@media screen and (max-width: 768px) {
   #main-content {
     margin-top: 200px;
-    /* Adjusted margin-top for smaller screens */
   }
 
   #main-text h1 {
     font-size: 28px;
-    /* Decrease font size for smaller screens */
   }
 
-  /* Further adjustments for even smaller screens */
-  #main-content {
-    margin-top: 150px;
-    /* Adjusted margin-top for even smaller screens */
-  }
-
-  #main-text h1 {
-    font-size: 24px;
-    /* Decrease font size for even smaller screens */
-  }
-
-  /* Styles for hamburger icon and collapsible navbar */
   .navbar-menu {
     display: none;
-    /* Hide menu by default on small screens */
     flex-direction: column;
     background-color: #222;
-    /* Background color for collapsed menu */
     position: absolute;
     top: 60px;
     left: 0;
@@ -384,6 +459,5 @@ canvas {
 
   .navbar-toggle {
     display: block;
-    /* Display hamburger icon on small screens */
   }
 }

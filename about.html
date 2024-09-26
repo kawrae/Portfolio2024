@@ -20,8 +20,10 @@
         #main-content2 {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Ensure space is distributed evenly */
-            flex: 1; /* Allow it to grow to fill available space */
+            justify-content: space-between;
+            /* Ensure space is distributed evenly */
+            flex: 1;
+            /* Allow it to grow to fill available space */
         }
 
         .about-me-heading {
@@ -32,14 +34,6 @@
             color: #ffffff;
         }
 
-        .colored-bar {
-            width: 5px;
-            height: 24px;
-            background-color: #7289da;
-            margin-right: 10px;
-            border-radius: 4px;
-        }
-
         .about-card {
             margin-top: 20px;
             padding: 20px;
@@ -47,11 +41,13 @@
             background-color: rgb(25, 31, 55);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-left: 2px solid #1e3debc9;
+            /* Subtle border to add a pop of color */
         }
 
         .about-card:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
         }
 
         .front-end-card,
@@ -68,6 +64,40 @@
         h2,
         h3 {
             font-size: 24px;
+        }
+
+        .about-card {
+            position: relative;
+            /* Ensure the card is the positioning context */
+            padding-right: 100px;
+            /* Add padding to the right to prevent text overlap */
+        }
+
+        .laptop-image {
+            position: absolute;
+            /* Position the image absolutely */
+            right: -120px;
+            /* Adjust the image to be closer to the card */
+            top: 50%;
+            /* Center it vertically */
+            transform: translateY(-50%) rotate(10deg);
+            /* Adjust for exact vertical center and add a slight rotation */
+            height: auto;
+            /* Maintain aspect ratio */
+            max-height: 300px;
+            /* Set a max height to keep it proportional */
+            opacity: 0.8;
+            /* Slightly reduce opacity for a subtle effect */
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+            /* Add a soft shadow to give it depth */
+            z-index: 1;
+            /* Ensure the image stays below any buttons or text */
+        }
+
+
+        .communicate {
+            width: auto;
+            max-height: 80px;
         }
 
         @media screen and (max-width: 770px) {
@@ -112,6 +142,7 @@
 
     <div class="heading-container">
         <h1 class="heading-text">About Me</h1>
+        <div class="heading-underline"></div>
     </div>
 
     <div id="waves-container2">
@@ -141,17 +172,28 @@
 
                                         functionality and aesthetics.
                                     </p>
-                                    <p>
-                                        With experience working on various projects, I am dedicated to continuous
-                                        learning and adapting to new challenges in the ever-evolving tech landscape.
-                                    </p>
-                                    <h3 class="text-center"><i class="fas fa-share-alt"></i> Connect With Me</h3>
-                                    <div id="connectWith">
-                                        <div class="social-links">
-                                            <a href="https://github.com/kawrae" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
-                                            <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                                            <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="about-card" style="display: flex; align-items: center; overflow: hidden;">
+                                    <img src="imgs/chat.png" class="communicate ml-2 mr-1" alt="Contact Us">
+                                    <div class="content" style="margin-left: 20px;">
+                                        <h3><i class="fas fa-share-alt"></i> Connect With Me</h3>
+                                        <div id="connectWith" class="p-2">
+                                            <div class="social-links" style="justify-content: left;">
+                                                <a href="https://github.com/kawrae" target="_blank"
+                                                    class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                                <a href="https://www.linkedin.com/in/corey-black-92526532b/"
+                                                    target="_blank" class="btn-linkedin"><i
+                                                        class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                                <a href="https://steamcommunity.com/id/nastybj/" target="_blank"
+                                                    class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
+                                            </div>
                                         </div>
+                                        <!-- PS3 Image -->
+                                        <img src="imgs/laptop.png" alt="Laptop" class="laptop-image">
                                     </div>
                                 </div>
                             </div>
@@ -160,26 +202,33 @@
                             <div class="col-md-6 d-flex">
                                 <!-- Front-End Development Card -->
                                 <div class="about-card front-end-card flex-fill">
-                                    <h3><i class="fas fa-laptop-code"></i> Front-End Expertise</h3>
+                                    <h3><i class="fas fa-laptop-code" style="color: #ffb400;"></i> Front-End Expertise
+                                    </h3>
                                     <p>
                                         I specialize in developing responsive, intuitive user interfaces using:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-code"></i> <strong>HTML, CSS, JavaScript</strong> – Building dynamic and accessible web pages.</li>
-                                        <li><i class="fas fa-paint-brush"></i> <strong>UI/UX Design</strong> – Crafting visually engaging user experiences.</li>
-                                        <li><i class="fas fa-laptop"></i> <strong>Java</strong> – Leveraging powerful tools for interactive web applications.</li>
+                                        <li><i class="fas fa-code" style="color: #ffb400;"></i> <strong>HTML, CSS,
+                                                JavaScript</strong> – Building dynamic and accessible web pages.</li>
+                                        <li><i class="fas fa-paint-brush" style="color: #ff6f61;"></i> <strong>UI/UX
+                                                Design</strong> – Crafting visually engaging user experiences.</li>
+                                        <li><i class="fas fa-laptop" style="color: #42a5f5;"></i> <strong>Java</strong>
+                                            – Leveraging powerful tools for interactive web applications.</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-6 d-flex">
                                 <!-- Game Development Card -->
                                 <div class="about-card game-dev-card flex-fill">
-                                    <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+                                    <h3><i class="fas fa-gamepad" style="color: #29b6f6;"></i> Game Development</h3>
                                     <p>
-                                        My background in <strong>C#</strong> and <strong>Unity</strong> allows me to creatively approach challenges, especially in game development:
+                                        My background in <strong>C#</strong> and <strong>Unity</strong> allows me to
+                                        creatively approach challenges, especially in game development:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-lightbulb"></i> <strong>Creative Problem Solving</strong> – Applying game design principles to real-world coding problems.</li>
+                                        <li><i class="fas fa-lightbulb" style="color: #ffeb3b;"></i> <strong>Creative
+                                                Problem Solving</strong> – Applying game design principles to real-world
+                                            coding problems.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -189,50 +238,65 @@
                             <div class="col-md-6 d-flex">
                                 <!-- Mobile Development Card -->
                                 <div class="about-card mobile-dev-card flex-fill">
-                                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                                    <h3><i class="fas fa-mobile-alt" style="color: #66bb6a;"></i> Mobile Development
+                                    </h3>
                                     <p>
                                         I have hands-on experience developing mobile applications with:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-android"></i><strong>Android Studio & Kotlin</strong> – Building native, high-performance Android apps.</li>
+                                        <li><i class="fas fa-android" style="color: #4caf50;"></i> <strong>Android
+                                                Studio & Kotlin</strong> – Building native, high-performance Android
+                                            apps.</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-6 d-flex">
                                 <!-- Back-End Development Card -->
                                 <div class="about-card back-end-card flex-fill">
-                                    <h3><i class="fas fa-server"></i> Back-End Expertise</h3>
+                                    <h3><i class="fas fa-server" style="color: #8e44ad;"></i> Back-End Expertise</h3>
                                     <p>
                                         I am proficient in database management and back-end development:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-database"></i> <strong>SQL & PHP</strong> – Designing and managing robust databases.</li>
-                                        <li><i class="fas fa-lock"></i> <strong>Security</strong> – Building reliable, secure systems that protect user data.</li>
+                                        <li><i class="fas fa-database" style="color: #d35400;"></i> <strong>SQL &
+                                                PHP</strong> – Designing and managing robust databases.</li>
+                                        <li><i class="fas fa-lock" style="color: #c0392b;"></i>
+                                            <strong>Security</strong> – Building reliable, secure systems that protect
+                                            user data.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="row">
-                            <div class="col-md-12">
-                                <div class="about-card">
-                                    <h3><i class="fas fa-share-alt"></i> Connect With Me</h3>
-                                    <div id="connectWith">
-                                        <div class="social-links">
-                                            <a href="https://github.com/B01651145" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
-                                            <a href="https://www.linkedin.com/in/corey-black-9733461b9/" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                                            <a href="https://steamcommunity.com/id/Sephiroth28/" target="_blank" class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Corey Black</h5>
+                    <p class="footer-description">Aspiring Full Stack Developer.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <div class="social-links">
+                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                            class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i
+                                class="fab fa-steam"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2024 Corey Black. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

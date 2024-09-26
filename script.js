@@ -11,11 +11,11 @@ canvas1.height = height;
 canvas2.width = width;
 canvas2.height = height;
 
-// Wave properties
-const waveSpeed = 0.00080;
-const waveAmplitude = 50;
-const waveFrequency1 = 0.0045;
-const waveFrequency2 = 0.0050;
+// Wave properties - increased amplitude and adjusted speed for more dynamic waves
+const waveSpeed = 0.0008; // Increase the speed for a more lively effect
+const waveAmplitude = 140; // Increase amplitude to make waves taller and more pronounced
+const waveFrequency1 = 0.0023; // Adjust frequency to create tighter waves
+const waveFrequency2 = 0.0026; // Slightly different frequency for more complex movement
 
 // Particle properties
 const particleCount = 10;
@@ -29,13 +29,12 @@ const particles = [];
 
 // Create gradients for the waves
 const gradient1 = ctx1.createLinearGradient(0, height / 2, 0, height);
-gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.3)');  // Top color: rgb(1, 28, 148)
-gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.5)');   // Bottom color: rgb(0, 5, 54)
+gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.5)');  // Increase top color opacity for more visibility
+gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.7)');   // Increase bottom color opacity for richer color
 
 const gradient2 = ctx2.createLinearGradient(0, height / 2, 0, height);
-gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.3)');  // Top color with transparency: rgb(1, 28, 148)
-gradient2.addColorStop(1, 'rgba(0, 5, 54, 0)');   // Bottom color with full transparency: rgb(0, 5, 54)
-
+gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.5)');  // Increase top color with transparency for visibility
+gradient2.addColorStop(1, 'rgba(0, 5, 54, 0.3)');   // Reduce bottom color transparency slightly
 
 // Animation loop
 function animate() {
@@ -43,8 +42,8 @@ function animate() {
   ctx1.clearRect(0, 0, width, height);
   ctx2.clearRect(0, 0, width, height);
 
-  drawWave(ctx1, waveFrequency1, gradient1, performance.now()); /* Gradient with transparency */
-  drawWave(ctx2, waveFrequency2, gradient2, performance.now()); /* Gradient with transparency */
+  drawWave(ctx1, waveFrequency1, gradient1, performance.now());
+  drawWave(ctx2, waveFrequency2, gradient2, performance.now());
 
   updateParticles();
   drawParticles(ctx1);
@@ -53,8 +52,7 @@ function animate() {
 
 // Draw waves
 function drawWave(ctx, frequency, gradient, timestamp) {
-  const opacity = Math.min((timestamp / 1000) * 1, 1); // Adjust the multiplier for faster fading
-  ctx.globalAlpha = opacity; // Set global alpha for the wave
+  ctx.globalAlpha = 0.9; // Set global alpha for the wave to enhance visibility
 
   ctx.beginPath();
   ctx.moveTo(0, height);
@@ -65,10 +63,8 @@ function drawWave(ctx, frequency, gradient, timestamp) {
   ctx.lineTo(width, height);
   ctx.closePath();
 
-  // Fill wave with gradient color for smooth transitions
   ctx.fillStyle = gradient;
   ctx.fill();
-
   ctx.globalAlpha = 1; // Reset global alpha
 }
 
@@ -92,8 +88,8 @@ function updateParticles() {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        lifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime, // Random lifetime within range
-        initialLifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime, // Initial lifetime for alpha calculation
+        lifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime,
+        initialLifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime,
         alpha: 1 // Start with full opacity
       });
     }
@@ -103,11 +99,11 @@ function updateParticles() {
 // Draw particles
 function drawParticles(ctx) {
   for (let i = 0; i < particles.length; i++) {
-    const opacity = particles[i].alpha; // Use the alpha value directly for particles
+    const opacity = particles[i].alpha;
 
     ctx.beginPath();
     ctx.arc(particles[i].x, particles[i].y, particleSize, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`; /* White particles with varying transparency */
+    ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
     ctx.fill();
   }
 }

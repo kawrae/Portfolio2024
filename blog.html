@@ -85,16 +85,6 @@
             color: #ffffff;
         }
 
-        .colored-bar {
-            width: 5px;
-            height: 24px;
-            background-color: #7289da;
-            /* Adjust the color as needed */
-            margin-right: 10px;
-            /* Space between the bar and text */
-            border-radius: 4px;
-        }
-
         #main-content2 {
             height: 100%;
         }
@@ -146,6 +136,7 @@
 
     <div class="heading-container">
         <h1 class="heading-text">Blog</h1>
+        <div class="heading-underline"></div>
     </div>
 
     <div id="waves-container2">
@@ -179,9 +170,11 @@
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="toggle-btn"
-                                                onclick="toggleInfo('fullBlogContent1', this)">Click here for more
-                                                info</span>
+                                            <button class="toggle-btn btn btn-link"
+                                                onclick="toggleInfo('fullBlogContent1', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                Click here for more info
+                                            </button>
                                         </div>
                                     </div>
 
@@ -220,18 +213,21 @@
                                                 that make it easy to create a site.
                                             </p>
 
-                                            <div id="connectWith">
+                                            <div id="connectWith" style="margin-right: 5px;">
                                                 <div class="social-links mb-2 mr-4" style="justify-content: right;">
-                                                    <a href="#" target="_blank" class="btn-chrome"><i class="fab fa-chrome"></i>Chrome</a>
-                                                    <a href="https://github.com/kawrae" target="_blank"
-                                                        class="btn-github" id="git1"><i class="fab fa-github"></i> GitHub</a>
-                                                    <a class="btn-vscode">
-                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-                                                            alt="VS Code Logo" width="20px" style="margin-right: 5px;">
+                                                    <a href="#" class="btn-chrome non-clickable">
+                                                        <i class="fab fa-chrome"></i> Chrome
+                                                    </a>
+                                                    <a href="https://github.com/kawrae" target="_blank" class="btn-github" id="git1">
+                                                        <i class="fab fa-github"></i> GitHub
+                                                    </a>
+                                                    <a class="btn-vscode non-clickable">
+                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code Logo" width="20px">
                                                         Visual Studio Code
                                                     </a>
                                                 </div>
                                             </div>
+
                                             <br>
                                             <h3>
                                                 Personal Decisions and Experience
@@ -284,10 +280,12 @@
                                                         track the evolution of my project and also contributes towards
                                                         establishing your online presence.
                                                     </p>
-                                                    <h4 class="mb-3" style="color: rgb(103, 108, 217);"><strong>My Portfolio Repository</strong></h4>
+                                                    <h4 class="mb-3" style="color: rgb(103, 108, 217);"><strong>My
+                                                            Portfolio Repository</strong></h4>
                                                     <a href="https://github.com/kawrae/Portfolio2024" target="_blank"
-                                                    class="btn btn-github"><i class="fab fa-github"></i>My Github</a>
-                                                </div>  
+                                                        class="btn btn-github"><i class="fab fa-github"></i>Portfolio
+                                                        Repository</a>
+                                                </div>
                                                 <div class="col-md-6">
                                                     <img src="imgs/code1.png" alt="Source Control Graph"
                                                         class="img-fluid">
@@ -303,8 +301,11 @@
                                             </p>
                                             <div class="row align-items-center mb-3">
                                                 <div class="col-md-8">
-                                                    <a href="https://gyazo.com/594dadde4a47f49ac570def43f56901d" target="_blank">
-                                                        <img src="https://i.gyazo.com/594dadde4a47f49ac570def43f56901d.gif" alt="Image from Gyazo" width="100%"  style="border-radius: 15px;"/>
+                                                    <a href="https://gyazo.com/594dadde4a47f49ac570def43f56901d"
+                                                        target="_blank">
+                                                        <img src="https://i.gyazo.com/594dadde4a47f49ac570def43f56901d.gif"
+                                                            alt="Image from Gyazo" width="100%"
+                                                            style="border-radius: 15px;" />
                                                     </a>
                                                 </div>
                                                 <div class="col-md-4">
@@ -314,7 +315,8 @@
                                                         depth.
                                                     </p><br>
                                                     <p>
-                                                        My portfolio makes use of soft, bright colours for the interactive features,
+                                                        My portfolio makes use of soft, bright colours for the
+                                                        interactive features,
                                                         which really draw it out from the darker background.
                                                     </p><br>
                                                     <p>
@@ -351,13 +353,15 @@
                                                 and updated regularly.
                                             </p>
 
-                                            <div id="connectWith">
+                                            <div id="connectWith" style="pointer-events: none;">
                                                 <div class="social-links mb-2 mr-4" style="justify-content: right;">
-                                                    <a href="https://github.com/kawrae" target="_blank"
-                                                    class="btn-x" id="git1"><i class="fab fa-github"></i> X</a>
-                                                    <a href="#" target="_blank" class="btn-chrome"><i class="fab fa-chrome"></i> Instagram</a>
-                                                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
-                                                        class="btn btn-steam" style="pointer-events: none;">
+                                                    <a href="https://github.com/kawrae" target="_blank" class="btn-x"
+                                                        id="git1"><i class="fab fa-github"></i> X</a>
+                                                    <a href="#" target="_blank" class="btn-chrome"><i
+                                                            class="fab fa-chrome"></i> Instagram</a>
+                                                    <a href="https://www.linkedin.com/in/corey-black-92526532b/"
+                                                        target="_blank" class="btn btn-steam"
+                                                        style="pointer-events: none;">
                                                         <i class="fab fa-linkedin"></i> LinkedIn
                                                     </a>
                                                 </div>
@@ -484,16 +488,42 @@
         </div>
     </div>
 
-    <script>
-        function toggleInfo(contentId, toggleBtn) {
-            const fullBlogContent = document.getElementById(contentId);
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Corey Black</h5>
+                    <p class="footer-description">Aspiring Full Stack Developer.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <div class="social-links">
+                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i class="fab fa-steam"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2024 Corey Black. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-            if (fullBlogContent.style.display === "none" || fullBlogContent.style.display === "") {
-                fullBlogContent.style.display = "block";
-                toggleBtn.textContent = "Click here to hide info";
+    <script>
+        function toggleInfo(contentId, button) {
+            const content = document.getElementById(contentId);
+            const arrow = button.querySelector('.arrow i');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                arrow.classList.remove('fa-arrow-down');
+                arrow.classList.add('fa-arrow-up');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Click here to hide info';
             } else {
-                fullBlogContent.style.display = "none";
-                toggleBtn.textContent = "Click here for more info";
+                content.style.display = "none";
+                arrow.classList.remove('fa-arrow-up');
+                arrow.classList.add('fa-arrow-down');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Click here for more info';
             }
         }
     </script>
