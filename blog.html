@@ -148,6 +148,60 @@
 
                         <div class="row">
                             <div class="col-md-12">
+
+                                <!-- Blog Post 2 -->
+                                <div class="blog-card">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="post-title">
+                                                <h2 style="font-size: 25px;">Understanding the Basics of Web Development
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Toggle Button for More Info -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="toggle-btn btn btn-link"
+                                                onclick="toggleInfo('fullBlogContent2', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                Expand Blog Post
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Content (Initially Displayed) -->
+                                    <div id="hiddenInfo2" class="hidden-info" style="display: block;">
+                                        <p>
+                                            <!-- Potential Card Preview Spot -->
+                                        </p>
+
+                                        <!-- Full Blog Content (Initially Hidden) -->
+                                        <div id="fullBlogContent2" class="hidden-info" style="display: none;">
+                                            <!-- Blog content goes here -->
+                                            <p>Post coming next week...</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collapse Info Button at the Bottom -->
+                                    <div class="row">
+                                        <div class="col-md-12 text-right">
+                                            <button class="collapse-btn btn btn-link"
+                                                onclick="toggleInfo('fullBlogContent2', this)" style="display: none;">
+                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
+                                                Collapse Blog Post
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Date Section -->
+                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
+                                        <p>Published on: N/A</p>
+                                    </div>
+                                </div>
+                                <!-- End Blog Post 2 -->
+
                                 <!-- Blog Post 1 -->
                                 <div class="blog-card">
                                     <div class="row">
@@ -199,7 +253,7 @@
                                                 you will use to showcase your work. For many creatives, building your
                                                 own personal website is one of the best approaches, which I have also
                                                 chosen to do. This gives you complete control over how your work is
-                                                presented, and perceived. There are free, online website builders and
+                                                presented, and perceived. Additionally, there are free, online website builders and
                                                 Content Management Systems (CMS) available, such as Wix and WordPress,
                                                 that make it easy to create a site.
                                             </p>
@@ -367,9 +421,9 @@
                                                 A crucial aspect anyone seeking an online presence will come to find,
                                                 consistency is crucial. You must update your work regularly to show that
                                                 you are active and always engaging/improving your talents. If you are a
-                                                game developer, for instance, you can share your finished games, but
-                                                potentially glimpses into projects under construction, simply ensuring
-                                                you are consistent with engaging with your audience.
+                                                game developer, for instance, you can share your finished games, or
+                                                potential glimpses into projects under construction, simply ensuring
+                                                you are consistent with engaging with your audience, will make a world of difference.
                                             </p>
                                             <h3>
                                                 Setting Yourself Apart
@@ -407,16 +461,47 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p>
-                                                        This is an example of a website I made while taking a former course, HNC Web Development & Design, at the City of Glasgow College.
+                                                        This is an example of a website I made while taking a former
+                                                        course, HNC Web Development & Design, at the City of Glasgow
+                                                        College.
                                                     </p><br>
                                                     <p>
-                                                        The page was made using Bootstrap, the same free, open-source front-end devlopment framework used to create this webpage.
+                                                        The page was made using Bootstrap, the same free, open-source
+                                                        front-end devlopment framework used to create this webpage.
                                                     </p><br>
                                                     <p>
-                                                        The page uses the Scrollspy feature of Bootstrap, allowing the user to easily navigate between the main points of interest on the webpage.
+                                                        The page uses the Scrollspy feature of Bootstrap, allowing the
+                                                        user to easily navigate between the main points of interest on
+                                                        the webpage.
                                                     </p>
                                                 </div>
                                             </div>
+
+                                            <div class="row align-items-center mb-3">
+                                                <div class="col-md-4">
+                                                    <p>
+                                                        Here's an example of another website I made while at the City of
+                                                        Glasgow College.
+                                                    <p><br>
+                                                        This was to be an educationol site aimed at children, hence the
+                                                        bright colours. The website had to feature a puzzle/quiz which I
+                                                        demonstrate in this video.
+                                                    <p><br>
+                                                        The page also uses the Scrollspy feature of Bootstrap, this is
+                                                        especially important when developing a website with a younger
+                                                        target audience.
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <a href="https://gyazo.com/4d82d8b1164f48b9c670e2259743b66e"
+                                                        target="_blank">
+                                                        <img src="https://i.gyazo.com/4d82d8b1164f48b9c670e2259743b66e.gif"
+                                                            alt="Image from Gyazo" width="100%"
+                                                            style="border-radius: 15px;" />
+                                                    </a>
+                                                </div>
+                                            </div>
+
                                             <h3>
                                                 Conclusion
                                             </h3>
@@ -450,46 +535,6 @@
                                     </div>
                                 </div>
                                 <!-- End Blog Post 1 -->
-
-                                <!-- Blog Post 2 -->
-                                <div class="blog-card">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">Understanding the Basics of Web Development
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent2', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Click here for more info
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Blog Content (Initially Displayed) -->
-                                    <div id="hiddenInfo2" class="hidden-info" style="display: block;">
-                                        <p>Web development encompasses a variety of skills and technologies...</p>
-
-                                        <!-- Full Blog Content (Initially Hidden) -->
-                                        <div id="fullBlogContent2" class="hidden-info" style="display: none;">
-                                            <!-- Blog content goes here -->
-                                        </div>
-                                    </div>
-
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: N/A</p>
-                                    </div>
-                                </div>
-                                <!-- End Blog Post 2 -->
-
                             </div>
                         </div>
 
@@ -547,26 +592,19 @@
             const topButton = blogCard.querySelector('.toggle-btn');
             const bottomButton = blogCard.querySelector('.collapse-btn');
 
-            // Check if content is currently hidden or shown
             if (content.style.display === "none" || content.style.display === "") {
-                // Expand the content
                 content.style.display = "block";
                 topButton.querySelector('.arrow i').classList.remove('fa-arrow-down');
                 topButton.querySelector('.arrow i').classList.add('fa-arrow-up');
                 topButton.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Collapse Blog Post';
-
-                // Show the bottom collapse button
                 if (bottomButton) {
                     bottomButton.style.display = 'inline-block';
                 }
             } else {
-                // Collapse the content
                 content.style.display = "none";
                 topButton.querySelector('.arrow i').classList.remove('fa-arrow-up');
                 topButton.querySelector('.arrow i').classList.add('fa-arrow-down');
                 topButton.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand Blog Post';
-
-                // Hide the bottom collapse button
                 if (bottomButton) {
                     bottomButton.style.display = 'none';
                 }
