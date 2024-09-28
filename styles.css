@@ -173,11 +173,13 @@ html {
   padding: 50px;
   color: white;
   background-color: rgb(18, 21, 38);
-  min-height: 100vh; /* Set minimum height to viewport height */
+  min-height: 100vh;
+  /* Set minimum height to viewport height */
   position: relative;
   z-index: 101;
   width: 100vw;
-  overflow: visible; /* Allow content to overflow naturally */
+  overflow: visible;
+  /* Allow content to overflow naturally */
   display: flex;
   flex-direction: column;
 }
@@ -185,12 +187,14 @@ html {
 #waves-container2 {
   position: relative;
   height: 400px;
-  width: 100%; /* Ensure it takes the full width of its parent */
+  width: 100%;
+  /* Ensure it takes the full width of its parent */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  overflow: hidden; /* Prevent any content from overflowing */
+  overflow: hidden;
+  /* Prevent any content from overflowing */
 }
 
 canvas {
@@ -265,9 +269,11 @@ canvas {
 }
 
 /* Common styles for expand/collapse buttons */
-.toggle-btn, .collapse-btn {
+.toggle-btn,
+.collapse-btn {
   cursor: pointer;
-  color: #7289da; /* Matching the existing button color */
+  color: #7289da;
+  /* Matching the existing button color */
   background: none;
   border: none;
   padding: 0;
@@ -276,8 +282,10 @@ canvas {
   text-decoration: underline;
 }
 
-.toggle-btn:hover, .collapse-btn:hover {
-  color: #4e66a3; /* Matching hover effect */
+.toggle-btn:hover,
+.collapse-btn:hover {
+  color: #4e66a3;
+  /* Matching hover effect */
   text-decoration: none;
 }
 
@@ -299,7 +307,8 @@ canvas {
   color: white;
   font-size: 46px;
   font-weight: bold;
-  animation: pulse-glow 3s infinite; /* Optional animation */
+  animation: pulse-glow 3s infinite;
+  /* Optional animation */
 }
 
 
@@ -353,7 +362,9 @@ canvas {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.profile-card:hover {
+.profile-card:hover,
+.about-card:hover,
+.blog-card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
@@ -380,12 +391,6 @@ canvas {
   transform: translateX(-50%);
   border: 4px solid #1e1e1e;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-  margin: 50px 0 10px;
-  font-size: 20px;
-  color: #fff;
 }
 
 .username {
@@ -460,6 +465,7 @@ h2 {
   font-size: 12px;
   cursor: pointer;
 }
+
 /* Profile Card End */
 
 /* About Card Start */
@@ -480,6 +486,7 @@ h2 {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
+
 /* About Card End */
 
 .blog-card {
