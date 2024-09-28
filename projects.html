@@ -20,7 +20,6 @@
         .project-card {
             margin-top: 20px;
             padding: 20px;
-            border: 1px solid #2c2f33;
             border-radius: 12px;
             background-color: rgb(25, 31, 55);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -44,26 +43,6 @@
 
         .download-button-container a:hover {
             background-color: #4e66a3;
-        }
-
-        .toggle-btn {
-            cursor: pointer;
-            color: #7289da;
-        }
-
-        .toggle-btn:hover {
-            text-decoration: underline;
-        }
-
-        .hidden-info {
-            display: none;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #4e4f52;
-        }
-
-        h2 {
-            font-size: 24px;
         }
 
         .past-projects-heading {
@@ -95,12 +74,10 @@
     </div>
 
     <div id="waves-container2">
-
         <div class="heading-container">
             <h1 class="heading-text pt-5">My Projects</h1>
             <div class="heading-underline"></div>
         </div>
-
         <canvas id="waveCanvas1"></canvas>
         <canvas id="waveCanvas2"></canvas>
     </div>
@@ -110,7 +87,6 @@
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
-
                         <!-- Content heading -->
                         <div class="past-projects-heading">
                             <span class="colored-bar"></span>Past Projects
@@ -123,7 +99,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
-                                                <h2>Horror Game Alpha V1.0</h2>
+                                                <h2 style="font-size: 27px;">Horror Game Alpha V1.0</h2>
                                             </div>
                                         </div>
                                         <div class="col text-right">
@@ -133,16 +109,18 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <button class="toggle-btn btn btn-link"
                                                 onclick="toggleInfo('hiddenInfo1', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Click here for more info
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand
+                                                Project
                                             </button>
                                         </div>
                                     </div>
+
                                     <!-- Hidden Information -->
                                     <div id="hiddenInfo1" class="hidden-info">
                                         <p>
@@ -161,10 +139,19 @@
                                         </p>
                                         <p>
                                             This is an early alpha version, so there may be bugs and the game is far
-                                            from completion. This project served as a general insight into techniques
-                                            using C# and familiarizing myself with the Unity Engine UX. Feedback is
-                                            welcome!
+                                            from
+                                            completion. This project served as a general insight into techniques using
+                                            C# and
+                                            familiarizing myself with the Unity Engine UX. Feedback is welcome!
                                         </p>
+                                    </div>
+
+                                    <!-- Date Section -->
+                                    <div class="row">
+                                        <div class="col-md-12 text-left">
+                                            <p class="post-date" style="color: gray; margin-top: 10px;">Published on:
+                                                10th February 2023</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Project Card 1 -->
@@ -174,7 +161,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="download-text">
-                                                <h2>Free Roam Game Project</h2>
+                                                <h2 style="font-size: 27px;">Free Roam Game Project</h2>
                                             </div>
                                         </div>
                                         <div class="col text-right">
@@ -189,8 +176,8 @@
                                         <div class="col-md-12">
                                             <button class="toggle-btn btn btn-link"
                                                 onclick="toggleInfo('hiddenInfo2', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Click here for more info
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand
+                                                Project
                                             </button>
                                         </div>
                                     </div>
@@ -201,9 +188,7 @@
                                             a quick mess around more than anything else, yet it still displays use of
                                             player movement handling, controversial car movement, and car interaction.
                                         </p>
-                                        <p>
-                                            Bugs to be highly expected.
-                                        </p>
+                                        <p>Bugs to be highly expected.</p>
                                     </div>
                                 </div>
                                 <!-- End Project Card 2 -->
@@ -239,6 +224,7 @@
         </div>
     </footer>
 
+
     <script>
         function toggleInfo(contentId, button) {
             const content = document.getElementById(contentId);
@@ -248,12 +234,12 @@
                 content.style.display = "block";
                 arrow.classList.remove('fa-arrow-down');
                 arrow.classList.add('fa-arrow-up');
-                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Click here to hide info';
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Collapse Project';
             } else {
                 content.style.display = "none";
                 arrow.classList.remove('fa-arrow-up');
                 arrow.classList.add('fa-arrow-down');
-                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Click here for more info';
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand Project';
             }
         }
     </script>
