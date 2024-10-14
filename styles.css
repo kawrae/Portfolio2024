@@ -185,7 +185,7 @@ html {
 
 #waves-container2 {
   position: relative;
-  height: 400px;
+  height: 380px;
   width: 100%;
   /* Ensure it takes the full width of its parent */
   display: flex;
@@ -195,6 +195,29 @@ html {
   overflow: hidden;
   /* Prevent any content from overflowing */
 }
+
+/* Scroll bar Start */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+/* Scroll bar End */
 
 canvas {
   display: block;
