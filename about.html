@@ -74,6 +74,25 @@
                 margin-bottom: 0px;
             }
         }
+
+        /* Avatar Image */
+        .avatar-img {
+            position: absolute;
+            top: -30px;
+            right: 35px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border-left: 0.2rem solid #1e3debc9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .about-card h3,
+        .about-card p {
+            margin-right: 140px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -113,10 +132,11 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="about-card">
+                                    <img src="imgs/me.png" alt="Avatar" class="avatar-img">
                                     <h3><i class="fas fa-user"></i> About Corey Black</h3>
                                     <p>
-                                        I am a passionate <strong>Full Stack Developer</strong> with a diverse skill
-                                        set in front-end, back-end, and mobile technologies. My aim is to deliver
+                                        I am a passionate <strong>Full Stack Developer</strong> with a diverse skill set
+                                        in front-end, back-end, and mobile technologies. My aim is to deliver
                                         high-quality digital solutions that merge both functionality and aesthetics.
                                     </p>
                                 </div>
@@ -133,9 +153,13 @@
                                         <h3><i class="fas fa-share-alt"></i> Connect With Me</h3>
                                         <div id="connectWith" class="p-2">
                                             <div class="social-links" style="justify-content: left;">
-                                                <a href="https://github.com/kawrae" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
-                                                <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                                                <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
+                                                <a href="https://github.com/kawrae" target="_blank"
+                                                    class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                                <a href="https://www.linkedin.com/in/corey-black-92526532b/"
+                                                    target="_blank" class="btn-linkedin"><i
+                                                        class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                                <a href="https://steamcommunity.com/id/nastybj/" target="_blank"
+                                                    class="btn-steam"><i class="fab fa-steam"></i> Steam</a>
                                             </div>
                                         </div>
                                         <!-- PS3 Image -->
@@ -150,14 +174,18 @@
                         <div class="row">
                             <div class="col-md-6 d-flex">
                                 <div class="about-card front-end-card flex-fill">
-                                    <h3><i class="fas fa-laptop-code" style="color: #ffb400;"></i> Front-End Expertise</h3>
+                                    <h3><i class="fas fa-laptop-code" style="color: #ffb400;"></i> Front-End Expertise
+                                    </h3>
                                     <p>
                                         I specialize in developing responsive, intuitive user interfaces using:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-code" style="color: #ffb400;"></i> <strong>HTML, CSS, JavaScript</strong> – Building dynamic and accessible web pages.</li>
-                                        <li><i class="fas fa-paint-brush" style="color: #ff6f61;"></i> <strong>UI/UX Design</strong> – Crafting visually engaging user experiences.</li>
-                                        <li><i class="fas fa-laptop" style="color: #42a5f5;"></i> <strong>Java</strong> – Leveraging powerful tools for interactive web applications.</li>
+                                        <li><i class="fas fa-code" style="color: #ffb400;"></i> <strong>HTML, CSS,
+                                                JavaScript</strong> – Building dynamic and accessible web pages.</li>
+                                        <li><i class="fas fa-paint-brush" style="color: #ff6f61;"></i> <strong>UI/UX
+                                                Design</strong> – Crafting visually engaging user experiences.</li>
+                                        <li><i class="fas fa-laptop" style="color: #42a5f5;"></i> <strong>Java</strong>
+                                            – Leveraging powerful tools for interactive web applications.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -166,11 +194,16 @@
                                 <div class="about-card game-dev-card flex-fill">
                                     <h3><i class="fas fa-gamepad" style="color: #29b6f6;"></i> Game Development</h3>
                                     <p>
-                                        My background in <strong>C#</strong> and <strong>Unity</strong> allows me to creatively approach challenges, especially in game development:
+                                        My background in <strong>C#</strong> and <strong>Unity</strong> allows me to
+                                        creatively approach challenges, especially in game development:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-lightbulb" style="color: #ffeb3b;"></i> <strong>Creative Problem Solving</strong> – Applying game design principles to real-world coding problems.</li>
-                                        <li><i class="fas fa-code" style="color: #8bc34a;"></i> <strong>Efficient Code Optimization</strong> – Writing optimized code that enhances performance, crucial in game mechanics and responsiveness.</li>
+                                        <li><i class="fas fa-lightbulb" style="color: #ffeb3b;"></i> <strong>Creative
+                                                Problem Solving</strong> – Applying game design principles to real-world
+                                            coding problems.</li>
+                                        <li><i class="fas fa-code" style="color: #8bc34a;"></i> <strong>Efficient Code
+                                                Optimization</strong> – Writing optimized code that enhances
+                                            performance, crucial in game mechanics and responsiveness.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -179,13 +212,18 @@
                         <div class="row">
                             <div class="col-md-6 d-flex">
                                 <div class="about-card mobile-dev-card flex-fill">
-                                    <h3><i class="fas fa-mobile-alt" style="color: #66bb6a;"></i> Mobile Development</h3>
+                                    <h3><i class="fas fa-mobile-alt" style="color: #66bb6a;"></i> Mobile Development
+                                    </h3>
                                     <p>
                                         I have hands-on experience developing mobile applications with:
                                     </p>
                                     <ul>
-                                        <li><i class="fab fa-android" style="color: #4caf50;"></i> <strong>Android Studio & Kotlin</strong> – Building native, high-performance Android apps.</li>
-                                        <li><i class="fas fa-sync-alt" style="color: #ff9800;"></i> <strong>Responsive UI/UX Design</strong> – Creating intuitive and adaptive interfaces that provide a seamless user experience across various devices.</li>
+                                        <li><i class="fab fa-android" style="color: #4caf50;"></i> <strong>Android
+                                                Studio & Kotlin</strong> – Building native, high-performance Android
+                                            apps.</li>
+                                        <li><i class="fas fa-sync-alt" style="color: #ff9800;"></i> <strong>Responsive
+                                                UI/UX Design</strong> – Creating intuitive and adaptive interfaces that
+                                            provide a seamless user experience across various devices.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -196,10 +234,12 @@
                                         I am proficient in database management and back-end development:
                                     </p>
                                     <ul>
-                                        <li><i class="fas fa-database" style="color: #d35400;"></i> <strong>SQL & PHP</strong
-
-> – Designing and managing robust databases.</li>
-                                        <li><i class="fas fa-lock" style="color: #c0392b;"></i> <strong>Security</strong> – Building reliable, secure systems that protect user data.</li>
+                                        <li><i class="fas fa-database" style="color: #d35400;"></i> <strong>SQL &
+                                                PHP</strong> – Designing and managing robust databases.</li>
+                                        <li><i class="fas fa-lock" style="color: #c0392b;"></i>
+                                            <strong>Security</strong> – Building reliable, secure systems that protect
+                                            user data.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -220,9 +260,12 @@
                 </div>
                 <div class="col-md-6 text-md-right">
                     <div class="social-links" style="justify-content: right;">
-                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i class="fab fa-steam"></i></a>
+                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                            class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i
+                                class="fab fa-steam"></i></a>
                     </div>
                 </div>
             </div>
