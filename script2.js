@@ -59,13 +59,13 @@ window.addEventListener('resize', setCanvasSize);
 
 // Wave properties - increased amplitude and adjusted speed for more dynamic waves
 const waveSpeed = 0.0008; // Increase the speed for a more lively effect
-const waveAmplitude = 140; // Increase amplitude to make waves taller and more pronounced
+const waveAmplitude = 100; // Increase amplitude to make waves taller and more pronounced
 const waveFrequency1 = 0.0023; // Adjust frequency to create tighter waves
 const waveFrequency2 = 0.0026; // Slightly different frequency for more complex movement
 
 // Particle properties
 const particleMinSize = 1;
-const particleMaxSize = 4;
+const particleMaxSize = 5;
 const particleCount = 10;
 const particleSize = 3;
 const particleSpeed = 0.2; // Adjust particle speed as needed
@@ -75,14 +75,13 @@ const maxLifetime = 400; // Maximum lifetime in milliseconds
 // Particles array to store their positions, velocities, lifetimes, and alpha values
 const particles = [];
 
-// Create gradients for the waves
-const gradient1 = ctx1.createLinearGradient(0, canvas1.height / 1.2, 0, canvas1.height);
-gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.7)');
-
-const gradient2 = ctx2.createLinearGradient(0, canvas2.height / 1.2, 0, canvas2.height);
-gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-gradient2.addColorStop(1, 'rgba(0, 5, 54, 0.3)');
+// Create a subtle gradient for the waves that is brighter at the top of the wave
+function createWaveGradient(ctx, yStart, yEnd) {
+  const gradient = ctx.createLinearGradient(0, yStart, 0, yEnd);
+  gradient.addColorStop(0, 'rgba(1, 18, 106, 0.4)'); // Brighter at the top
+  gradient.addColorStop(1, 'rgba(1, 5, 53, 0.6)'); // Darker at the bottom
+  return gradient;
+}
 
 // Animation loop
 function animate() {
@@ -90,8 +89,8 @@ function animate() {
   ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-  drawWave(ctx1, waveFrequency1, gradient1, performance.now());
-  drawWave(ctx2, waveFrequency2, gradient2, performance.now());
+  drawWave(ctx1, waveFrequency1, performance.now());
+  drawWave(ctx2, waveFrequency2, performance.now());
 
   updateParticles();
   drawParticles(ctx1);
@@ -99,22 +98,32 @@ function animate() {
 }
 
 // Draw waves
-function drawWave(ctx, frequency, gradient, timestamp) {
-  ctx.globalAlpha = 0.9;
-
-  ctx.beginPath();
-  ctx.moveTo(0, canvas1.height);
-  for (let x = 0; x < canvas1.width; x++) {
-    const y = canvas1.height / 1.2 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
-    ctx.lineTo(x, y);
+function drawWave(ctx, frequency, timestamp) {
+    const waveTop = canvas1.height / 3.5 - waveAmplitude;  // Highest point the wave can reach
+    const waveBottom = canvas1.height / 3.5 + waveAmplitude; // Lowest point the wave can reach
+    
+    // Create a gradient that covers only the wave height
+    const waveGradient = ctx.createLinearGradient(0, waveTop, 0, waveBottom);
+    waveGradient.addColorStop(0, 'rgba(1, 23, 136, 0.6)'); // Brighter at the top of the wave
+    waveGradient.addColorStop(1, 'rgba(1, 5, 53, 0.5)'); // Darker at the bottom of the wave
+    
+    ctx.globalAlpha = 0.9;
+  
+    ctx.beginPath();
+    ctx.moveTo(0, canvas1.height);
+    for (let x = 0; x < canvas1.width; x++) {
+      const y = canvas1.height / 3.5 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
+      ctx.lineTo(x, y);
+    }
+    ctx.lineTo(canvas1.width, canvas1.height);
+    ctx.closePath();
+  
+    // Apply the subtle gradient for the wave fill
+    ctx.fillStyle = waveGradient;
+    ctx.fill();
+    ctx.globalAlpha = 1;
   }
-  ctx.lineTo(canvas1.width, canvas1.height);
-  ctx.closePath();
-
-  ctx.fillStyle = gradient;
-  ctx.fill();
-  ctx.globalAlpha = 1;
-}
+  
 
 // Update particles to simulate ember-like floating behavior
 function updateParticles() {
@@ -164,4 +173,3 @@ function drawParticles(ctx) {
 
 // Start animation
 animate();
-
