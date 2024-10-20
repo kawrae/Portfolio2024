@@ -4,10 +4,14 @@ const canvas2 = document.getElementById('waveCanvas2');
 const ctx1 = canvas1.getContext('2d');
 const ctx2 = canvas2.getContext('2d');
 
+// Variables to toggle waves and particles
+let showWaves = true;
+let showParticles = true;
+
 // Function to set canvas size and handle pixel ratio scaling
 function setCanvasSize() {
   const ratio = window.devicePixelRatio || 1;
-  
+
   // Reset canvas size and scaling first to avoid accumulating transformations
   canvas1.width = window.innerWidth;
   canvas1.height = window.innerHeight;
@@ -30,25 +34,22 @@ function setCanvasSize() {
 function resizeCanvas() {
   const container = document.getElementById('waves-container2');
   const ratio = window.devicePixelRatio || 1;
-  
+
   // Set canvas size to match container
   canvas1.width = container.clientWidth * ratio;
   canvas1.height = container.clientHeight * ratio;
   canvas2.width = container.clientWidth * ratio;
   canvas2.height = container.clientHeight * ratio;
-  
+
   // Reset transformations
   ctx1.setTransform(1, 0, 0, 1, 0, 0);
   ctx2.setTransform(1, 0, 0, 1, 0, 0);
-  
+
   // Apply scaling
   ctx1.scale(ratio, ratio);
   ctx2.scale(ratio, ratio);
 }
 
-window.addEventListener('resize', resizeCanvas);
-
-// Call this function after the page changes or when the container size changes
 window.addEventListener('resize', resizeCanvas);
 
 // Set initial canvas size
@@ -66,11 +67,10 @@ const waveFrequency2 = 0.0026; // Slightly different frequency for more complex 
 // Particle properties
 const particleMinSize = 1;
 const particleMaxSize = 5;
-const particleCount = 10;
-const particleSize = 3;
-const particleSpeed = 0.2; // Adjust particle speed as needed
-const minLifetime = 200; // Minimum lifetime in milliseconds
-const maxLifetime = 400; // Maximum lifetime in milliseconds
+const particleCount = 20;
+const particleSpeed = 0.2;
+const minLifetime = 200;
+const maxLifetime = 400;
 
 // Particles array to store their positions, velocities, lifetimes, and alpha values
 const particles = [];
@@ -89,45 +89,47 @@ function animate() {
   ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-  drawWave(ctx1, waveFrequency1, performance.now());
-  drawWave(ctx2, waveFrequency2, performance.now());
+  if (showWaves) {
+    drawWave(ctx1, waveFrequency1, performance.now());
+    drawWave(ctx2, waveFrequency2, performance.now());
+  }
 
-  updateParticles();
-  drawParticles(ctx1);
-  drawParticles(ctx2);
+  if (showParticles) {
+    updateParticles();
+    drawParticles(ctx1);
+    drawParticles(ctx2);
+  }
 }
 
 // Draw waves
 function drawWave(ctx, frequency, timestamp) {
-    const waveTop = canvas1.height / 3.5 - waveAmplitude;  // Highest point the wave can reach
-    const waveBottom = canvas1.height / 3.5 + waveAmplitude; // Lowest point the wave can reach
-    
-    // Create a gradient that covers only the wave height
-    const waveGradient = ctx.createLinearGradient(0, waveTop, 0, waveBottom);
-    waveGradient.addColorStop(0, 'rgba(1, 23, 136, 0.6)'); // Brighter at the top of the wave
-    waveGradient.addColorStop(1, 'rgba(1, 5, 53, 0.5)'); // Darker at the bottom of the wave
-    
-    ctx.globalAlpha = 0.9;
+  const waveTop = canvas1.height / 3.5 - waveAmplitude;  // Highest point the wave can reach
+  const waveBottom = canvas1.height / 3.5 + waveAmplitude; // Lowest point the wave can reach
   
-    ctx.beginPath();
-    ctx.moveTo(0, canvas1.height);
-    for (let x = 0; x < canvas1.width; x++) {
-      const y = canvas1.height / 3.5 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(canvas1.width, canvas1.height);
-    ctx.closePath();
+  // Create a gradient that covers only the wave height
+  const waveGradient = ctx.createLinearGradient(0, waveTop, 0, waveBottom);
+  waveGradient.addColorStop(0, 'rgba(1, 23, 136, 0.6)'); // Brighter at the top of the wave
+  waveGradient.addColorStop(1, 'rgba(1, 5, 53, 0.5)'); // Darker at the bottom of the wave
   
-    // Apply the subtle gradient for the wave fill
-    ctx.fillStyle = waveGradient;
-    ctx.fill();
-    ctx.globalAlpha = 1;
+  ctx.globalAlpha = 0.9;
+
+  ctx.beginPath();
+  ctx.moveTo(0, canvas1.height);
+  for (let x = 0; x < canvas1.width; x++) {
+    const y = canvas1.height / 3.5 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
+    ctx.lineTo(x, y);
   }
-  
+  ctx.lineTo(canvas1.width, canvas1.height);
+  ctx.closePath();
+
+  // Apply the subtle gradient for the wave fill
+  ctx.fillStyle = waveGradient;
+  ctx.fill();
+  ctx.globalAlpha = 1;
+}
 
 // Update particles to simulate ember-like floating behavior
 function updateParticles() {
-  // Update particle positions, velocities, and lifetimes
   for (let i = 0; i < particles.length; i++) {
     particles[i].x += particles[i].vx;
     particles[i].y += particles[i].vy;
@@ -149,7 +151,7 @@ function updateParticles() {
         y: Math.random() * canvas1.height,
         vx: (Math.random() - 0.5) * particleSpeed, // Random initial x velocity
         vy: (Math.random() - 0.5) * particleSpeed, // Random initial y velocity
-        size: size, // Store size of particle
+        size: size,
         lifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime,
         initialLifetime: Math.random() * (maxLifetime - minLifetime) + minLifetime,
         alpha: 1
@@ -170,6 +172,17 @@ function drawParticles(ctx) {
   }
   ctx.restore();
 }
+
+// Event listeners for toggle buttons
+document.getElementById('toggleWaves').addEventListener('click', () => {
+  showWaves = !showWaves;
+  document.getElementById('toggleWaves').innerHTML = `Waves - ${showWaves ? 'On' : 'Off'}`;
+});
+
+document.getElementById('toggleParticles').addEventListener('click', () => {
+  showParticles = !showParticles;
+  document.getElementById('toggleParticles').innerHTML = `Particles - ${showParticles ? 'On' : 'Off'}`;
+});
 
 // Start animation
 animate();

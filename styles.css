@@ -4,33 +4,50 @@ html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 100%);
+  background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 90%);
   overflow: hidden;
 }
 
+/* Navbar Start */
 #navbar {
   background-image: linear-gradient(-135deg, rgba(8, 0, 15, 0.15) 25%, rgba(40, 40, 58, 0.15) 100%);
   color: white;
-  padding-top: 10px;
-  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
+  position: fixed;
   z-index: 100;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: center; /* Center all items */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  overflow: visible; /* Allow content to overflow */
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100vw; /* Full width */
+  position: relative;
+  z-index: 1; /* Position below nav-right */
+}
+
+.nav-right {
+  position: absolute; /* Float above nav-center */
+  right: 20px; /* Distance from the right edge */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  padding-top: 5px;
+  z-index: 2; /* Position on top of nav-center */
 }
 
 #navbar ul {
   list-style-type: none;
   margin: 0;
-  overflow: hidden;
-}
-
-#navbar li {
-  float: left;
-  padding-bottom: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 #navbar li a {
@@ -43,32 +60,51 @@ html {
 
 #navbar li:hover {
   border-bottom: 2px solid white;
-  /* Add border on hover */
   color: #101d66;
-  /* Change text color on hover */
 }
 
-.dropdown-menu {
-  background-color: #333;
-  border: none;
+#drop-Menu {
+  background-color: rgba(18, 21, 38, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: -65px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
   color: white;
+  transition: background-color 0.3s ease;
 }
+
+.dropdown-item i {
+  margin-right: 10px;
+}
+
 .dropdown-item:hover {
-  background-color: #555;
-  color: white;
+  background-color: rgba(26, 28, 53, 0.5);
+  border-radius: 5px;
 }
 
-.navbar-toggler {
-  color: white;
-  border-color: white;
+#drop-Menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent rgba(18, 21, 38, 0.9) transparent;
 }
 
-.navbar-toggler-icon {
-  background-color: white;
+#toggleParticles:hover,
+#toggleWaves:hover {
+  background-color: rgba(26, 28, 53, 0.5);
 }
+
+/* Navbar End */
+
 
 #main-content {
   margin-top: 300px;
@@ -239,15 +275,19 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
+
 /* Scroll bar End */
 
 canvas {
   display: block;
   position: absolute;
-  top: 0;  /* Fixing top offset */
+  top: 0;
+  /* Fixing top offset */
   left: 0;
-  width: 100vw;  /* Use viewport width */
-  height: 100vh; /* Use viewport height */
+  width: 100vw;
+  /* Use viewport width */
+  height: 100vh;
+  /* Use viewport height */
   pointer-events: none;
   z-index: 11;
   opacity: 0.7;
@@ -338,6 +378,7 @@ canvas {
   text-decoration: none;
 }
 
+/* Your pulse animation */
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
@@ -350,6 +391,11 @@ canvas {
   100% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
   }
+}
+
+/* Define the pulse-glow animation */
+.pulse {
+  animation: pulse-glow 2s infinite;
 }
 
 .heading-text {
@@ -367,22 +413,6 @@ canvas {
   background-color: #1b4b91;
   margin: 10px auto 0 auto;
   border-radius: 2px;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-brand {
-  color: white;
-  font-weight: bold;
-}
-
-.navbar-toggle {
-  cursor: pointer;
-  display: none;
 }
 
 .bar {
