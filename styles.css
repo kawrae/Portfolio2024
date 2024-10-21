@@ -572,8 +572,12 @@ canvas {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-left: 2px solid #1e3debc9;
   position: relative;
-  padding-right: 100px;
   /* Subtle border to add a pop of color */
+}
+
+#aboutTop {
+  
+  padding-right: 100px;
 }
 
 .about-card:hover {
@@ -629,7 +633,7 @@ canvas {
   padding: 30px 0;
   color: #d4d4dc;
   font-size: 14px;
-  border-top: 2px solid #7289da;
+  border-top: 2px solid #1e3debc9;
 }
 
 .footer h5 {

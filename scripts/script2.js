@@ -103,8 +103,8 @@ function animate() {
 
 // Draw waves
 function drawWave(ctx, frequency, timestamp) {
-  const waveTop = canvas1.height / 3.5 - waveAmplitude;  // Highest point the wave can reach
-  const waveBottom = canvas1.height / 3.5 + waveAmplitude; // Lowest point the wave can reach
+  const waveTop = canvas1.height / 4.2 - waveAmplitude;  // Adjusted higher point the wave can reach
+  const waveBottom = canvas1.height / 4.2 + waveAmplitude; // Adjusted higher point the wave can reach
   
   // Create a gradient that covers only the wave height
   const waveGradient = ctx.createLinearGradient(0, waveTop, 0, waveBottom);
@@ -116,7 +116,7 @@ function drawWave(ctx, frequency, timestamp) {
   ctx.beginPath();
   ctx.moveTo(0, canvas1.height);
   for (let x = 0; x < canvas1.width; x++) {
-    const y = canvas1.height / 3.5 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
+    const y = canvas1.height / 4.2 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
     ctx.lineTo(x, y);
   }
   ctx.lineTo(canvas1.width, canvas1.height);
@@ -173,15 +173,15 @@ function drawParticles(ctx) {
   ctx.restore();
 }
 
-// Event listeners for toggle buttons
+// Event listeners for toggle buttons with icons
 document.getElementById('toggleWaves').addEventListener('click', () => {
   showWaves = !showWaves;
-  document.getElementById('toggleWaves').innerHTML = `Waves - ${showWaves ? 'On' : 'Off'}`;
+  document.getElementById('toggleWaves').innerHTML = `<i class="fas fa-water"></i> Waves - ${showWaves ? 'On' : 'Off'}`;
 });
 
 document.getElementById('toggleParticles').addEventListener('click', () => {
   showParticles = !showParticles;
-  document.getElementById('toggleParticles').innerHTML = `Particles - ${showParticles ? 'On' : 'Off'}`;
+  document.getElementById('toggleParticles').innerHTML = `<i class="fas fa-star"></i> Particles - ${showParticles ? 'On' : 'Off'}`;
 });
 
 // Start animation
