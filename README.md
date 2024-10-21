@@ -1,3 +1,3 @@
 Public hosted site:
 
-https://corey-black.tiiny.co/contact.html
+https://corey-black.tiiny.co/index.html
