@@ -241,6 +241,15 @@ html {
   flex-direction: column;
 }
 
+#about1 {
+  margin-right: 140px;
+  margin-bottom: 25px;
+}
+
+#infinitus {
+  margin-right: 320px;
+}
+
 #waves-container2 {
   position: relative;
   height: 380px;

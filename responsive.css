@@ -1,0 +1,187 @@
+/* Responsive styles for mobile devices (Samsung Galaxy S22) */
+@media only screen and (max-width: 768px) {
+
+    /* Navbar (Hamburger Menu for Mobile) */
+    #navbar {
+        background-image: linear-gradient(-135deg, rgba(8, 0, 15, 0.15) 25%, rgba(40, 40, 58, 0.15) 100%);
+        color: white;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        /* Ensure the navbar is always above */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-toggler {
+        display: block;
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #navbar-projects {
+        padding: 10px; /* Make sure the padding matches other pages */
+        height: 56px; /* Set the height to match the other pages */
+        box-sizing: border-box;
+    }
+
+    /* Force white hamburger icon regardless of dark mode or browser settings */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    /* Hide the settings button on mobile */
+    .nav-right {
+        display: none;
+    }
+
+    #nav-links {
+        width: 100vw;
+        left: -65px;
+        /* Align the dropdown menu with the screen edge */
+        top: 30px;
+        /* Position it below the navbar */
+        background-color: rgba(7, 7, 56, 0.979);
+        position: absolute;
+        z-index: 101;
+        /* Ensure the dropdown is above other elements */
+    }
+
+    .nav-item {
+        border: 1px solid rgba(212, 206, 206, 0.048);
+    }
+
+    /* Hide the navigation links by default */
+    .nav-center ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        background-color: rgba(8, 0, 15, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 101;
+    }
+
+    /* Display the navigation links when the navbar is toggled */
+    #navbar.active .nav-center ul {
+        display: flex;
+    }
+
+    #navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbar li a {
+        color: white;
+        padding: 14px;
+        display: block;
+        width: 100%;
+        /* Ensure the links fill the width */
+        box-sizing: border-box;
+    }
+
+    /* Remove any margin between the links */
+    #navbar li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hide unnecessary elements like avatar and images on mobile */
+    .avatar-img,
+    .laptop-image,
+    .communicate {
+        display: none;
+    }
+
+    /* Page Layout & Spacing Adjustments */
+    .container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
+    #main-content2 {
+        padding: 20px 0px;
+        z-index: 1;
+        /* Ensure the content stays behind the navbar */
+    }
+
+    #waves-container2 {
+        height: 280px;
+    }
+
+    #connect {
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+
+    #about1 {
+        margin-right: 0;
+    }
+
+    #infinitus {
+        margin-right: 0;
+        padding-top: 25px;
+    }
+
+    .about-card {
+        padding: 16px;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .row {
+        margin: 0;
+        padding: 0;
+    }
+
+    .col-md-6 {
+        padding: 0 8px;
+    }
+
+    /* Adjustments for better layout */
+    .about-me-heading,
+    .about-card h3 {
+        margin: 0 0 10px 0;
+        padding: 0;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 10px 0;
+    }
+
+    .btn-github,
+    .btn-linkedin,
+    .btn-steam {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        font-size: 14px;
+        text-align: center;
+        padding: 12px;
+        background-color: #222;
+        color: #fff;
+    }
+}

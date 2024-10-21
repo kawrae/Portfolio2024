@@ -12,43 +12,42 @@ let showParticles = true;
 function setCanvasSize() {
   const ratio = window.devicePixelRatio || 1;
 
-  // Reset canvas size and scaling first to avoid accumulating transformations
-  canvas1.width = window.innerWidth;
-  canvas1.height = window.innerHeight;
-  canvas2.width = window.innerWidth;
-  canvas2.height = window.innerHeight;
-
-  ctx1.setTransform(1, 0, 0, 1, 0, 0); // Reset any scaling
-  ctx2.setTransform(1, 0, 0, 1, 0, 0); // Reset any scaling
-
-  // Apply new scaling
+  // Set canvas size to match window dimensions
   canvas1.width = window.innerWidth * ratio;
   canvas1.height = window.innerHeight * ratio;
   canvas2.width = window.innerWidth * ratio;
   canvas2.height = window.innerHeight * ratio;
 
+  // Reset scaling to avoid accumulation
+  ctx1.setTransform(1, 0, 0, 1, 0, 0);
+  ctx2.setTransform(1, 0, 0, 1, 0, 0);
+
+  // Apply device pixel ratio scaling
   ctx1.scale(ratio, ratio);
   ctx2.scale(ratio, ratio);
 }
 
-// Function to resize canvas
+// Function to resize canvas dynamically
 function resizeCanvas() {
   const container = document.getElementById('waves-container2');
   const ratio = window.devicePixelRatio || 1;
 
-  // Set canvas size to match container
+  // Set canvas size to match container size
   canvas1.width = container.clientWidth * ratio;
   canvas1.height = container.clientHeight * ratio;
   canvas2.width = container.clientWidth * ratio;
   canvas2.height = container.clientHeight * ratio;
 
-  // Reset transformations
+  // Reset scaling to avoid accumulation
   ctx1.setTransform(1, 0, 0, 1, 0, 0);
   ctx2.setTransform(1, 0, 0, 1, 0, 0);
 
-  // Apply scaling
+  // Apply scaling for high-DPI displays
   ctx1.scale(ratio, ratio);
   ctx2.scale(ratio, ratio);
+
+  // Recalculate gradients after resizing
+  createGradients();
 }
 
 window.addEventListener('resize', resizeCanvas);
@@ -59,11 +58,20 @@ setCanvasSize();
 // Adjust size on window resize
 window.addEventListener('resize', setCanvasSize);
 
-// Wave properties
+// Dynamic wave properties for responsiveness
 const waveSpeed = 0.0008;
-const waveAmplitude = 140;
+let waveAmplitudeBase = 140; // Base amplitude
 const waveFrequency1 = 0.0023;
 const waveFrequency2 = 0.0026;
+
+// Adjust wave amplitude based on screen height
+function adjustWaveAmplitude() {
+  const screenHeight = window.innerHeight;
+  waveAmplitudeBase = screenHeight * 0.1; // Amplitude is now 10% of the screen height
+}
+
+adjustWaveAmplitude();
+window.addEventListener('resize', adjustWaveAmplitude);
 
 // Particle properties
 const particleMinSize = 1;
@@ -72,13 +80,19 @@ const particleCount = 10;
 const particles = [];
 
 // Create gradients for the waves
-const gradient1 = ctx1.createLinearGradient(0, canvas1.height / 1.2, 0, canvas1.height);
-gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.7)');
+let gradient1, gradient2;
 
-const gradient2 = ctx2.createLinearGradient(0, canvas2.height / 1.2, 0, canvas2.height);
-gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-gradient2.addColorStop(1, 'rgba(0, 5, 54, 0.3)');
+function createGradients() {
+  gradient1 = ctx1.createLinearGradient(0, canvas1.height * 0.8, 0, canvas1.height);
+  gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
+  gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.7)');
+
+  gradient2 = ctx2.createLinearGradient(0, canvas2.height * 0.8, 0, canvas2.height);
+  gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
+  gradient2.addColorStop(1, 'rgba(0, 5, 54, 0.3)');
+}
+
+createGradients();
 
 // Animation loop
 function animate() {
@@ -98,14 +112,17 @@ function animate() {
   }
 }
 
-// Draw waves
+// Draw waves with responsive amplitude and positioning
 function drawWave(ctx, frequency, gradient, timestamp) {
+  const waveAmplitude = waveAmplitudeBase; // Use dynamically scaled amplitude
+  const yOffset = canvas1.height * 0.8; // Adjust y-position for responsiveness
+
   ctx.globalAlpha = 0.9;
 
   ctx.beginPath();
   ctx.moveTo(0, canvas1.height);
   for (let x = 0; x < canvas1.width; x++) {
-    const y = canvas1.height / 1.2 + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
+    const y = yOffset + Math.sin(x * frequency + timestamp * waveSpeed) * waveAmplitude;
     ctx.lineTo(x, y);
   }
   ctx.lineTo(canvas1.width, canvas1.height);
