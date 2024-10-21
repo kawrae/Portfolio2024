@@ -77,20 +77,21 @@ html {
   border: 1px solid #ca1a6c;
 }
 
-.second-theme .toggle-btn {
+.second-theme .toggle-btn,
+.second-theme .collapse-btn {
   color: hsla(327, 100%, 81%, 0.788);
   transition: color 0s;
 }
 
-.second-theme .toggle-btn:hover {
+.second-theme .toggle-btn:hover,
+.second-theme .collapse-btn:hover {
   color: #c0247ac9;
 }
 
 .second-theme #nav-links {
-  background-color: #5e0536f6;
+  background-color: transparent;
 }
 
-/* Add more specific styles for second theme if needed */
 /* Themes End */
 
 /* Navbar Start */
