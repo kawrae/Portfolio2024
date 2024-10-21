@@ -8,6 +8,91 @@ html {
   overflow: hidden;
 }
 
+/* Themes Start */
+
+/* Default Theme */
+.default-theme body,
+.default-theme html {
+    background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 90%);
+    color: white;
+}
+
+/* Second Theme */
+.second-theme body,
+.second-theme html {
+    background-image: linear-gradient(-135deg, rgb(135, 0, 94) 0%, rgb(173, 21, 85) 50%, rgb(251, 63, 64) 100%);
+    color: #fff;
+}
+
+.second-theme #navbar {
+    background-image: linear-gradient(-135deg, rgba(135, 0, 94, 0.2) 25%, rgba(251, 63, 64, 0.2) 100%);
+}
+
+.second-theme .about-me-heading {
+    color: #fff; /* Adjust text color */
+}
+
+.second-theme #main-content2 {
+  background-color: rgb(33, 18, 37);
+}
+
+.second-theme .colored-bar {
+  background-color: #eb1e8fc9 !important;
+}
+
+.second-theme .btn-social {
+    background-color: #d92367;
+}
+
+.second-theme .heading-underline {
+    background-color: #ec4593;
+}
+
+.second-theme .about-card,
+.second-theme .blog-card {
+  background-color: rgb(55, 25, 49);
+  border-left: 2px solid #eb1e8fc9;
+}
+
+.second-theme .avatar-img {
+  border-left: 0.2rem solid #eb1e8fc9;
+}
+
+.second-theme .footer {
+  border-top: 2px solid #eb1e8fc9;
+}
+
+.second-theme .footer-bottom {
+  color: white;
+}
+
+.second-theme .btn-shared {
+  background-color: #eb1e8fc9;
+  border: 1px solid #ec4593;
+  transition: color 0s;
+}
+
+.second-theme .btn-shared:hover {
+  background-color: #750543c9;
+  border: 1px solid #ca1a6c;
+}
+
+.second-theme .toggle-btn {
+  color: hsla(327, 100%, 81%, 0.788);
+  transition: color 0s;
+}
+
+.second-theme .toggle-btn:hover {
+  color: #c0247ac9;
+}
+
+.second-theme #nav-links {
+  background-color: #5e0536f6;
+}
+
+/* Add more specific styles for second theme if needed */
+/* Themes End */
+
 /* Navbar Start */
 #navbar {
   background-image: linear-gradient(-135deg, rgba(8, 0, 15, 0.15) 25%, rgba(40, 40, 58, 0.15) 100%);
@@ -17,29 +102,37 @@ html {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center all items */
+  justify-content: center;
+  /* Center all items */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0;
-  overflow: visible; /* Allow content to overflow */
+  overflow: visible;
+  /* Allow content to overflow */
 }
 
 .nav-center {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 100vw; /* Full width */
+  width: 100vw;
+  /* Full width */
   position: relative;
-  z-index: 1; /* Position below nav-right */
+  z-index: 1;
+  /* Position below nav-right */
 }
 
 .nav-right {
-  position: absolute; /* Float above nav-center */
-  right: 20px; /* Distance from the right edge */
+  position: absolute;
+  /* Float above nav-center */
+  right: 20px;
+  /* Distance from the right edge */
   top: 50%;
-  transform: translateY(-50%); /* Center vertically */
+  transform: translateY(-50%);
+  /* Center vertically */
   padding-top: 5px;
-  z-index: 2; /* Position on top of nav-center */
+  z-index: 2;
+  /* Position on top of nav-center */
 }
 
 #navbar ul {
@@ -67,7 +160,7 @@ html {
   background-color: rgba(18, 21, 38, 0.4);
   border-radius: 10px;
   padding: 10px;
-  margin-left: -65px; 
+  margin-left: -65px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -345,13 +438,22 @@ canvas {
   color: #fff;
 }
 
-.btn-1 {
-  padding: 8px 15px;
-  background-color: #132c9e;
-  color: #fff;
+/* Shared Button Styling for Submit and Download */
+.btn-shared {
+  padding: 10px 20px;
+  background-color: #2549c9;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.2s ease;
+  border: 1px solid #15337e;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-shared:hover {
+  background-color: #001870;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 
 .btn-1:hover {
@@ -582,7 +684,7 @@ canvas {
 }
 
 #aboutTop {
-  
+
   padding-right: 100px;
 }
 

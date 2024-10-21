@@ -8,6 +8,22 @@ const ctx2 = canvas2.getContext('2d');
 let showWaves = true;
 let showParticles = true;
 
+// Wave gradient colors for theme
+let waveGradientColorTop;
+let waveGradientColorBottom;
+
+// Theme initialization
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'second') {
+  document.documentElement.classList.add('second-theme');
+  waveGradientColorTop = 'rgba(251, 63, 64, 0.35)';
+  waveGradientColorBottom = 'rgba(148, 1, 21, 0.25)';
+} else {
+  document.documentElement.classList.add('default-theme');
+  waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
+  waveGradientColorBottom = 'rgba(1, 5, 53, 0.5)';
+}
+
 // Function to set canvas size and handle pixel ratio scaling
 function setCanvasSize() {
   const ratio = window.devicePixelRatio || 1;
@@ -84,12 +100,12 @@ let gradient1, gradient2;
 
 function createGradients() {
   gradient1 = ctx1.createLinearGradient(0, canvas1.height * 0.8, 0, canvas1.height);
-  gradient1.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-  gradient1.addColorStop(1, 'rgba(0, 5, 54, 0.7)');
+  gradient1.addColorStop(0, waveGradientColorTop);
+  gradient1.addColorStop(1, waveGradientColorBottom);
 
   gradient2 = ctx2.createLinearGradient(0, canvas2.height * 0.8, 0, canvas2.height);
-  gradient2.addColorStop(0, 'rgba(1, 28, 148, 0.5)');
-  gradient2.addColorStop(1, 'rgba(0, 5, 54, 0.3)');
+  gradient2.addColorStop(0, waveGradientColorTop);
+  gradient2.addColorStop(1, waveGradientColorBottom);
 }
 
 createGradients();
@@ -185,6 +201,31 @@ document.getElementById('toggleWaves').addEventListener('click', () => {
 document.getElementById('toggleParticles').addEventListener('click', () => {
   showParticles = !showParticles;
   document.getElementById('toggleParticles').innerHTML = `<i class="fas fa-star"></i> Particles - ${showParticles ? 'On' : 'Off'}`;
+});
+
+// Theme toggle logic
+document.getElementById('drop-Item').addEventListener('click', function () {
+  const isDefaultTheme = document.documentElement.classList.contains('default-theme');
+
+  if (isDefaultTheme) {
+    document.documentElement.classList.remove('default-theme');
+    document.documentElement.classList.add('second-theme');
+
+    waveGradientColorTop = 'rgba(251, 63, 64, 0.35)';
+    waveGradientColorBottom = 'rgba(148, 1, 21, 0.25)';
+
+    localStorage.setItem('theme', 'second');
+  } else {
+    document.documentElement.classList.remove('second-theme');
+    document.documentElement.classList.add('default-theme');
+
+    waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
+    waveGradientColorBottom = 'rgba(1, 5, 53, 0.5)';
+
+    localStorage.setItem('theme', 'default');
+  }
+
+  createGradients(); // Recreate gradients when the theme changes
 });
 
 // Start animation
