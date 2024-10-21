@@ -88,6 +88,11 @@ html {
   color: #c0247ac9;
 }
 
+.second-theme .lightbox .close {
+  top: 60px;
+  right: 20px;
+}
+
 .second-theme #nav-links {
   background-color: transparent;
 }

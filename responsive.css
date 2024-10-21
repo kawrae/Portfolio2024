@@ -96,6 +96,15 @@
         box-sizing: border-box;
     }
 
+    .second-theme #nav-links {
+        background-color: rgba(156, 10, 78, 0.9);
+        box-shadow: 0px 5px 30px rgba(29, 29, 29, 0.507);
+    }
+
+    .second-theme .nav-item {
+        border: 1px solid rgba(233, 226, 226, 0.116);
+    }
+
     /* Remove any margin between the links */
     #navbar li a:hover {
         background-color: rgba(255, 255, 255, 0.1);
