@@ -119,6 +119,12 @@ html {
   padding-top: 15px;
 }
 
+.social-links-footer {
+  justify-content: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+
 .btn-social,
 .btn-github,
 .btn-linkedin,
