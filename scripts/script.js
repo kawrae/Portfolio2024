@@ -18,6 +18,10 @@ if (savedTheme === 'second') {
   document.documentElement.classList.add('second-theme');
   waveGradientColorTop = 'rgba(251, 63, 64, 0.35)';
   waveGradientColorBottom = 'rgba(148, 1, 21, 0.25)';
+} else if (savedTheme === 'third') {
+  document.documentElement.classList.add('third-theme');
+  waveGradientColorTop = 'rgba(56, 239, 125, 0.35)';
+  waveGradientColorBottom = 'rgba(11, 153, 90, 0.25)';
 } else {
   document.documentElement.classList.add('default-theme');
   waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
@@ -99,6 +103,17 @@ const particles = [];
 let gradient1, gradient2;
 
 function createGradients() {
+  if (document.documentElement.classList.contains('second-theme')) {
+    waveGradientColorTop = 'rgba(255, 255, 255, 0.35)';
+    waveGradientColorBottom = 'rgba(1, 1, 21, 0.25)';
+  } else if (document.documentElement.classList.contains('third-theme')) {
+    waveGradientColorTop = 'rgba(255, 239, 255, 0.35)';
+    waveGradientColorBottom = 'rgba(11, 153, 90, 0.25)';
+  } else {
+    waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
+    waveGradientColorBottom = 'rgba(1, 5, 1, 0.5)';
+  }
+
   gradient1 = ctx1.createLinearGradient(0, canvas1.height * 0.8, 0, canvas1.height);
   gradient1.addColorStop(0, waveGradientColorTop);
   gradient1.addColorStop(1, waveGradientColorBottom);

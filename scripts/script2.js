@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'second') {
     document.documentElement.classList.add('second-theme'); // Apply theme to html
-    waveGradientColorTop = 'rgba(251, 63, 64, 0.35)';
-    waveGradientColorBottom = 'rgba(148, 1, 21, 0.25)';
+    waveGradientColorTop = 'rgba(255, 255, 255, 0.35)';
+    waveGradientColorBottom = 'rgba(1, 1, 1, 0.25)';
   } else {
     document.documentElement.classList.add('default-theme'); // Apply theme to html
     waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
@@ -175,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
       document.documentElement.classList.remove('default-theme');
       document.documentElement.classList.add('second-theme');
 
-      waveGradientColorTop = 'rgba(251, 63, 64, 0.35)';
-      waveGradientColorBottom = 'rgba(148, 1, 21, 0.25)';
+      waveGradientColorTop = 'rgba(255, 255, 255, 0.35)';
+      waveGradientColorBottom = 'rgba(1, 1, 1, 0.25)';
 
       localStorage.setItem('theme', 'second');
     } else {
