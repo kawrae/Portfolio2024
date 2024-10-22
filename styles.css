@@ -84,6 +84,10 @@ html {
   transition: color 0s;
 }
 
+.second-theme #uni:visited:hover {
+  color: darkgray;
+}
+
 .second-theme .toggle-btn:hover,
 .second-theme .collapse-btn:hover {
   color: #faf7f7c9;
@@ -234,7 +238,7 @@ html {
 }
 
 #uni:visited:hover {
-  color: gray;
+  color: #43d5e0;
   text-decoration: none;
 }
 
