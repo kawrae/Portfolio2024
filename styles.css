@@ -4,7 +4,6 @@ html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 90%);
   overflow: hidden;
 }
 
@@ -13,53 +12,54 @@ html {
 /* Default Theme */
 .default-theme body,
 .default-theme html {
-    background-image: linear-gradient(-135deg, rgb(0, 5, 54) 25%, rgb(1, 28, 148) 90%);
-    color: white;
+  background-image: linear-gradient(-135deg, rgb(0, 172, 240) 0%, rgb(36, 21, 173) 50%, rgb(4, 31, 90) 100%);
+  color: white;
 }
 
 /* Second Theme */
 .second-theme body,
 .second-theme html {
-    background-image: linear-gradient(-135deg, rgb(135, 0, 94) 0%, rgb(173, 21, 85) 50%, rgb(251, 63, 64) 100%);
-    color: #fff;
+  background-image: linear-gradient(-135deg, rgb(0, 0, 0) 55%, rgb(253, 253, 253) 125%);
+  color: #fff;
 }
 
 .second-theme #navbar {
-    background-image: linear-gradient(-135deg, rgba(135, 0, 94, 0.2) 25%, rgba(251, 63, 64, 0.2) 100%);
+  background-image: linear-gradient(-135deg, rgba(44, 39, 43, 0.2) 25%, rgba(100, 96, 96, 0.2) 100%);
 }
 
 .second-theme .about-me-heading {
-    color: #fff; /* Adjust text color */
+  color: #fff;
+  /* Adjust text color */
 }
 
 .second-theme #main-content2 {
-  background-color: rgb(33, 18, 37);
+  background-color: rgb(17, 16, 16);
 }
 
 .second-theme .colored-bar {
-  background-color: #eb1e8fc9 !important;
+  background-color: #ffffffc9 !important;
 }
 
 .second-theme .btn-social {
-    background-color: #d92367;
+  background-color: #ffffffc9;
 }
 
 .second-theme .heading-underline {
-    background-color: #ec4593;
+  background-color: #ffffffc9;
 }
 
 .second-theme .about-card,
 .second-theme .blog-card {
-  background-color: rgb(55, 25, 49);
-  border-left: 2px solid #eb1e8fc9;
+  background-color: rgb(44, 42, 42);
+  border-left: 2px solid #ffffffc9;
 }
 
 .second-theme .avatar-img {
-  border-left: 0.2rem solid #eb1e8fc9;
+  border-left: 0.2rem solid #ffffffc9;
 }
 
 .second-theme .footer {
-  border-top: 2px solid #eb1e8fc9;
+  border-top: 2px solid #ffffffc9;
 }
 
 .second-theme .footer-bottom {
@@ -67,25 +67,26 @@ html {
 }
 
 .second-theme .btn-shared {
-  background-color: #eb1e8fc9;
-  border: 1px solid #ec4593;
+  background-color: #ffffffc9;
+  border: 1px solid #302e2ec9;
+  color: black;
   transition: color 0s;
 }
 
 .second-theme .btn-shared:hover {
-  background-color: #750543c9;
-  border: 1px solid #ca1a6c;
+  background-color: #161616c9;
+  border: 1px solid #f3f3f3;
 }
 
 .second-theme .toggle-btn,
 .second-theme .collapse-btn {
-  color: hsla(327, 100%, 81%, 0.788);
+  color: #aaa7a7c9;
   transition: color 0s;
 }
 
 .second-theme .toggle-btn:hover,
 .second-theme .collapse-btn:hover {
-  color: #c0247ac9;
+  color: #faf7f7c9;
 }
 
 .second-theme .lightbox .close {
@@ -96,6 +97,28 @@ html {
 .second-theme #nav-links {
   background-color: transparent;
 }
+
+/* Third Theme */
+.third-theme body,
+.third-theme html {
+  background-image: linear-gradient(-135deg, rgb(56, 239, 125) 0%, rgb(28, 187, 118) 50%, rgb(11, 153, 90) 100%);
+  color: #fff;
+}
+
+.third-theme #navbar {
+  background-image: linear-gradient(-135deg, rgba(56, 239, 125, 0.2) 25%, rgba(11, 153, 90, 0.2) 100%);
+}
+
+.third-theme .btn-social {
+  background-color: #0b9960;
+}
+
+.third-theme .colored-bar,
+.third-theme .footer {
+  background-color: #0b9960 !important;
+}
+
+/* Add additional styles for the third theme */
 
 /* Themes End */
 
