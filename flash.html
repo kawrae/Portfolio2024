@@ -24,21 +24,25 @@
         /* Gallery Start */
         /* Image grid styling */
         .gallery-container {
-            padding: 0px;
+            padding: 20px 0;
         }
 
         .gallery-container .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 20px;
+            padding: 10px;
         }
 
         .gallery-container .gallery-grid img {
             width: 100%;
+            height: auto;
             aspect-ratio: 1 / 1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             object-fit: cover;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-container .gallery-grid img:hover {
@@ -182,7 +186,7 @@
 
     <div id="waves-container2">
         <div class="heading-container">
-            <h1 class="heading-text pt-5">Tattoo Flash</h1>
+            <h1 class="heading-text pt-5">Flash</h1>
             <div class="heading-underline"></div>
         </div>
 
@@ -215,6 +219,9 @@
                                 <img src="imgs/gallery/p16.jpg" alt="Gallery Image 16" class="gallery-img">
                                 <img src="imgs/gallery/p17.jpg" alt="Gallery Image 17" class="gallery-img">
                                 <img src="imgs/gallery/p18.jpg" alt="Gallery Image 18" class="gallery-img">
+                                <img src="imgs/gallery/p19.jpg" alt="Gallery Image 19" class="gallery-img">
+                                <img src="imgs/gallery/p20.jpg" alt="Gallery Image 20" class="gallery-img">
+                                <img src="imgs/gallery/p21.jpg" alt="Gallery Image 21" class="gallery-img">
                             </div>
                         </div>
 
