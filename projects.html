@@ -91,6 +91,31 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 2;
         }
+
+        /* Styling for Carousel */
+        .carousel-inner img {
+            width: 100%;
+            /* Ensure the image takes the full width of the carousel */
+            height: 300px;
+            /* Set a fixed height for the images */
+            object-fit: cover;
+            /* Ensures the image is resized without distortion */
+            object-position: center;
+            /* Center the image within the container */
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            /* Optional: add a shadow for a polished look */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(0);
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            filter: invert(0.5);
+        }
     </style>
 </head>
 
@@ -181,15 +206,15 @@
                                                 <h2 style="font-size: 27px;">Horror Game Alpha V1.0</h2>
                                             </div>
                                         </div>
-                                        <div class="col text-right">
+                                        <div class="col-md-0 text-right" style="padding-right: 10px;">
                                             <div class="download-button-container">
                                                 <a href="https://www.mediafire.com/file/wr56nglsllpa2qq/NASTYBJ_HorrorGame.zip/file"
-                                                    target="_blank" download class="btn-shared">Download</a>
-
+                                                    target="_blank" class="btn-shared">Download</a>
                                             </div>
                                         </div>
                                     </div>
 
+                                    
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
@@ -202,34 +227,64 @@
                                     </div>
 
                                     <!-- Hidden Information -->
-                                    <div id="hiddenInfo1" class="hidden-info">
-                                        <p>
-                                            <strong>Horror Game Alpha V1.0</strong> is an unfinished first-person horror
-                                            experience where players navigate through a dark, eerie environment.
-                                        </p>
-                                        <p>
-                                            <strong>Features:</strong>
-                                        <ul>
-                                            <li>Dynamic lighting and realistic sound effects to enhance the atmosphere.
-                                            </li>
-                                            <li>Jumpscare trigger technology as well as an interactive inventory system.
-                                            </li>
-                                            <li>Object interaction, advanced movement, and level progression.</li>
-                                        </ul>
-                                        </p>
-                                        <p>
-                                            This is an early alpha version, so there may be bugs and the game is far
-                                            from completion. This project served as a general insight into techniques
-                                            using C# and familiarizing myself with the Unity Engine UX. Feedback is
-                                            welcome!
-                                        </p>
-                                    </div>
+                                    <div id="hiddenInfo1" class="hidden-info" style="display: none;">
+                                        <div class="row">
+                                            <!-- Carousel Section -->
+                                            <div class="col-md-6">
+                                                <div id="carouselHorrorGame" class="carousel slide"
+                                                    data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="imgs/nbj1.png" class="d-block w-100"
+                                                                alt="Horror Game Screenshot 1">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="imgs/nbj2.png" class="d-block w-100"
+                                                                alt="Horror Game Screenshot 2">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="imgs/nbj3.png" class="d-block w-100"
+                                                                alt="Horror Game Screenshot 3">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="imgs/nbj4.png" class="d-block w-100"
+                                                                alt="Horror Game Screenshot 4">
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" href="#carouselHorrorGame"
+                                                        role="button" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselHorrorGame"
+                                                        role="button" data-slide="next">
+                                                        <span class="carousel-control-next-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </div>
+                                            </div>
 
-                                    <!-- Date Section -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-left">
-                                            <p class="post-date" style="color: gray; margin-top: 10px;">Published on:
-                                                10th February 2023</p>
+                                            <!-- Game Info Section -->
+                                            <div class="col-md-6">
+                                                <h3>About the Game</h3>
+                                                <p><strong>Horror Game Alpha V1.0</strong> is an unfinished first-person
+                                                    horror experience where players navigate through a dark, eerie
+                                                    environment.</p>
+                                                <ul>
+                                                    <li>Dynamic lighting and realistic sound effects to enhance the
+                                                        atmosphere.</li>
+                                                    <li>Jumpscare trigger technology as well as an interactive inventory
+                                                        system.</li>
+                                                    <li>Object interaction, advanced movement, and level progression.
+                                                    </li>
+                                                </ul>
+                                                <p>This is an early alpha version, so there may be bugs and the game is
+                                                    far from completion. Feedback is welcome!</p>
+                                                <p class="post-date" style="color: gray; margin-top: 10px;">Published
+                                                    on: 10th February 2024</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -243,13 +298,14 @@
                                                 <h2 style="font-size: 27px;">Free Roam Game Project</h2>
                                             </div>
                                         </div>
-                                        <div class="col text-right">
+                                        <div class="col-md-0 text-right" style="padding-right: 10px;">
                                             <div class="download-button-container">
                                                 <a href="https://www.mediafire.com/file/oicujy796c0w37v/FreeRoam_GameProject.zip/file"
                                                     target="_blank" download class="btn-shared">Download</a>
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- Toggle Button for More Info -->
                                     <div class="row">
                                         <div class="col-md-12">
@@ -260,14 +316,57 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Hidden Information -->
-                                    <div id="hiddenInfo2" class="hidden-info">
-                                        <p>
-                                            This game is a very basic and unfinished attempt at a GTA-like game. This is
-                                            a quick mess around more than anything else, yet it still displays use of
-                                            player movement handling, controversial car movement, and car interaction.
-                                        </p>
-                                        <p>Bugs to be highly expected.</p>
+
+                                    <!-- Hidden Information with Carousel and Game Details -->
+                                    <div id="hiddenInfo2" class="hidden-info" style="display: none;">
+                                        <div class="row">
+                                            <!-- Carousel Section -->
+                                            <div class="col-md-6">
+                                                <div id="carouselFreeRoam" class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="imgs/game2.png" class="d-block w-100"
+                                                                alt="Free Roam Game Screenshot 1">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="imgs/game3.png" class="d-block w-100"
+                                                                alt="Free Roam Game Screenshot 2">
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" href="#carouselFreeRoam"
+                                                        role="button" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselFreeRoam"
+                                                        role="button" data-slide="next">
+                                                        <span class="carousel-control-next-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Game Details Section -->
+                                            <div class="col-md-6">
+                                                <p><strong>Free Roam Game Project</strong> is an early prototype for an
+                                                    open-world game inspired by GTA mechanics. It focuses on car
+                                                    physics, player movement, and city exploration.</p>
+                                                <p><strong>Features:</strong></p>
+                                                <ul>
+                                                    <li>Basic car driving with free roam capabilities.</li>
+                                                    <li>First-person driving for immersive gameplay.</li>
+                                                    <li>Basic collision and AI logic (in development).</li>
+                                                </ul>
+                                                <p>This experimental project explores free roam elements, car handling,
+                                                    and city design. Bugs and incomplete features are expected. Feedback
+                                                    is welcome!</p>
+                                                <p class="post-date" style="color: gray; margin-top: 10px;">Published
+                                                    on: 15th December 2023</p>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Project Card 2 -->
