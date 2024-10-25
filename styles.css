@@ -456,9 +456,15 @@ canvas {
   height: auto;
 }
 
-.img-ForF {
+.img-ForF, .img-networking {
   height: 250px;
 }
+
+.img-research {
+  height: 300px;
+}
+
+
 
 @keyframes fadeIn {
   from {
