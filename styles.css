@@ -465,6 +465,45 @@ canvas {
 }
 
 
+/* Container styling for overall spacing */
+#professionalism-container {
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-bottom: 20px;
+}
+
+/* Styling for each column */
+#commitment, #integrity, #responsibility, #accountability {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+#commitment:hover, #integrity:hover, #responsibility:hover, #accountability:hover {
+    transform: scale(1.01);
+}
+
+/* Adjust font size and line height for readability */
+#commitment p, #integrity p, #responsibility p, #accountability p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Alternate background color for visual variety */
+#integrity, #accountability {
+    background-color: #252525;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    #professionalism-container {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+}
 
 @keyframes fadeIn {
   from {
