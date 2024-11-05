@@ -272,10 +272,26 @@ html {
   color: white;
   padding: 10px 50px;
   text-decoration: none;
-  border-radius: 15px;
-  border: 1px solid;
-  box-shadow: 0 2px 8px rgba(185, 176, 241, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  border:2px solid rgb(255 255 255/20%);
+  transition:all .1s ease-in-out 0s;
+}
+
+.btn-github {
+  box-shadow:rgba(130,86,208,.5) 0 8px 24px 0;
+}
+
+.btn-linkedin,
+.btn-chrome {
+  box-shadow:rgba(181, 124, 0, .5) 0 8px 24px 0;
+}
+
+.btn-steam {
+  box-shadow: rgba(0, 243, 93, .2) 0 8px 24px 0;
+}
+
+.btn-vscode {
+  box-shadow: rgba(0, 194, 243, 0.2) 0 8px 24px 0;
 }
 
 .non-clickable {
@@ -529,19 +545,24 @@ canvas {
 
 /* Shared Button Styling for Submit and Download */
 .btn-shared {
+  font-size: 16px;
+  height: 100%;
+  text-shadow: rgba(0,0,0,.25) 0 2px 2px;
   padding: 10px 20px;
-  background-color: #2549c9;
+  background:linear-gradient(-135deg,rgb(73,164,255) 25%,rgb(0,116,231) 100%);
+  box-shadow:rgba(0,116,231,.4) 0 10px 32px 0;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  border: 1px solid #15337e;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius:46px;
+  border:1px solid #0080ff!important;
+  transition:all .1s ease-in-out 0s;
 }
 
 .btn-shared:hover {
-  background-color: #001870;
+	background:linear-gradient(-135deg,rgb(46,204,113) 25%,rgb(26,188,156) 100%);
+	box-shadow:rgba(46,204,113,.4) 0 10px 32px 0;
+	border:1px solid #57e694!important;
   color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
 
@@ -644,13 +665,13 @@ canvas {
   font-family: Arial, sans-serif;
   color: #ddd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:all .1s ease-in-out 0s;
 }
 
 .profile-card:hover,
 .about-card:hover,
 .blog-card:hover {
-  transform: scale(1.02);
+  transform:translate(0px,-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
@@ -763,10 +784,10 @@ canvas {
 .about-card {
   margin-top: 20px;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
   background-color: rgb(25, 31, 55);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow:rgba(0,0,0,.1) 0 10px 32px 0;
+  transition:all .1s ease-in-out 0s;
   border-left: 2px solid #1e3debc9;
   position: relative;
   /* Subtle border to add a pop of color */
@@ -778,7 +799,7 @@ canvas {
 }
 
 .about-card:hover {
-  transform: scale(1.02);
+  transform:translate(0px,-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
@@ -787,11 +808,11 @@ canvas {
 .blog-card {
   margin-top: 20px;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid #2c2f33;
   background-color: rgb(25, 31, 55);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow:rgba(0,0,0,.1) 0 10px 32px 0;
+  transition:all .1s ease-in-out 0s;
   border-left: 2px solid #1e3debc9;
 }
 
