@@ -49,11 +49,6 @@
             margin-right: 5px;
         }
 
-        .blog-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
-        }
-
         .toggle-btn {
             cursor: pointer;
             color: #7289da;
@@ -61,14 +56,6 @@
 
         .toggle-btn:hover {
             text-decoration: underline;
-        }
-
-        .creative-tech-heading {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
         }
 
         #main-content2 {
@@ -150,15 +137,16 @@
                         <i class="fas fa-cog"></i> Settings
                     </a>
                     <div class="dropdown-menu dropdown-menu-custom" id="drop-Menu">
+                        <a class="dropdown-item" id="drop-Item" href="#">
+                            <i class="fas fa-palette"></i> Dark Theme - On
+                        </a>
                         <a class="dropdown-item" id="toggleParticles" href="#">
                             <i class="fas fa-star"></i> Particles - On
                         </a>
                         <a class="dropdown-item" id="toggleWaves" href="#">
                             <i class="fas fa-water"></i> Waves - On
                         </a>
-                        <a class="dropdown-item" id="drop-Item" href="#">
-                            <i class="fas fa-palette"></i> Change Theme
-                        </a>
+
                     </div>
                 </li>
             </ul>
@@ -181,10 +169,10 @@
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
-
                         <!-- Content heading -->
-                        <div class="creative-tech-heading">
-                            <span class="colored-bar"></span>Creative Tech Professionalism
+                        <div class="content-heading">
+                            <span class="colored-bar"></span>
+                            Creative Tech Professionalism Blog
                         </div>
 
                         <div class="row">
@@ -194,27 +182,19 @@
                                 <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">IP Rights and Their Importance in the
-                                                    Creative Industries
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="post-title">
+                                                    <h2 style="font-size: 25px;">IP Rights and Their Importance in the
+                                                        Creative Industries</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent5', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Expand Blog Post
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <div class="gradient-bar"></div>
 
                                     <!-- Blog Content -->
                                     <div id="hiddenInfo2" class="hidden-info"
-                                        style="display: block;  border-top: 1px solid #4e4f52;">
+                                        >
 
                                         <!-- Full Blog Content -->
                                         <div id="fullBlogContent5" class="hidden-info" style="display: none;">
@@ -425,21 +405,24 @@
                                         </div>
                                     </div>
 
-                                    <!-- Collapse Info Button at the Bottom -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <button class="collapse-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent5', this)" style="display: none;">
-                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
-                                                Collapse Blog Post
+                                    <!-- Date and Toggle Button Section -->
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col">
+                                            <!-- Date Section -->
+                                            <div class="post-date text-left">
+                                                <p>Release Date: 24-10-2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <!-- Toggle Button for More Info -->
+                                            <button class="btn-shared toggle-info-btn"
+                                                onclick="toggleInfo('fullBlogContent5', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
                                             </button>
                                         </div>
                                     </div>
 
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: October 24th, 2024</p>
-                                    </div>
+
                                 </div>
                                 <!-- End Blog Post 5 -->
 
@@ -447,28 +430,19 @@
                                 <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">Does Professionalism Apply to
-                                                    the Creative
-                                                    Industries?</h2>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="post-title">
+                                                    <h2 style="font-size: 25px;">
+                                                        Does Professionalism Apply to the Creative Industries
+                                                    </h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent4', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Expand Blog Post
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <div class="gradient-bar"></div>
 
                                     <!-- Blog Content -->
-                                    <div id="hiddenInfo2" class="hidden-info"
-                                        style="display: block;  border-top: 1px solid #4e4f52;">
+                                    <div id="hiddenInfo2" class="hidden-info">
 
                                         <!-- Full Blog Content -->
                                         <div id="fullBlogContent4" class="hidden-info" style="display: none;">
@@ -786,20 +760,21 @@
                                         </div>
                                     </div>
 
-                                    <!-- Collapse Info Button at the Bottom -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <button class="collapse-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent4', this)" style="display: none;">
-                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
-                                                Collapse Blog Post
+                                    <!-- Date and Toggle Button Section -->
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col">
+                                            <!-- Date Section -->
+                                            <div class="post-date text-left">
+                                                <p>Release Date: 17-10-2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <!-- Toggle Button for More Info -->
+                                            <button class="btn-shared toggle-info-btn"
+                                                onclick="toggleInfo('fullBlogContent4', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: October 17th, 2024</p>
                                     </div>
                                 </div>
 
@@ -807,28 +782,19 @@
                                 <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">The Importance of Networking in
-                                                    the
-                                                    Creative Industries</h2>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="post-title">
+                                                    <h2 style="font-size: 25px;">
+                                                        The Importance of Networking in the Creative Industries
+                                                    </h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent3', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Expand Blog Post
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <div class="gradient-bar"></div>
 
                                     <!-- Blog Content -->
-                                    <div id="hiddenInfo2" class="hidden-info"
-                                        style="display: block;   border-top: 1px solid #4e4f52;">
+                                    <div id="hiddenInfo2" class="hidden-info">
 
                                         <!-- Full Blog Content -->
                                         <div id="fullBlogContent3" class="hidden-info" style="display: none;">
@@ -1095,7 +1061,7 @@
                                             <div id="connectWith" style="margin-right: 5px;">
                                                 <div class="social-links mb-2 mr-4" style="justify-content: right;">
                                                     <a href="https://www.linkedin.com/in/corey-black-92526532b/"
-                                                        class="btn-linkedin">
+                                                        class="btn-linkedin" target="_blank">
                                                         <i class="fab fa-dribbble"></i> LinkedIn
                                                     </a>
                                                     <a href="#" class="btn-vscode non-clickable">
@@ -1131,20 +1097,21 @@
                                         </div>
                                     </div>
 
-                                    <!-- Collapse Info Button at the Bottom -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <button class="collapse-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent3', this)" style="display: none;">
-                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
-                                                Collapse Blog Post
+                                    <!-- Date and Toggle Button Section -->
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col">
+                                            <!-- Date Section -->
+                                            <div class="post-date text-left">
+                                                <p>Release Date: 10-10-2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <!-- Toggle Button for More Info -->
+                                            <button class="btn-shared toggle-info-btn"
+                                                onclick="toggleInfo('fullBlogContent3', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: October 10th, 2024</p>
                                     </div>
                                 </div>
                                 <!-- End Blog Post 3 -->
@@ -1153,28 +1120,20 @@
                                 <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">Working in the Creative
-                                                    Industries: Is
-                                                    Freelancing the Road to Success?</h2>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="post-title">
+                                                    <h2 style="font-size: 25px;">
+                                                        Working in the Creative Industires: Is Freelancing the Road to
+                                                        Success?
+                                                    </h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent2', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Expand Blog Post
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <div class="gradient-bar"></div>
 
                                     <!-- Blog Content -->
-                                    <div id="hiddenInfo2" class="hidden-info"
-                                        style="display: block;   border-top: 1px solid #4e4f52;">
+                                    <div id="hiddenInfo2" class="hidden-info">
 
                                         <!-- Full Blog Content -->
                                         <div id="fullBlogContent2" class="hidden-info" style="display: none;">
@@ -1554,20 +1513,21 @@
                                         </div>
                                     </div>
 
-                                    <!-- Collapse Info Button at the Bottom -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <button class="collapse-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent2', this)" style="display: none;">
-                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
-                                                Collapse Blog Post
+                                    <!-- Date and Toggle Button Section -->
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col">
+                                            <!-- Date Section -->
+                                            <div class="post-date text-left">
+                                                <p>Release Date: 03-10-2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <!-- Toggle Button for More Info -->
+                                            <button class="btn-shared toggle-info-btn"
+                                                onclick="toggleInfo('fullBlogContent2', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: October 3rd, 2024</p>
                                     </div>
                                 </div>
                                 <!-- End Blog Post 2 -->
@@ -1576,31 +1536,19 @@
                                 <div class="blog-card">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="post-title">
-                                                <h2 style="font-size: 25px;">The Fundamentals of Creating a
-                                                    Good Online
-                                                    Presence</h2>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="post-title">
+                                                    <h2 style="font-size: 25px;">
+                                                        The Fundamentals of Creating a Good Online Presenece
+                                                    </h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent1', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
-                                                Expand Blog Post
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <div class="gradient-bar"></div>
 
                                     <!-- Blog Content -->
-                                    <div id="hiddenInfo1" class="hidden-info"
-                                        style="display: block;  border-top: 1px solid #4e4f52;">
-                                        <p>
-                                            <!-- Potential Card Preview Spot -->
-                                        </p>
+                                    <div id="hiddenInfo2" class="hidden-info">
 
                                         <!-- Full Blog Content -->
                                         <div id="fullBlogContent1" class="hidden-info" style="display: none;">
@@ -1844,8 +1792,7 @@
                                                     <a href="#" target="_blank" class="btn-chrome"><i
                                                             class="fab fa-chrome"></i> Instagram</a>
                                                     <a href="https://www.linkedin.com/in/corey-black-92526532b/"
-                                                        target="_blank" class="btn btn-steam"
-                                                        style="pointer-events: none;">
+                                                        target="_blank" class="btn-steam" style="pointer-events: none;">
                                                         <i class="fab fa-linkedin"></i> LinkedIn
                                                     </a>
                                                 </div>
@@ -2056,20 +2003,21 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <!-- Collapse Info Button at the Bottom -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-right">
-                                            <button class="collapse-btn btn btn-link"
-                                                onclick="toggleInfo('fullBlogContent1', this)" style="display: none;">
-                                                <span class="arrow"><i class="fas fa-arrow-up"></i></span>
-                                                Collapse Blog Post
+                                    <!-- Date and Toggle Button Section -->
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col">
+                                            <!-- Date Section -->
+                                            <div class="post-date text-left">
+                                                <p>Release Date: 26-09-2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col text-right">
+                                            <!-- Toggle Button for More Info -->
+                                            <button class="btn-shared toggle-info-btn"
+                                                onclick="toggleInfo('fullBlogContent1', this)">
+                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span>
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- Date Section -->
-                                    <div class="post-date text-left" style="margin-top: 10px; color: gray;">
-                                        <p>Published on: September 26th, 2024</p>
                                     </div>
                                 </div>
                                 <!-- End Blog Post 1 -->
@@ -2106,34 +2054,41 @@
         </div>
     </footer>
 
-    <!-- Script for content hide button -->
     <script>
         function toggleInfo(contentId, button) {
             const content = document.getElementById(contentId);
-            const blogCard = button.closest('.blog-card');
-            const topButton = blogCard.querySelector('.toggle-btn');
-            const bottomButton = blogCard.querySelector('.collapse-btn');
+            const isHidden = content.style.display === "none" || content.style.display === "";
 
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                topButton.querySelector('.arrow i').classList.remove('fa-arrow-down');
-                topButton.querySelector('.arrow i').classList.add('fa-arrow-up');
-                topButton.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Collapse Blog Post';
-                if (bottomButton) {
-                    bottomButton.style.display = 'inline-block';
-                }
+            // Toggle content visibility
+            content.style.display = isHidden ? "block" : "none";
+
+            // Update arrow direction and button text
+            const arrowIcon = button.querySelector('.arrow i');
+            if (isHidden) {
+                arrowIcon.classList.remove('fa-arrow-down');
+                arrowIcon.classList.add('fa-arrow-up');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span>';
             } else {
-                content.style.display = "none";
-                topButton.querySelector('.arrow i').classList.remove('fa-arrow-up');
-                topButton.querySelector('.arrow i').classList.add('fa-arrow-down');
-                topButton.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand Blog Post';
-                if (bottomButton) {
-                    bottomButton.style.display = 'none';
-                }
+                arrowIcon.classList.remove('fa-arrow-up');
+                arrowIcon.classList.add('fa-arrow-down');
+                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span>';
             }
         }
 
+        // Initialize all blog content sections to be hidden on page load
+        window.addEventListener("load", function () {
+            for (let i = 1; i <= 5; i++) {
+                const content = document.getElementById(`fullBlogContent${i}`);
+                if (content) {
+                    content.style.display = "none"; // Ensure all hidden content starts collapsed
+                }
+            }
+        });
     </script>
+
+
+
+
 
     <!-- External Wave & Particle script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -2145,8 +2100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="scripts/waves2.js"></script>
-    <script src="scripts/particles.js"></script>
+    <script src="scripts/script2.js"></script>
     <script src="scripts/navToggler.js"></script>
 
 </body>

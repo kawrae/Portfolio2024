@@ -13,46 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-        html,
-        body {
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: #111;
-            color: #fff;
-        }
-
-        #main-content2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-        .about-me-heading {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .laptop-image {
-            position: absolute;
-            right: -120px;
-            top: 50%;
-            transform: translateY(-50%) rotate(10deg);
-            height: auto;
-            max-height: 300px;
-            opacity: 0.8;
-            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
-            z-index: 1;
-        }
-
-        .communicate {
-            width: auto;
-            max-height: 80px;
-        }
-
         @media screen and (max-width: 770px) {
             .img-fluid {
                 width: 100%;
@@ -78,49 +38,10 @@
                 margin-bottom: 0px;
             }
         }
-
-        /* Avatar Image */
-        .avatar-img {
-            position: absolute;
-            top: -30px;
-            right: 35px;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border-left: 0.2rem solid #1e3debc9;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-
-        /* Styling for Carousel */
-        .carousel-inner img {
-            width: 100%;
-            /* Ensure the image takes the full width of the carousel */
-            height: 300px;
-            /* Set a fixed height for the images */
-            object-fit: cover;
-            /* Ensures the image is resized without distortion */
-            object-position: center;
-            /* Center the image within the container */
-            border-radius: 12px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            /* Optional: add a shadow for a polished look */
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(0);
-        }
-
-        .carousel-control-prev-icon:hover,
-        .carousel-control-next-icon:hover {
-            filter: invert(0.5);
-        }
     </style>
 </head>
 
 <body id="about-page">
-    <!-- Navbar with centered links and right-aligned Settings -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid d-flex">
             <!-- Hamburger Menu -->
@@ -160,21 +81,20 @@
                         <i class="fas fa-cog"></i> Settings
                     </a>
                     <div class="dropdown-menu dropdown-menu-custom" id="drop-Menu">
+                        <a class="dropdown-item" id="drop-Item" href="#">
+                            <i class="fas fa-palette"></i> Dark Theme - On
+                        </a>
                         <a class="dropdown-item" id="toggleParticles" href="#">
                             <i class="fas fa-star"></i> Particles - On
                         </a>
                         <a class="dropdown-item" id="toggleWaves" href="#">
                             <i class="fas fa-water"></i> Waves - On
                         </a>
-                        <a class="dropdown-item" id="drop-Item" href="#">
-                            <i class="fas fa-palette"></i> Change Theme
-                        </a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-
 
     <div id="waves-container2">
         <div class="heading-container">
@@ -191,83 +111,108 @@
             <div class="col pl-0">
                 <div id="main-content2">
                     <div class="container">
-                        <!-- Content heading -->
-                        <div class="about-me-heading">
-                            <span class="colored-bar"></span>Past Projects
+                        <div class="content-heading">
+                            <span class="colored-bar"></span>
+                            Latest Builds
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- Project Card 1 -->
-                                <div class="blog-card">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="download-text">
-                                                <h2 style="font-size: 27px;">Horror Game Alpha V1.0</h2>
+                                <!-- Game Dev Info Start -->
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="project-card p-4"
+                                            style="display: flex; align-items: center; overflow: hidden;">
+                                            <!-- Icon Image -->
+                                            <img src="imgs/gamepad.png" class="communicate ml-2 mr-3"
+                                                alt="Console Gamepad Icon" style="width: 60px; height: 60px;">
+
+                                            <!-- Content Section -->
+                                            <div class="content" style="flex: 1;">
+                                                <h3 style="font-weight: bold; margin-bottom: 10px;" class="gd-heading">
+                                                    <i class="fas fa-code"></i> Game Development Projects
+                                                </h3>
+                                                <p style="margin-bottom: 15px; font-size: 16px; line-height: 1.5;">
+                                                    These game development projects showcase my experience in creating
+                                                    interactive and engaging games using Unity and C#. From gameplay
+                                                    mechanics to advanced animation, these projects demonstrate my
+                                                    skills in programming and design.
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="col-md-0 text-right" style="padding-right: 10px;">
-                                            <div class="download-button-container">
-                                                <a href="https://www.mediafire.com/file/wr56nglsllpa2qq/NASTYBJ_HorrorGame.zip/file"
-                                                    target="_blank" class="btn-shared">Download</a>
+
+                                            <!-- GitHub Button -->
+                                            <div style="text-align: right;">
+                                                <a href="https://github.com/kawrae" target="_blank" class="btn-github"
+                                                    style="font-weight: 600; padding: 10px 20px;">
+                                                    <i class="fab fa-github"></i> View on GitHub
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('hiddenInfo1', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand
-                                                Project
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Hidden Information -->
-                                    <div id="hiddenInfo1" class="hidden-info" style="display: none;">
-                                        <div class="row">
-                                            <!-- Carousel Section -->
-                                            <div class="col-md-6">
-                                                <div id="carouselHorrorGame" class="carousel slide"
-                                                    data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="imgs/nbj1.png" class="d-block w-100"
-                                                                alt="Horror Game Screenshot 1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="imgs/nbj2.png" class="d-block w-100"
-                                                                alt="Horror Game Screenshot 2">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="imgs/nbj3.png" class="d-block w-100"
-                                                                alt="Horror Game Screenshot 3">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="imgs/nbj4.png" class="d-block w-100"
-                                                                alt="Horror Game Screenshot 4">
-                                                        </div>
-                                                    </div>
-                                                    <a class="carousel-control-prev" href="#carouselHorrorGame"
-                                                        role="button" data-slide="prev">
-                                                        <span class="carousel-control-prev-icon"
-                                                            aria-hidden="true"></span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                    <a class="carousel-control-next" href="#carouselHorrorGame"
-                                                        role="button" data-slide="next">
-                                                        <span class="carousel-control-next-icon"
-                                                            aria-hidden="true"></span>
-                                                        <span class="sr-only">Next</span>
-                                                    </a>
+                                </div>
+                                <!-- Game Dev Info End -->
+                                <div class="row">
+                                    <!-- Project Card 1 -->
+                                    <div class="col-md-6">
+                                        <div class="project-card p-4 mb-4 d-flex flex-column">
+                                            <!-- Header Section -->
+                                            <div class="project-header d-flex align-items-center mb-3">
+                                                <div>
+                                                    <h2 class="project-title">NBJ Horror Story</h2>
+                                                    <p class="release-date">This build was released on 10-02-2024</p>
                                                 </div>
                                             </div>
 
-                                            <!-- Game Info Section -->
-                                            <div class="col-md-6">
+                                            <!-- Project Description (Visible always) -->
+                                            <p class="project-description">
+                                                Horror Game Alpha V1.0 is an immersive first-person horror experience
+                                                built in Unity and C#. Explore eerie environments, encounter jumpscares,
+                                                and navigate through dark, atmospheric levels in this alpha release.
+                                            </p>
+
+                                            <!-- Metadata Section -->
+                                            <div
+                                                class="project-metadata d-flex justify-content-between align-items-center mt-1 mb-4">
+                                                <div class="metadata-item">
+                                                    <strong>VER:</strong> <span class="hash">1.0.0</span>
+                                                </div>
+                                                <div class="metadata-item">
+                                                    <strong>Size:</strong> 1023.3 MB
+                                                </div>
+                                            </div>
+
+                                            <!-- Carousel Section -->
+                                            <div id="carouselHorrorGame" class="carousel slide mb-4"
+                                                data-ride="carousel">
+                                                <div class="carousel-inner rounded">
+                                                    <div class="carousel-item active">
+                                                        <img src="imgs/nbj1.png" class="d-block w-100"
+                                                            alt="Screenshot 1">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="imgs/nbj2.png" class="d-block w-100"
+                                                            alt="Screenshot 2">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="imgs/nbj3.png" class="d-block w-100"
+                                                            alt="Screenshot 3">
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselHorrorGame"
+                                                    role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselHorrorGame"
+                                                    role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+
+                                            <!-- Collapsible About Section (Initially hidden) -->
+                                            <div id="aboutGameSection" class="about-game-section mt-3"
+                                                style="display: none;">
                                                 <h3>About the Game</h3>
                                                 <p><strong>Horror Game Alpha V1.0</strong> is an unfinished first-person
                                                     horror experience where players navigate through a dark, eerie
@@ -282,157 +227,168 @@
                                                 </ul>
                                                 <p>This is an early alpha version, so there may be bugs and the game is
                                                     far from completion. Feedback is welcome!</p>
-                                                <p class="post-date" style="color: gray; margin-top: 10px;">Published
-                                                    on: 10th February 2024</p>
+                                            </div>
+
+                                            <!-- Footer Section with Toggle and Download Button -->
+                                            <div
+                                                class="card-footer mt-auto d-flex justify-content-between align-items-center">
+                                                <a href="https://www.mediafire.com/file/wr56nglsllpa2qq/NASTYBJ_HorrorGame.zip/file"
+                                                    target="_blank" class="btn-shared initial-download">
+                                                    <i class="fab fa-windows"></i> Download for Windows
+                                                </a>
+                                                <button class="btn-shared toggle-info-btn"
+                                                    onclick="toggleInfo('aboutGameSection', this)">
+                                                    <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                </button>
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- End Project Card 1 -->
+                                    <!-- End Project Card 1 -->
 
-                                <!-- Project Card 2 -->
-                                <div class="blog-card">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="download-text">
-                                                <h2 style="font-size: 27px;">Free Roam Game Project</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-0 text-right" style="padding-right: 10px;">
-                                            <div class="download-button-container">
-                                                <a href="https://www.mediafire.com/file/oicujy796c0w37v/FreeRoam_GameProject.zip/file"
-                                                    target="_blank" download class="btn-shared">Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Toggle Button for More Info -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="toggle-btn btn btn-link"
-                                                onclick="toggleInfo('hiddenInfo2', this)">
-                                                <span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand
-                                                Project
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Hidden Information with Carousel and Game Details -->
-                                    <div id="hiddenInfo2" class="hidden-info" style="display: none;">
-                                        <div class="row">
-                                            <!-- Carousel Section -->
-                                            <div class="col-md-6">
-                                                <div id="carouselFreeRoam" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="imgs/game2.png" class="d-block w-100"
-                                                                alt="Free Roam Game Screenshot 1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="imgs/game3.png" class="d-block w-100"
-                                                                alt="Free Roam Game Screenshot 2">
-                                                        </div>
-                                                    </div>
-                                                    <a class="carousel-control-prev" href="#carouselFreeRoam"
-                                                        role="button" data-slide="prev">
-                                                        <span class="carousel-control-prev-icon"
-                                                            aria-hidden="true"></span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                    <a class="carousel-control-next" href="#carouselFreeRoam"
-                                                        role="button" data-slide="next">
-                                                        <span class="carousel-control-next-icon"
-                                                            aria-hidden="true"></span>
-                                                        <span class="sr-only">Next</span>
-                                                    </a>
+                                    <!-- Project Card 2 -->
+                                    <div class="col-md-6">
+                                        <div class="project-card p-4 mb-4 d-flex flex-column">
+                                            <!-- Header Section -->
+                                            <div class="project-header d-flex align-items-center mb-3">
+                                                <div>
+                                                    <h2 class="project-title">NBJ Free Roam</h2>
+                                                    <p class="release-date">This build was released on 15-12-2023</p>
                                                 </div>
                                             </div>
 
-                                            <!-- Game Details Section -->
-                                            <div class="col-md-6">
-                                                <p><strong>Free Roam Game Project</strong> is an early prototype for an
-                                                    open-world game inspired by GTA mechanics. It focuses on car
-                                                    physics, player movement, and city exploration.</p>
-                                                <p><strong>Features:</strong></p>
-                                                <ul>
-                                                    <li>Basic car driving with free roam capabilities.</li>
-                                                    <li>First-person driving for immersive gameplay.</li>
-                                                    <li>Basic collision and AI logic (in development).</li>
-                                                </ul>
-                                                <p>This experimental project explores free roam elements, car handling,
-                                                    and city design. Bugs and incomplete features are expected. Feedback
-                                                    is welcome!</p>
-                                                <p class="post-date" style="color: gray; margin-top: 10px;">Published
-                                                    on: 15th December 2023</p>
+                                            <!-- Project Description (Visible always) -->
+                                            <p class="project-description">
+                                                Free Roam Game Project is an open-world prototype focused on car
+                                                physics, player movement, and exploration. Inspired by the Grand Theft
+                                                Auto series, it offers a
+                                                realistic sandbox for driving and interaction.
+                                            </p>
+
+                                            <!-- Metadata Section -->
+                                            <div
+                                                class="project-metadata d-flex justify-content-between align-items-center mt-1 mb-4">
+                                                <div class="metadata-item">
+                                                    <strong>VER:</strong> <span class="hash">0.1.0</span>
+                                                </div>
+                                                <div class="metadata-item">
+                                                    <strong>Size:</strong> 519.7 MB
+                                                </div>
                                             </div>
 
+                                            <!-- Carousel Section -->
+                                            <div id="carouselFreeRoam" class="carousel slide mb-4" data-ride="carousel">
+                                                <div class="carousel-inner rounded">
+                                                    <div class="carousel-item active">
+                                                        <img src="imgs/game2.png" class="d-block w-100"
+                                                            alt="Screenshot 1">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="imgs/game3.png" class="d-block w-100"
+                                                            alt="Screenshot 2">
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselFreeRoam" role="button"
+                                                    data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselFreeRoam" role="button"
+                                                    data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+
+                                            <!-- Collapsible About Section (Initially hidden) -->
+                                            <div id="aboutFreeRoamSection" class="about-game-section mt-3"
+                                                style="display: none;">
+                                                <h3>
+                                                    About the Game
+                                                </h3>
+                                                <p><strong>Free Roam Game Project</strong> offers players a city to
+                                                    explore with realistic driving mechanics and dynamic NPCs. It
+                                                    features:
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        Interactive car physics and audio elements, such as car engine
+                                                        and horn.
+                                                    </li>
+                                                    <li>
+                                                        Camera mechanics for First Person and Third Person vehicle
+                                                        views.
+                                                    </li>
+                                                    <li>
+                                                        Open-world map with diverse exploration points, where players
+                                                        can explore by vehicle or on foot.
+                                                    </li>
+                                                </ul>
+                                                <p>This is a very early build and bugs are to be highly expected,
+                                                    regardless feedback is welcome.
+                                                </p>
+                                            </div>
+
+                                            <!-- Footer Section with Toggle and Download Button -->
+                                            <div
+                                                class="card-footer mt-auto d-flex justify-content-between align-items-center">
+                                                <a href="https://www.mediafire.com/file/oicujy796c0w37v/FreeRoam_GameProject.zip/file"
+                                                    target="_blank" class="btn-shared initial-download">
+                                                    <i class="fab fa-windows"></i> Download for Windows
+                                                </a>
+                                                <button class="btn-shared toggle-info-btn"
+                                                    onclick="toggleInfo('aboutFreeRoamSection', this)">
+                                                    <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- End Project Card 2 -->
+
                                 </div>
-                                <!-- End Project Card 2 -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Corey Black</h5>
-                    <p class="footer-description">Aspiring Full Stack Developer.</p>
-                </div>
-                <div class="col-md-6 text-md-right">
-                    <div class="social-links-footer" style="justify-content: right;">
-                        <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
-                            class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://steamcommunity.com/id/nastybj/" target="_blank" class="footer-social-link"><i
-                                class="fab fa-steam"></i></a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Corey Black</h5>
+                        <p class="footer-description">Aspiring Full Stack Developer.</p>
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <div class="social-links-footer" style="justify-content: right;">
+                            <a href="https://github.com/kawrae" target="_blank" class="footer-social-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/corey-black-92526532b/" target="_blank"
+                                class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://steamcommunity.com/id/nastybj/" target="_blank"
+                                class="footer-social-link"><i class="fab fa-steam"></i></a>
+                        </div>
                     </div>
                 </div>
+                <div class="footer-bottom text-center">
+                    <p>&copy; 2024 Corey Black. All rights reserved.</p>
+                </div>
             </div>
-            <div class="footer-bottom text-center">
-                <p>&copy; 2024 Corey Black. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        function toggleInfo(contentId, button) {
-            const content = document.getElementById(contentId);
-            const arrow = button.querySelector('.arrow i');
-
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                arrow.classList.remove('fa-arrow-down');
-                arrow.classList.add('fa-arrow-up');
-                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-up"></i></span> Collapse Project';
-            } else {
-                content.style.display = "none";
-                arrow.classList.remove('fa-arrow-up');
-                arrow.classList.add('fa-arrow-down');
-                button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand Project';
-            }
-        }
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="scripts/waves2.js"></script>
-    <script src="scripts/particles.js"></script>
-    <script src="scripts/navToggler.js"></script>
+        <script src="scripts/toggleInfo.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <script src="scripts/script2.js"></script>
+        <script src="scripts/navToggler.js"></script>
 </body>
 
 </html>
