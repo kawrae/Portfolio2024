@@ -1,65 +1,70 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* General Body & HTML Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 body,
 html {
+  background-color: #111;
+  color: #fff;
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* Themes Start */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Theme Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* Default Theme */
 .default-theme body,
 .default-theme html {
-  background-image: linear-gradient(-135deg, rgb(0, 172, 240) 0%, rgb(36, 21, 173) 50%, rgb(4, 31, 90) 100%);
+  background: linear-gradient(-135deg, rgb(9, 0, 135) 25%, rgb(147, 64, 255) 100%);
   color: white;
+}
+
+.default-theme #infinitusImage {
+  content: url('imgs/infinitus.png');
+}
+
+.default-theme .gd-heading {
+  color: rgb(105, 109, 226);
 }
 
 /* Second Theme */
 .second-theme body,
 .second-theme html {
-  background-image: linear-gradient(-135deg, rgb(0, 0, 0) 55%, rgb(253, 253, 253) 125%);
-  color: #fff;
+  background: linear-gradient(-135deg, rgb(9, 0, 135) 25%, rgb(147, 64, 255) 100%);
+  color: #000000;
 }
 
-.second-theme #navbar {
-  background-image: linear-gradient(-135deg, rgba(44, 39, 43, 0.2) 25%, rgba(100, 96, 96, 0.2) 100%);
+.second-theme .gd-heading {
+  color: rgb(105, 109, 226);
 }
 
-.second-theme .about-me-heading {
-  color: #fff;
-  /* Adjust text color */
+.second-theme .content-heading {
+  color: black;
+}
+
+.second-theme .metadata-item {
+  background-color: rgb(241, 241, 241);
+  border: 0px;
 }
 
 .second-theme #main-content2 {
-  background-color: rgb(17, 16, 16);
-}
-
-.second-theme .colored-bar {
-  background-color: #ffffffc9 !important;
-}
-
-.second-theme .btn-social {
-  background-color: #ffffffc9;
-}
-
-.second-theme .heading-underline {
-  background-color: #ffffffc9;
+  background-color: rgb(255, 255, 255);
 }
 
 .second-theme .about-card,
-.second-theme .blog-card {
-  background-color: rgb(44, 42, 42);
-  border-left: 2px solid #ffffffc9;
-}
-
-.second-theme .avatar-img {
-  border-left: 0.2rem solid #ffffffc9;
-}
-
-.second-theme .footer {
-  border-top: 2px solid #ffffffc9;
+.second-theme .blog-card,
+.second-theme .project-card,
+.second-theme .fe-card,
+.second-theme .gd-card,
+.second-theme .md-card,
+.second-theme .be-card {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .second-theme .footer-bottom {
@@ -67,9 +72,7 @@ html {
 }
 
 .second-theme .btn-shared {
-  background-color: #ffffffc9;
   border: 1px solid #302e2ec9;
-  color: black;
   transition: color 0s;
 }
 
@@ -78,19 +81,23 @@ html {
   border: 1px solid #f3f3f3;
 }
 
+.second-theme #infinitusImage {
+  content: url('imgs/infinitus-bw.png');
+}
+
 .second-theme .toggle-btn,
 .second-theme .collapse-btn {
-  color: #aaa7a7c9;
+  color: rgb(65, 108, 226);
   transition: color 0s;
 }
 
 .second-theme #uni:visited:hover {
-  color: darkgray;
+  color: rgb(0, 0, 0);
 }
 
 .second-theme .toggle-btn:hover,
 .second-theme .collapse-btn:hover {
-  color: #faf7f7c9;
+  color: #000000c9;
 }
 
 .second-theme .lightbox .close {
@@ -117,55 +124,68 @@ html {
   background-color: #0b9960;
 }
 
-.third-theme .colored-bar,
-.third-theme .footer {
-  background-color: #0b9960 !important;
-}
 
-/* Add additional styles for the third theme */
 
-/* Themes End */
-
-/* Navbar Start */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Navbar Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #navbar {
-  background-image: linear-gradient(-135deg, rgba(8, 0, 15, 0.15) 25%, rgba(40, 40, 58, 0.15) 100%);
+  background: linear-gradient(-135deg,rgba(0,42,135,0.8) 25%,rgba(120, 46, 218, 0.8) 100%);
+	box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
   color: white;
   width: 100%;
   position: fixed;
-  z-index: 100;
+  top: 0;
+  /* Keep the navbar at the top of the screen */
+  z-index: 150;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Center all items */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0;
-  overflow: visible;
-  /* Allow content to overflow */
+  font-size: 16px;
+	animation-name:fadeInUp;
+	animation-duration: .5s;
+	animation-iteration-count:1;
+	backdrop-filter: blur(16px) saturate(150%);
 }
+
 
 .nav-center {
   flex: 1;
   display: flex;
   justify-content: center;
   width: 100vw;
-  /* Full width */
   position: relative;
   z-index: 1;
-  /* Position below nav-right */
 }
 
-.nav-right {
+.nav-right .dropdown-menu-custom {
   position: absolute;
-  /* Float above nav-center */
-  right: 20px;
-  /* Distance from the right edge */
-  top: 50%;
-  transform: translateY(-50%);
-  /* Center vertically */
-  padding-top: 5px;
-  z-index: 2;
-  /* Position on top of nav-center */
+  top: 100%;
+  right: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Show dropdown with sliding animation */
+.nav-right .dropdown-menu-custom.show {
+  transform: translateX(0);
+  /* Slide into view */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styling adjustments */
+.dropdown-menu-custom {
+  background-color: rgba(18, 21, 38, 0.9);
+  /* Slightly dark background */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #navbar ul {
@@ -180,7 +200,7 @@ html {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 20px;
   text-decoration: none;
 }
 
@@ -211,10 +231,12 @@ html {
 
 .dropdown-item:hover {
   background-color: rgba(26, 28, 53, 0.5);
+  /* Hover effect */
   border-radius: 5px;
 }
 
-#drop-Menu::before {
+/* Add pointer effect for dropdown indicator arrow */
+.dropdown-menu-custom::before {
   content: '';
   position: absolute;
   top: -10px;
@@ -224,14 +246,61 @@ html {
   border-color: transparent transparent rgba(18, 21, 38, 0.9) transparent;
 }
 
+/* Settings Card Styling */
+.settings-card {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  /* Start off-screen */
+  height: 100%;
+  width: 250px;
+  background-color: rgba(18, 21, 38, 0.9);
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease-out;
+  z-index: 110;
+  /* Above other elements */
+}
+
+/* Show settings card */
+.settings-card.show {
+  right: 0;
+  /* Slide in */
+}
+
+/* Menu item styling */
+.dropdown-menu-custom {
+  padding: 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(26, 28, 53, 0.5);
+  border-radius: 5px;
+}
+
+.dropdown-item i {
+  margin-right: 10px;
+}
+
+
 #toggleParticles:hover,
 #toggleWaves:hover,
 #drop-Item:hover {
   background-color: rgba(26, 28, 53, 0.5);
 }
 
-/* Navbar End */
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Button Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #uni {
   color: white;
   text-decoration: none;
@@ -241,7 +310,6 @@ html {
   color: #43d5e0;
   text-decoration: none;
 }
-
 
 #main-content {
   margin-top: 300px;
@@ -273,21 +341,23 @@ html {
   padding: 10px 50px;
   text-decoration: none;
   border-radius: 12px;
-  border:2px solid rgb(255 255 255/20%);
-  transition:all .1s ease-in-out 0s;
+  border: 2px solid rgb(255 255 255 / 20%);
+  transition: all 0.1s ease-in-out 0s;
 }
 
 .btn-github {
-  box-shadow:rgba(130,86,208,.5) 0 8px 24px 0;
+  background-color: #8256d0;
+  box-shadow: rgba(130, 86, 208, 0.5) 0 8px 24px 0;
 }
 
 .btn-linkedin,
 .btn-chrome {
-  box-shadow:rgba(181, 124, 0, .5) 0 8px 24px 0;
+  background-color: rgb(254, 159, 68);
+  box-shadow: rgba(181, 124, 0, 0.5) 0 8px 24px 0;
 }
 
 .btn-steam {
-  box-shadow: rgba(0, 243, 93, .2) 0 8px 24px 0;
+  box-shadow: rgba(0, 243, 93, 0.2) 0 8px 24px 0;
 }
 
 .btn-vscode {
@@ -297,51 +367,11 @@ html {
 .non-clickable {
   pointer-events: none;
   cursor: default;
-  /* Optional: change cursor to indicate it's not clickable */
 }
 
-.hidden-info {
-  display: none;
-  margin-top: 15px;
-  padding-top: 10px;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  overflow: hidden;
-}
-
-.hidden-info.show {
-  display: block;
-  /* Override for showing */
-  max-height: 1000px;
-  /* Set a high value for smooth expansion */
-  opacity: 1;
-  /* Fully visible */
-}
-
-.hidden-info.hide {
-  max-height: 0;
-  opacity: 0;
-  /* Invisible */
-}
-
-.toggle-btn {
-  cursor: pointer;
-  color: #7289da;
-  transition: color 0.3s;
-  border: 0;
-}
-
-.toggle-btn:hover {
-  text-decoration: underline;
-  border: 0;
-}
 
 .btn-social {
   background-color: #7289da;
-}
-
-.btn-github {
-  background-color: rgb(129, 86, 207);
-  border-color: rgb(190, 156, 252);
 }
 
 .btn-linkedin {
@@ -364,46 +394,121 @@ html {
   border-color: lightcoral;
 }
 
-.btn-chrome {
-  background-color: rgb(254, 159, 68);
-  border-color: rgb(248, 209, 173);
-}
+
 
 .btn-github:hover,
 .btn-linkedin:hover,
 .btn-steam:hover {
   color: rgb(25, 31, 55);
-  text-decoration: none;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 
 .btn-social:hover {
   background-color: #4e66a3;
 }
 
+.btn-shared {
+  font-size: 16px;
+  height: 100%;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  padding: 10px 20px;
+  background: linear-gradient(-135deg, rgb(73, 164, 255) 25%, rgb(0, 116, 231) 100%);
+  box-shadow: rgba(0, 116, 231, 0.4) 0 10px 32px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 46px;
+  border: 1px solid #0080ff !important;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+.btn-windows {
+  font-size: 16px;
+  height: 100%;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  padding: 10px 20px;
+  background: linear-gradient(-135deg, rgb(73, 164, 255) 25%, rgb(0, 116, 231) 100%);
+  box-shadow: rgba(0, 116, 231, 0.4) 0 10px 32px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 46px;
+  border: 1px solid #0080ff !important;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+.btn-shared:hover,
+.btn-windows:hover {
+  background: linear-gradient(-135deg, rgb(46, 204, 113) 25%, rgb(26, 188, 156) 100%);
+  box-shadow: rgba(46, 204, 113, 0.4) 0 10px 32px 0;
+  border: 1px solid #57e694 !important;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-1:hover {
+  background-color: #101d66;
+}
+
+.download-button-container {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.toggle-btn,
+.collapse-btn {
+  cursor: pointer;
+  color: rgb(65, 108, 226);
+  font-size: 16px;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover,
+.collapse-btn:hover {
+  color: #4e66a3;
+  text-decoration: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Main Content Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #main-text {
   padding-top: 50px;
 }
 
+#hiddenInfo1,
+#hiddenInfo2,
+#hiddenInfo3,
+#hiddenInfo4,
+#hiddenInfo5 {
+  
+}
+
+.gradient-bar {
+  height: 1px; /* Adjust height as needed */
+  background: linear-gradient(to right, rgb(53, 71, 233), rgba(0, 123, 255, 0));
+}
+
 #main-content2 {
-  padding: 50px;
+  padding: 30px;
   color: white;
   background-color: rgb(18, 21, 38);
   min-height: 100vh;
-  /* Set minimum height to viewport height */
   position: relative;
   z-index: 101;
   width: 100vw;
   overflow: visible;
-  /* Allow content to overflow naturally */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 
 #about1 {
   margin-right: 140px;
   margin-bottom: 25px;
 }
+
 
 #infinitus {
   margin-right: 400px;
@@ -413,53 +518,122 @@ html {
   position: relative;
   height: 380px;
   width: 100%;
-  /* Ensure it takes the full width of its parent */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
   overflow: hidden;
-  /* Prevent any content from overflowing */
 }
 
-/* Scroll bar Start */
+.metadata-item {
+  background-color: rgb(18, 23, 44);
+  padding: 4px 12px;
+  border-radius: 15px;
+  border: 0.5px solid rgba(63, 62, 94, .7);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Project About Game Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.about-game-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+  will-change: max-height;
+}
+
+/* When active, max-height expands to make it visible */
+.about-game-section.active {
+  max-height: 2000px; /* Ensure this value is greater than the expected content height */
+}
+
+/* Additional styling to hide initial download when expanded */
+.about-game-section.active+.download-toggle .initial-download {
+  display: none;
+}
+
+.about-game-section .toggle-info-btn i.fa-arrow-up {
+  display: inline;
+}
+
+/* Initial state with down arrow */
+.toggle-info-btn .arrow {
+  outline: none;
+  border: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.toggle-info-btn:focus,
+.toggle-info-btn:active {
+    outline: none;
+    border: none;
+}
+
+/* Rotate arrow icon 180 degrees when expanded */
+.about-game-section.active~.card-footer .toggle-info-btn .arrow {
+  transform: rotate(180deg);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Carousel Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Styling for Carousel */
+.carousel-inner img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(0);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  filter: invert(0.5);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Scroll Bar Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #1e1e24;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #555;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
 
-/* Scroll bar End */
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Canvas Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 canvas {
   display: block;
   position: absolute;
   top: 0;
-  /* Fixing top offset */
   left: 0;
   width: 100vw;
-  /* Use viewport width */
   height: 100vh;
-  /* Use viewport height */
   pointer-events: none;
   z-index: 11;
   opacity: 0.7;
-  /* Remove object-fit and adjust within JS for canvas rendering */
 }
 
 #main-content2 h1 {
@@ -472,7 +646,8 @@ canvas {
   height: auto;
 }
 
-.img-ForF, .img-networking {
+.img-ForF,
+.img-networking {
   height: 250px;
 }
 
@@ -480,47 +655,57 @@ canvas {
   height: 300px;
 }
 
-
-/* Container styling for overall spacing */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Container and Column Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #professionalism-container {
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-bottom: 20px;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 20px;
 }
 
-/* Styling for each column */
-#commitment, #integrity, #responsibility, #accountability {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
-    transition: transform 0.3s ease;
+#commitment,
+#integrity,
+#responsibility,
+#accountability {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
+  transition: transform 0.3s ease;
 }
 
-#commitment:hover, #integrity:hover, #responsibility:hover, #accountability:hover {
-    transform: scale(1.01);
+#commitment:hover,
+#integrity:hover,
+#responsibility:hover,
+#accountability:hover {
+  transform: scale(1.01);
 }
 
-/* Adjust font size and line height for readability */
-#commitment p, #integrity p, #responsibility p, #accountability p {
-    font-size: 1rem;
-    line-height: 1.6;
+#commitment p,
+#integrity p,
+#responsibility p,
+#accountability p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* Alternate background color for visual variety */
-#integrity, #accountability {
-    background-color: #252525;
+#integrity,
+#accountability {
+  background-color: #252525;
 }
 
-/* Responsive styling for smaller screens */
 @media (max-width: 768px) {
-    #professionalism-container {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-    }
+  #professionalism-container {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Animations */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -539,73 +724,6 @@ canvas {
   animation: fadeIn 1s ease forwards;
 }
 
-.download-text {
-  color: #fff;
-}
-
-/* Shared Button Styling for Submit and Download */
-.btn-shared {
-  font-size: 16px;
-  height: 100%;
-  text-shadow: rgba(0,0,0,.25) 0 2px 2px;
-  padding: 10px 20px;
-  background:linear-gradient(-135deg,rgb(73,164,255) 25%,rgb(0,116,231) 100%);
-  box-shadow:rgba(0,116,231,.4) 0 10px 32px 0;
-  color: white;
-  text-decoration: none;
-  border-radius:46px;
-  border:1px solid #0080ff!important;
-  transition:all .1s ease-in-out 0s;
-}
-
-.btn-shared:hover {
-	background:linear-gradient(-135deg,rgb(46,204,113) 25%,rgb(26,188,156) 100%);
-	box-shadow:rgba(46,204,113,.4) 0 10px 32px 0;
-	border:1px solid #57e694!important;
-  color: white;
-  text-decoration: none;
-}
-
-.btn-1:hover {
-  background-color: #101d66;
-}
-
-.download-button-container {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.heading-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 102;
-}
-
-/* Common styles for expand/collapse buttons */
-.toggle-btn,
-.collapse-btn {
-  cursor: pointer;
-  color: #7289da;
-  /* Matching the existing button color */
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 16px;
-  transition: color 0.3s ease;
-  text-decoration: underline;
-}
-
-.toggle-btn:hover,
-.collapse-btn:hover {
-  color: #4e66a3;
-  /* Matching hover effect */
-  text-decoration: none;
-}
-
-/* Your pulse animation */
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 0px rgba(255, 255, 255, 0);
@@ -620,9 +738,29 @@ canvas {
   }
 }
 
-/* Define the pulse-glow animation */
 .pulse {
   animation: pulse-glow 2s infinite;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Text and Heading Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.post-date {
+  padding-top: 10px;
+  color: rgb(73, 164, 255);
+  font-weight: 600;
+}
+
+.release-date {
+  font-weight: 600;
+  padding-left: 6px;
+  margin-bottom: 0px;
+  color: rgb(65, 108, 226);
+}
+
+.heading-container {
+  z-index: 101 !important;
 }
 
 .heading-text {
@@ -630,9 +768,16 @@ canvas {
   font-size: 46px;
   font-weight: bold;
   animation: pulse-glow 3s infinite;
-  /* Optional animation */
+  animation: slideUp 1s ease forwards;
 }
 
+.content-heading {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
 
 .heading-underline {
   width: 50px;
@@ -642,6 +787,14 @@ canvas {
   border-radius: 2px;
 }
 
+.colored-bar {
+  width: 5px;
+  height: 24px;
+  background-color: #1e3debc9;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
 .bar {
   width: 25px;
   height: 3px;
@@ -649,32 +802,9 @@ canvas {
   margin: 5px 0;
 }
 
-/* Profile Card Start */
-.profile-card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.profile-card {
-  width: 320px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  color: #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition:all .1s ease-in-out 0s;
-}
-
-.profile-card:hover,
-.about-card:hover,
-.blog-card:hover {
-  transform:translate(0px,-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Header and Image Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .header img {
   width: 100%;
   height: 120px;
@@ -687,166 +817,109 @@ canvas {
   object-fit: cover;
 }
 
-.profile-info {
-  padding: 20px;
-  text-align: center;
-  position: relative;
-}
-
-.profile-pic {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+/* Avatar Image */
+.avatar-img {
   position: absolute;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 4px solid #1e1e1e;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  top: -30px;
+  right: 35px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border-left: 0.2rem solid #1e3debc9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-.username {
-  display: block;
-  margin-bottom: 10px;
-  color: #999;
-  font-size: 14px;
+.communicate {
+  width: auto;
+  max-height: 80px;
 }
 
-.status-icons {
-  margin: 8px 0;
+.laptop-image {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%) rotate(10deg);
+  height: auto;
+  max-height: 300px;
+  opacity: 0.8;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+  z-index: 1;
 }
 
-.icon {
-  margin: 0 4px;
-  font-size: 18px;
-}
-
-.status-button,
-.edit-profile {
-  margin: 5px 5px;
-  padding: 6px 12px;
-  background-color: #333;
-  border: none;
-  border-radius: 4px;
-  color: #ddd;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.status-button:hover,
-.edit-profile:hover {
-  background-color: #444;
-}
-
-.about {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.ascii-art {
-  font-size: 10px;
-  white-space: pre-wrap;
-  margin: 0 0 10px;
-  color: #888;
-}
-
-.connections {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.connection {
-  background-color: #444;
-  color: #ddd;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s ease;
-}
-
-.connection:hover {
-  background-color: #555;
-}
-
-.note {
-  margin-top: 8px;
-  color: #666;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* Profile Card End */
-
-/* About Card Start */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* About Card Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .about-card {
   margin-top: 20px;
   padding: 20px;
   border-radius: 16px;
   background-color: rgb(25, 31, 55);
-  box-shadow:rgba(0,0,0,.1) 0 10px 32px 0;
-  transition:all .1s ease-in-out 0s;
+  box-shadow: rgba(0, 0, 0, .1) 0 10px 32px 0;
+  transition: all 0.1s ease-in-out 0s;
   border-left: 2px solid #1e3debc9;
   position: relative;
-  /* Subtle border to add a pop of color */
 }
 
 #aboutTop {
-
   padding-right: 100px;
 }
 
-.about-card:hover {
-  transform:translate(0px,-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+.project-card:hover,
+.blog-card:hover {
+  transform: translate(0px, -10px);
 }
 
-/* About Card End */
+.fe-card,
+.gd-card,
+.md-card,
+.be-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgb(25, 31, 55);
+  box-shadow: rgba(0, 0, 0, .1) 0 10px 32px 0;
+  transition: all 0, 1s ease-in-out 0s;
+  border-left: 2px solid #1e3debc9;
+}
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Blog Card Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .blog-card {
   margin-top: 20px;
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid #2c2f33;
   background-color: rgb(25, 31, 55);
-  box-shadow:rgba(0,0,0,.1) 0 10px 32px 0;
-  transition:all .1s ease-in-out 0s;
+  box-shadow: rgba(0, 0, 0, .1) 0 10px 32px 0;
+  transition: all 0.1s ease-in-out 0s;
   border-left: 2px solid #1e3debc9;
 }
 
-/* Image Adjustments */
-.laptop-image {
-  position: absolute;
-  right: -80px;
-  top: 50%;
-  transform: translateY(-50%) rotate(5deg);
-  max-height: 250px;
-  opacity: 0.85;
-  filter: drop-shadow(-30px 20px 10px rgba(0, 0, 0, 0.15));
-  z-index: 0;
+#fullBlogContent1,
+#fullBlogContent2,
+#fullBlogContent3,
+#fullBlogContent4,
+#fullBlogContent5 {
+  margin-top: 20px;
 }
 
-/* Card Title Styling */
-.about-me-heading {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 10px;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Project Card Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.project-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgb(25, 31, 55);
+  box-shadow: rgba(0, 0, 0, .1) 0 10px 32px 0;
+  transition: all 0.1s ease-in-out 0s;
+  border-left: 2px solid #1e3debc9;
 }
 
-.colored-bar {
-  width: 5px;
-  height: 24px;
-  background-color: #1e3debc9;
-  margin-right: 10px;
-  border-radius: 4px;
-}
-
-/* Footer Start */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Footer Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .footer {
   padding: 30px 0;
   color: #d4d4dc;
@@ -876,7 +949,6 @@ canvas {
 
 .footer-social-link:hover {
   color: #7289da;
-  /* Matching the accent color of your page */
   text-decoration: none;
 }
 
@@ -900,9 +972,6 @@ canvas {
     margin: 0 10px;
   }
 }
-
-/* Footer End */
-
 
 @media screen and (max-width: 768px) {
   #main-content {
