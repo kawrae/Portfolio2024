@@ -9,20 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
   let showWaves = true;
   let showParticles = true;
 
-  // Wave gradient colors
-  let waveGradientColorTop;
-  let waveGradientColorBottom;
+  // Fixed wave gradient colors (same for both themes)
+  const waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
+  const waveGradientColorBottom = 'rgba(1, 5, 53, 0.5)';
 
   // Theme initialization
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'second') {
-    document.documentElement.classList.add('second-theme'); // Apply theme to html
-    waveGradientColorTop = 'rgba(255, 255, 255, 0.35)';
-    waveGradientColorBottom = 'rgba(1, 1, 1, 0.25)';
+    document.documentElement.classList.add('second-theme'); // Apply second theme
   } else {
-    document.documentElement.classList.add('default-theme'); // Apply theme to html
-    waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
-    waveGradientColorBottom = 'rgba(1, 5, 53, 0.5)';
+    document.documentElement.classList.add('default-theme'); // Apply default theme
   }
 
   // Function to set canvas size and handle pixel ratio scaling
@@ -167,25 +163,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('toggleParticles').innerHTML = `<i class="fas fa-star"></i> Particles - ${showParticles ? 'On' : 'Off'}`;
   });
 
-  // Theme toggle logic
+  // Theme toggle logic (light/dark mode)
   document.getElementById('drop-Item').addEventListener('click', function () {
     const isDefaultTheme = document.documentElement.classList.contains('default-theme');
 
     if (isDefaultTheme) {
       document.documentElement.classList.remove('default-theme');
       document.documentElement.classList.add('second-theme');
-
-      waveGradientColorTop = 'rgba(255, 255, 255, 0.35)';
-      waveGradientColorBottom = 'rgba(1, 1, 1, 0.25)';
-
       localStorage.setItem('theme', 'second');
     } else {
       document.documentElement.classList.remove('second-theme');
       document.documentElement.classList.add('default-theme');
-
-      waveGradientColorTop = 'rgba(1, 23, 136, 0.6)';
-      waveGradientColorBottom = 'rgba(1, 5, 53, 0.5)';
-
       localStorage.setItem('theme', 'default');
     }
   });
