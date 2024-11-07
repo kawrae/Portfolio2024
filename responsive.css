@@ -152,13 +152,17 @@
     }
 
     .about-card {
-        padding: 16px;
-        margin: 0;
-        box-sizing: border-box;
-        width: 100%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        margin-bottom: 15px;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 16px;
+        background-color: rgb(25, 31, 55);
+        box-shadow: rgba(0, 0, 0, .1) 0 10px 32px 0;
+        transition: all 0, 1s ease-in-out 0s;
+        border-left: 2px solid #1e3debc9;
+    }
+
+    .blog-card {
+        margin-top: 16px;
     }
 
     #aboutTop {
@@ -222,7 +226,16 @@
         font-size: 14px;
         text-align: center;
         padding: 12px;
-        background-color: #222;
         color: #fff;
     }
+}
+
+/* Responsive styling for smaller screens */
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    /* Set the project card to stack content vertically */
+    .project-card {
+        flex-direction: column;
+    }
+
 }
