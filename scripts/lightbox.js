@@ -26,26 +26,21 @@ function showPrevImage() {
     lightboxImage.src = images[currentIndex].src;
 }
 
-// Open lightbox when image is clicked
 images.forEach((image, index) => {
     image.addEventListener('click', () => showLightbox(index));
 });
 
-// Close lightbox
 closeBtn.addEventListener('click', hideLightbox);
 
-// Navigate images
 rightArrow.addEventListener('click', showNextImage);
 leftArrow.addEventListener('click', showPrevImage);
 
-// Close lightbox when clicking outside the image
 lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImage && e.target !== rightArrow && e.target !== leftArrow) {
         hideLightbox();
     }
 });
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('active')) {
         if (e.key === 'ArrowRight') {

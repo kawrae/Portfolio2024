@@ -6,25 +6,22 @@ function toggleInfo(sectionId) {
 
     if (aboutSection.classList.contains("active")) {
         aboutSection.style.display = "block";
-        toggleBtn.className = "fa fa-arrow-up"; // Change to up arrow
+        toggleBtn.className = "fa fa-arrow-up";
     } else {
-        toggleBtn.className = "fa fa-arrow-down"; // Change to down arrow
+        toggleBtn.className = "fa fa-arrow-down";
         aboutSection.style.display = "none";
     }
 }
 
-// Pre-expand and collapse the section on page load to smooth initial animations
 window.addEventListener("load", function () {
     const aboutSections = document.querySelectorAll(".about-game-section");
 
-    // For each section, trigger an initial expansion and collapse
     aboutSections.forEach((section) => {
         section.classList.add("active");
 
-        // Remove the class after a short delay to reset to collapsed state
         setTimeout(() => {
             section.classList.remove("active");
-            section.style.display = "none"; // Ensure it is hidden after reset
-        }, 50); // Short delay just to trigger initial calculation
+            section.style.display = "none";
+        }, 50); 
     });
 });

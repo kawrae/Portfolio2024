@@ -1,4 +1,3 @@
-// Initialize canvas elements and wave properties
 const canvas1 = document.getElementById('waveCanvas1');
 const canvas2 = document.getElementById('waveCanvas2');
 const ctx1 = canvas1.getContext('2d');
