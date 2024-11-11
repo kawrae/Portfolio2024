@@ -35,8 +35,8 @@ function drawMobileWave(ctx, timestamp) {
   ctx.globalAlpha = 0.9;
   ctx.beginPath();
   
-  const waveAmplitude = 50;  // Adjusted for mobile
-  const yOffset = mobileCanvas1.height * 0.85; // Lower wave for mobile visibility
+  const waveAmplitude = 50; 
+  const yOffset = mobileCanvas1.height * 0.85;
 
   ctx.moveTo(0, mobileCanvas1.height);
   for (let x = 0; x < mobileCanvas1.width; x++) {
@@ -46,18 +46,16 @@ function drawMobileWave(ctx, timestamp) {
 
   ctx.lineTo(mobileCanvas1.width, mobileCanvas1.height);
   ctx.closePath();
-  ctx.fillStyle = 'rgba(0, 100, 255, 0.5)'; // Example color for mobile waves
+  ctx.fillStyle = 'rgba(0, 100, 255, 0.5)';
   ctx.fill();
   ctx.globalAlpha = 1;
 }
 
 function drawMobileParticles(ctx) {
-  // Example mobile particles drawing logic
   ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
   ctx.beginPath();
-  ctx.arc(50, 50, 10, 0, Math.PI * 2); // Example particle
+  ctx.arc(50, 50, 10, 0, Math.PI * 2); 
   ctx.fill();
 }
 
-// Start mobile animation
 mobileAnimate();

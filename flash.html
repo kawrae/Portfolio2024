@@ -129,32 +129,36 @@
 
 <body id="gallery-page">
     <!-- Navbar with centered links and right-aligned Settings -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <nav id="navbar" class="navbar navbar-light">
         <div class="container-fluid d-flex">
-            <!-- Hamburger Menu -->
-            <button class="navbar-toggler navbar-dark" type="button" id="navbar-toggler">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <!-- Centered Nav Links (Will be hidden on mobile initially) -->
+            <div class="mobile-logo">
+                <a href="index.html" class="nav-link active">
+                    <img src="imgs/logo2.png" alt="Company Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Centered Nav Links (Hidden by default) -->
             <div class="nav-center">
                 <ul class="nav" id="nav-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item" id="nav-hide">
+                        <a href="index.html" class="nav-link">
+                            <img src="imgs/logo2.png" alt="Company Logo" class="logo">
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Flash</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="nav-hide">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link#" href="about.html">About</a>
+                    <li class="nav-item" id="nav-hide">
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="nav-hide">
+                        <a class="nav-link active" href="#">Flash</a>
+                    </li>
+                    <li class="nav-item" id="nav-hide">
+                        <a class="nav-link" href="projects.html">Download</a>
+                    </li>
+                    <li class="nav-item" id="nav-hide">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -162,10 +166,10 @@
 
             <!-- Right-aligned Settings (Hidden on mobile) -->
             <ul class="nav nav-right">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="settings-button">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cog"></i> Settings
+                        <i class="fas fa-cog"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-custom" id="drop-Menu">
                         <a class="dropdown-item" id="drop-Item" href="#">
@@ -181,14 +185,41 @@
                     </div>
                 </li>
             </ul>
-        </div>
+
+            <!-- Hamburger Menu - visible only on mobile -->
+            <button class="navbar-toggler navbar-dark" type="button" id="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
     </nav>
+
+    <!-- Dropdown Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-heading">
+            <h2 class="menu-heading-text">Main</h2>
+        </div>
+        <div class="gradient-bar2"></div>
+        <ul class="menu-items">
+            <li><a href="index.html"><i class="fa fa-angle-left"></i>Home</a></li>
+            <li><a href="blog.html"><i class="fa fa-angle-left"></i>Blog</a></li>
+            <li><a href="about.html"><i class="fa fa-angle-left"></i>About</a></li>
+            <li><a href="flash.html"><i class="fa fa-angle-left"></i>Flash</a></li>
+            <li><a href="projects.html"><i class="fa fa-angle-left"></i>Download</a></li>
+            <li><a href="contact.html"><i class="fa fa-angle-left"></i>Contact</a></li>
+        </ul>
+
+        <!-- Internal Section Header -->
+        <div class="menu-section-internal">Internal</div>
+        <ul class="menu-items">
+            <li><a href="branding.html"><i class="fas fa-paint-brush"></i>Branding</a></li>
+            <li><a href="docs.html"><i class="fas fa-book"></i>Documentation</a></li>
+        </ul>
+    </div>
 
 
     <div id="waves-container2">
         <div class="heading-container">
-            <h1 class="heading-text pt-5">Flash</h1>
-            <div class="heading-underline"></div>
+            <h1 class="heading-text pt-5" id="main-text">Flash</h1>
+            <div class="heading-underline" id="sub-text"></div>
         </div>
 
         <canvas id="waveCanvas1"></canvas>

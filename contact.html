@@ -103,32 +103,36 @@
 
 <body id="about-page">
     <!-- Navbar with centered links and right-aligned Settings -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <nav id="navbar" class="navbar navbar-light">
         <div class="container-fluid d-flex">
-            <!-- Hamburger Menu -->
-            <button class="navbar-toggler navbar-dark" type="button" id="navbar-toggler">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <!-- Centered Nav Links (Will be hidden on mobile initially) -->
+            <div class="mobile-logo">
+                <a href="index.html" class="nav-link active">
+                    <img src="imgs/logo2.png" alt="Company Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Centered Nav Links (Hidden by default) -->
             <div class="nav-center">
                 <ul class="nav" id="nav-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item" id="nav-hide">
+                        <a href="index.html" class="nav-link">
+                            <img src="imgs/logo2.png" alt="Company Logo" class="logo">
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="flash.html">Flash</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="nav-hide">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="nav-hide">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="nav-hide">
+                        <a class="nav-link" href="flash.html">Flash</a>
+                    </li>
+                    <li class="nav-item" id="nav-hide">
+                        <a class="nav-link" href="projects.html">Download</a>
+                    </li>
+                    <li class="nav-item" id="nav-hide">
                         <a class="nav-link active" href="#">Contact</a>
                     </li>
                 </ul>
@@ -136,10 +140,10 @@
 
             <!-- Right-aligned Settings (Hidden on mobile) -->
             <ul class="nav nav-right">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="settings-button">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cog"></i> Settings
+                        <i class="fas fa-cog"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-custom" id="drop-Menu">
                         <a class="dropdown-item" id="drop-Item" href="#">
@@ -155,14 +159,41 @@
                     </div>
                 </li>
             </ul>
-        </div>
+
+            <!-- Hamburger Menu - visible only on mobile -->
+            <button class="navbar-toggler navbar-dark" type="button" id="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
     </nav>
+
+    <!-- Dropdown Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-heading">
+            <h2 class="menu-heading-text">Main</h2>
+        </div>
+        <div class="gradient-bar2"></div>
+        <ul class="menu-items">
+            <li><a href="index.html"><i class="fa fa-angle-left"></i>Home</a></li>
+            <li><a href="blog.html"><i class="fa fa-angle-left"></i>Blog</a></li>
+            <li><a href="about.html"><i class="fa fa-angle-left"></i>About</a></li>
+            <li><a href="flash.html"><i class="fa fa-angle-left"></i>Flash</a></li>
+            <li><a href="projects.html"><i class="fa fa-angle-left"></i>Download</a></li>
+            <li><a href="contact.html"><i class="fa fa-angle-left"></i>Contact</a></li>
+        </ul>
+
+        <!-- Internal Section Header -->
+        <div class="menu-section-internal">Internal</div>
+        <ul class="menu-items">
+            <li><a href="branding.html"><i class="fas fa-paint-brush"></i>Branding</a></li>
+            <li><a href="docs.html"><i class="fas fa-book"></i>Documentation</a></li>
+        </ul>
+    </div>
 
     <div id="waves-container2">
 
         <div class="heading-container">
-            <h1 class="heading-text pt-5">Contact Me</h1>
-            <div class="heading-underline"></div>
+            <h1 class="heading-text pt-5" id="main-text">Contact Me</h1>
+            <div class="heading-underline" id="sub-text"></div>
         </div>
 
         <canvas id="waveCanvas1"></canvas>
@@ -183,22 +214,22 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 mx-auto">
-                                <div class="blog-card">
+                                <div class="contact-card">
                                     <!-- <h2 class="text-white mb-4">Get In Touch</h2> -->
                                     <form action="mailto:B01651145@studentmail.uws.ac.uk" method="POST"
                                         enctype="text/plain">
                                         <div class="form-group">
-                                            <label for="name" class="text-white">Your Name *</label>
+                                            <label for="name">Your Name *</label>
                                             <input type="text" class="form-control" id="name" name="name"
                                                 placeholder="Enter your name" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email" class="text-white">Email Address *</label>
+                                            <label for="email">Email Address *</label>
                                             <input type="email" class="form-control" id="email" name="email"
                                                 placeholder="Enter your email" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inquiryType" class="text-white">Inquiry Type</label>
+                                            <label for="inquiryType">Inquiry Type</label>
                                             <select class="form-control" id="inquiryType" name="inquiryType">
                                                 <option value="">Select...</option>
                                                 <option value="general">General Inquiry</option>
@@ -208,34 +239,33 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="message" class="text-white">Message *</label>
+                                            <label for="message">Message *</label>
                                             <textarea class="form-control" id="message" name="message" rows="4"
                                                 placeholder="Write your message here..." required></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label class="text-white">Topics of Interest</label><br>
+                                            <label>Topics of Interest</label><br>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="webDevelopment"
                                                     name="interest" value="webDevelopment">
-                                                <label class="form-check-label text-white" for="webDevelopment">Web
+                                                <label class="form-check-label " for="webDevelopment">Web
                                                     Development</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="gameDevelopment"
                                                     name="interest" value="gameDevelopment">
-                                                <label class="form-check-label text-white" for="gameDevelopment">Game
+                                                <label class="form-check-label " for="gameDevelopment">Game
                                                     Development</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="databaseManagement"
                                                     name="interest" value="databaseManagement">
-                                                <label class="form-check-label text-white"
-                                                    for="databaseManagement">Database
+                                                <label class="form-check-label " for="databaseManagement">Database
                                                     Management</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="contactMethod" class="text-white">Preferred Contact
+                                            <label for="contactMethod">Preferred Contact
                                                 Method</label>
                                             <select class="form-control" id="contactMethod" name="contactMethod"
                                                 onchange="togglePhoneInput()">
@@ -245,7 +275,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group" id="phoneGroup" style="display: none;">
-                                            <label for="phone" class="text-white">Phone Number</label>
+                                            <label for="phone">Phone Number</label>
                                             <input type="tel" class="form-control" id="phone" name="phone"
                                                 placeholder="Enter your phone number">
                                         </div>
