@@ -137,7 +137,6 @@ html {
   width: 100%;
   position: fixed;
   top: 0;
-  /* Keep the navbar at the top of the screen */
   z-index: 150;
   display: flex;
   align-items: center;
@@ -176,7 +175,6 @@ html {
 
 
 
-/* Full-Screen Hamburger Menu Overlay */
 .menu-overlay {
   position: fixed;
   top: 69px; 
@@ -203,7 +201,6 @@ html {
   height: 100vh; 
 }
 
-/* Menu Section Header */
 .menu-section {
   color: #ffffff;
   text-transform: uppercase;
@@ -214,7 +211,6 @@ html {
   margin-top: 10px;
 }
 
-/* Menu Items Styling */
 .menu-items {
   list-style-type: none;
   text-align: center;
@@ -243,25 +239,23 @@ html {
 }
 
 .menu-items li:nth-child(odd) a {
-  background-color: rgba(255, 255, 255, 0.031); /* Light background */
+  background-color: rgba(255, 255, 255, 0.031);
 }
 
 .menu-items li:nth-child(even) a {
-  background-color: rgba(0, 0, 0, 0.1); /* Darker background */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu-items li a:hover {
-  background-color: rgba(120, 46, 218, 0.2); /* Hover effect */
+  background-color: rgba(120, 46, 218, 0.2);
 }
 
-/* Icon Styling */
 .menu-items li a i {
   margin-right: 10px;
   font-size: 1.2em;
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Internal section header */
 .menu-section-internal {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9em;
@@ -302,82 +296,69 @@ html {
 }
 
 #drop-Menu {
-  background-color: rgba(18, 21, 38, 0.4);
-  border-radius: 10px;
-  padding: 10px;
+  background-color: rgba(18, 21, 38, 0.26);
+  border-radius: 18px;
   margin-left: -65px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px) saturate(150%);
 }
 
 .dropdown-item {
   display: flex;
-  align-items: center;
-  padding: 10px 15px;
   color: white;
+  font-size: 14px;
   transition: background-color 0.3s ease;
+  box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.137);
+  border-radius: 18px;
 }
 
 .dropdown-item i {
   margin-right: 10px;
+  font-size: 16px;
 }
 
-.dropdown-item:hover {
-  background-color: rgba(26, 28, 53, 0.5);
-  /* Hover effect */
-  border-radius: 5px;
-}
 
-/* Add pointer effect for dropdown indicator arrow */
-.dropdown-menu-custom::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  border-width: 0 10px 10px 10px;
-  border-style: solid;
-  border-color: transparent transparent rgba(18, 21, 38, 0.9) transparent;
-}
-
-/* Settings Card Styling */
 .settings-card {
   position: fixed;
   top: 0;
   right: -300px;
-  /* Start off-screen */
   height: 100%;
   width: 250px;
   background-color: rgba(18, 21, 38, 0.9);
-  padding: 20px;
   border-radius: 10px 0 0 10px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease-out;
   z-index: 110;
-  /* Above other elements */
 }
 
-/* Show settings card */
 .settings-card.show {
   right: 0;
-  /* Slide in */
 }
 
-/* Menu item styling */
 .dropdown-menu-custom {
-  z-index: 1050; /* Higher than the navbar's z-index */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 220px;
+  top: 115%;
+  right: -6px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  visibility: hidden;
+  z-index: 1050;
 }
 
+.nav-item.dropdown.show .dropdown-menu-custom {
+  transform: translateX(0);
+  opacity: 1;
+  
+  visibility: visible;
+}
 
 .dropdown-item {
   display: flex;
-  align-items: center;
-  padding: 10px 15px;
   color: white;
   transition: background-color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: rgba(26, 28, 53, 0.5);
-  border-radius: 5px;
 }
 
 .dropdown-item i {
@@ -388,7 +369,7 @@ html {
 #toggleParticles:hover,
 #toggleWaves:hover,
 #drop-Item:hover {
-  background-color: rgba(26, 28, 53, 0.5);
+  background-color: rgba(7, 205, 255, 0.832);
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

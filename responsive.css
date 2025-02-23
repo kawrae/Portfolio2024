@@ -72,6 +72,11 @@
         border: 1px solid rgba(212, 206, 206, 0.048);
     }
 
+    .dropdown-menu-custom {
+        right: -70px;
+        top: 75px;
+    }
+
     /* Hide the navigation links by default */
     .nav-center ul {
         display: none;
