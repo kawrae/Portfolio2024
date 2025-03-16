@@ -1,3 +1,15 @@
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "portfolio";
+
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -202,7 +214,7 @@
             <li><a href="index.html"><i class="fa fa-angle-left"></i>Home</a></li>
             <li><a href="blog.html"><i class="fa fa-angle-left"></i>Blog</a></li>
             <li><a href="about.html"><i class="fa fa-angle-left"></i>About</a></li>
-            <li><a href="flash.html"><i class="fa fa-angle-left"></i>Flash</a></li>
+            <li><a href="flash.php"><i class="fa fa-angle-left"></i>Flash</a></li>
             <li><a href="projects.html"><i class="fa fa-angle-left"></i>Download</a></li>
             <li><a href="contact.html"><i class="fa fa-angle-left"></i>Contact</a></li>
         </ul>
@@ -232,28 +244,35 @@
                             Gallery
                         </div>
 
+                        <!-- Admin upload form -->
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <label>Select an image to upload:</label>
+                            <input type="file" name="image" id="imageInput" required>
+                            <button type="submit">Upload</button>
+                        </form>
+
+                        <!-- PHP gallery -->
                         <div class="gallery-container container-fluid">
                             <div class="gallery-grid">
-                                <!-- Repeat this for each image in the gallery -->
-                                <img src="imgs/gallery/p1.jpg" alt="Gallery Image 1" class="gallery-img">
-                                <img src="imgs/gallery/p2.jpg" alt="Gallery Image 2" class="gallery-img">
-                                <img src="imgs/gallery/p3.jpg" alt="Gallery Image 3" class="gallery-img">
-                                <img src="imgs/gallery/p4.jpg" alt="Gallery Image 4" class="gallery-img">
-                                <img src="imgs/gallery/p5.jpg" alt="Gallery Image 5" class="gallery-img">
-                                <img src="imgs/gallery/p6.jpg" alt="Gallery Image 6" class="gallery-img">
-                                <img src="imgs/gallery/p7.jpg" alt="Gallery Image 7" class="gallery-img">
-                                <img src="imgs/gallery/p8.jpg" alt="Gallery Image 8" class="gallery-img">
-                                <img src="imgs/gallery/p15.jpg" alt="Gallery Image 15" class="gallery-img">
-                                <img src="imgs/gallery/p16.jpg" alt="Gallery Image 16" class="gallery-img">
-                                <img src="imgs/gallery/p17.jpg" alt="Gallery Image 17" class="gallery-img">
-                                <img src="imgs/gallery/p18.jpg" alt="Gallery Image 18" class="gallery-img">
-                                <img src="imgs/gallery/p19.jpg" alt="Gallery Image 19" class="gallery-img">
-                                <img src="imgs/gallery/p20.jpg" alt="Gallery Image 20" class="gallery-img">
-                                <img src="imgs/gallery/p21.jpg" alt="Gallery Image 21" class="gallery-img">
-                                <img src="imgs/gallery/p22.jpg" alt="Gallery Image 22" class="gallery-img">
-                                <img src="imgs/gallery/p23.jpg" alt="Gallery Image 23" class="gallery-img">
-                                <img src="imgs/gallery/p24.jpg" alt="Gallery Image 24" class="gallery-img">
+                                <?php
+                                $result = $conn->query("SELECT * FROM images ORDER BY uploaded_at DESC");
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<div class="image-card">';
+                                        echo '<img src="' . $row["filename"] . '" alt="Gallery Image" class="gallery-img">';
+                                        echo '<button class="delete-btn" data-id="' . $row["id"] . '">Delete</button>';
+                                        echo '</div>';
+                                    }
+                                } else {
+                                    echo "<p>No images uploaded yet.</p>";
+                                }
+                                ?>
                             </div>
+                        </div>
+
+                        <!-- Message Box -->
+                        <div id="messageBox"
+                            style="display: none; padding: 10px; margin-top: 10px; border-radius: 5px;">
                         </div>
 
                         <!-- Lightbox Modal -->
@@ -294,6 +313,37 @@
     </footer>
 
     <script>
+        document.getElementById("uploadForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from reloading page
+
+            let formData = new FormData();
+            let image = document.getElementById("imageInput").files[0];
+            formData.append("image", image);
+
+            fetch("upload.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    showMessage(data.message, data.status);
+                    if (data.status === "success") {
+                        setTimeout(() => window.location.reload(), 1000); // Reload page to update gallery
+                    }
+                })
+                .catch(error => showMessage("An error occurred.", "error"));
+        });
+
+        function showMessage(message, type) {
+            let messageBox = document.getElementById("messageBox");
+            messageBox.innerText = message;
+            messageBox.style.display = "block";
+            messageBox.style.backgroundColor = type === "success" ? "#4CAF50" : "#F44336";
+            messageBox.style.color = "#fff";
+        }
+    </script>
+
+    <script>
         function toggleInfo(contentId, button) {
             const content = document.getElementById(contentId);
             const arrow = button.querySelector('.arrow i');
@@ -310,6 +360,28 @@
                 button.innerHTML = '<span class="arrow"><i class="fas fa-arrow-down"></i></span> Expand Project';
             }
         }
+    </script>
+
+    <script>
+        document.querySelectorAll(".delete-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let imageId = this.getAttribute("data-id");
+
+                fetch("delete.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: "id=" + imageId
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        showMessage(data.message, data.status);
+                        if (data.status === "success") {
+                            setTimeout(() => window.location.reload(), 1000);
+                        }
+                    })
+                    .catch(error => showMessage("An error occurred.", "error"));
+            });
+        });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
